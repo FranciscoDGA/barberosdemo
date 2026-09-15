@@ -7,19 +7,19 @@
       ]
     },
     {
-      "source": "/barber-hemerson.jpg",
+      "source": "/barber-1.jpg",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     },
     {
-      "source": "/barber-douglas.jpg",
+      "source": "/barber-2.jpg",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     },
     {
-      "source": "/marcos-avatar.jpg",
+      "source": "/alfred-avatar.jpg",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]

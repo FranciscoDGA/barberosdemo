@@ -20,14 +20,14 @@ async function seed() {
       name: 'Rafael Mendes',
       description: 'Master Barber & Proprietário',
       specialty: 'Degradê, Navalha & Atendimento VIP',
-      photo_url: '/barber-hemerson.jpg',
+      photo_url: '/barber-1.jpg',
       active: true
     },
     {
       name: 'Lucas Ferreira',
       description: 'Especialista em Degradê & Coloração',
       specialty: 'Degradê / Fade & Coloração',
-      photo_url: '/barber-douglas.jpg',
+      photo_url: '/barber-2.jpg',
       active: true
     }
   ];

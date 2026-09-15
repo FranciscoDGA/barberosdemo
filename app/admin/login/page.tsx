@@ -359,7 +359,7 @@ export default function AdminLoginPage() {
                   type="text"
                   value={regName}
                   onChange={(e) => setRegName(e.target.value)}
-                  placeholder="ex: Francisco Dono"
+                  placeholder="ex: João Silva"
                   required
                   className="w-full pl-10 pr-4 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition"
                 />

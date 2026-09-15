@@ -246,7 +246,7 @@ export function processUserMessage(
     reply: {
       id: 'msg-' + Date.now(),
       sender: 'marcos',
-      text: `Olá! 👋 Sou o *Marcos*, assistente digital da *${SALON.nome}*.\n\nComo posso ajudar você hoje?\n\n• Escolha uma opção rápida abaixo ou envie sua dúvida:`,
+      text: `Olá! 👋 Sou o *${SALON.assistente.nome}*, assistente digital da *${SALON.nome}*.\n\nComo posso ajudar você hoje?\n\n• Escolha uma opção rápida abaixo ou envie sua dúvida:`,
       timestamp: timeStr,
       intent: 'GREETING',
       quickReplies: [
@@ -279,7 +279,7 @@ function handleStructuredAction(
       reply: {
         id: 'msg-' + Date.now(),
         sender: 'marcos',
-        text: `Olá! Sou o *Marcos*, assistente da *${SALON.nome}*. Como posso ajudar você agora? 💈`,
+        text: `Olá! Sou o *${SALON.assistente.nome}*, assistente da *${SALON.nome}*. Como posso ajudar você agora? 💈`,
         timestamp: timeStr,
         quickReplies: [
           { label: 'Quero agendar', action: 'INICIAR_AGENDAMENTO' },

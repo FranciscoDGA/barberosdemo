@@ -52,7 +52,7 @@
     <path d="M322 230 C362 240 392 290 384 340 C380 360 364 375 354 355 C348 340 352 300 316 268 C308 260 312 240 322 230 Z" />
   </g>
 
-  <!-- Brand Typography: MAMUTY -->
-  <text x="256" y="445" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="44" letter-spacing="9" fill="url(#goldGrad)">MAMUTY</text>
+  <!-- Brand Typography -->
+  <text x="256" y="445" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="44" letter-spacing="9" fill="url(#goldGrad)">BARBEROS</text>
   <text x="256" y="475" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="14" letter-spacing="5" fill="#94a3b8">BARBEARIA &amp; SALÃO</text>
 </svg>

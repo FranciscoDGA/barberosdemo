@@ -28,6 +28,10 @@ if (!serviceRoleKey) {
   );
 }
 
+if (!serviceRoleKey) {
+  throw new Error('SUPABASE_SERVICE_ROLE_KEY is required for server-side operations. Set it in .env.local');
+}
+
 /**
  * Server-side Supabase client with service role privileges.
  * Bypasses ALL RLS policies.
@@ -35,7 +39,7 @@ if (!serviceRoleKey) {
  */
 export const supabaseAdmin = createClient(
   supabaseUrl,
-  serviceRoleKey || 'PLACEHOLDER_KEY',
+  serviceRoleKey,
   {
     auth: {
       autoRefreshToken: false,

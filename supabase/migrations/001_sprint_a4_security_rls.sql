@@ -1,6 +1,6 @@
 -- =============================================================
 -- SPRINT A4: Schema + RLS + Profiles
--- Mamuty Barbearia — Segurança e Permissões
+-- BarberOS Template — Segurança e Permissões
 -- Execute no Supabase SQL Editor: https://supabase.com/dashboard
 -- =============================================================
 -- CORREÇÃO: Políticas RLS usam DROP IF EXISTS antes de CREATE
@@ -260,14 +260,14 @@ WHERE NOT EXISTS (SELECT 1 FROM public.services LIMIT 1);
 
 INSERT INTO public.barbers (name, specialty, description, photo_url, active)
 SELECT * FROM (VALUES
-  ('mamuty.barber', 'Degradê, Barba, Corte Tradicional', 'Barbeiro especialista em degradê e acabamento navalhado', '/barber-hemerson.jpg', true),
-  ('Douglas', 'Corte Social, Barba', 'Barbeiro especialista em corte social e barba', '/barber-douglas.jpg', true)
+  ('Profissional 1', 'Degradê, Barba, Corte Tradicional', 'Barbeiro especialista em degradê e acabamento', '/barber-1.jpg', true),
+  ('Profissional 2', 'Corte Social, Barba', 'Barbeiro especialista em corte social e barba', '/barber-2.jpg', true)
 ) AS v(name, specialty, description, photo_url, active)
 WHERE NOT EXISTS (SELECT 1 FROM public.barbers LIMIT 1);
 
 INSERT INTO public.business_settings (key, value)
 SELECT * FROM (VALUES
-  ('general', '{"shopName": "Mamuty Barbearia", "whatsapp": "(94) 98443-9065", "address": "Cumaru do Norte - PA"}'::jsonb),
+  ('general', '{"shopName": "Barbearia", "whatsapp": "(11) 99999-0000", "address": "São Paulo - SP"}'::jsonb),
   ('hours', '{"openTime": "08:00", "closeTime": "20:00", "lunchStart": "12:00", "lunchEnd": "14:00", "workDays": "Segunda a Sábado"}'::jsonb),
   ('payments', '{"pix": true, "dinheiro": true, "debito": true, "credito": true}'::jsonb),
   ('cancellation', '{"advanceHours": 2, "policy": "Cancelamento deve ser feito com pelo menos 2 horas de antecedência."}'::jsonb)

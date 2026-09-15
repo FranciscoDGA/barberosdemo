@@ -1,4 +1,5 @@
 import { IntentType } from './types';
+import { SALON } from '@/lib/config/salon';
 
 export function classificarIntencao(texto: string): IntentType {
   const norm = texto
@@ -13,8 +14,7 @@ export function classificarIntencao(texto: string): IntentType {
     norm.includes('atendente') ||
     norm.includes('humano') ||
     norm.includes('pessoa') ||
-    norm.includes('dono') ||
-    norm.includes('falar com o hemerson')
+    norm.includes('dono')
   ) {
     return 'HUMAN_HANDOFF';
   }
@@ -119,7 +119,7 @@ export function classificarIntencao(texto: string): IntentType {
     norm.startsWith('boa tarde') ||
     norm.startsWith('boa noite') ||
     norm === 'ola barberos' ||
-    norm === 'oi marcos'
+    norm === `oi ${SALON.assistente.nome.toLowerCase()}`
   ) {
     return 'GREETING';
   }

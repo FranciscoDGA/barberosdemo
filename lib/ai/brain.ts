@@ -140,7 +140,7 @@ export async function pensarEResponderMarcos(
   if (perguntouServicoInexistente) {
     const handoff = tool_encaminhar_para_humano('Serviço especial fora da grade');
     return {
-      reply: 'Esse serviço não consta no nosso catálogo oficial no momento. 😊 Posso encaminhar você para a equipe da Mamury confirmar diretamente no WhatsApp?',
+      reply: `Esse serviço não consta no nosso catálogo oficial no momento. 😊 Posso encaminhar você para a equipe da ${SALON.nome} confirmar diretamente no WhatsApp?`,
       intent: 'HUMAN_HANDOFF',
       toolUsed: 'encaminhar_para_humano',
       component: 'human_handoff',
@@ -161,7 +161,6 @@ export async function pensarEResponderMarcos(
     norm.includes('atendente') ||
     norm.includes('pessoa') ||
     norm.includes('dono') ||
-    norm.includes('falar com o hemerson') ||
     norm.includes('reclamacao') ||
     norm.includes('reclamação')
   ) {
@@ -583,33 +582,37 @@ export async function pensarEResponderMarcos(
     };
   }
 
-  // SELECT_BARBER — Escolher profissional
-  if (norm.includes('hemerson') || norm.includes('com o dono') || norm.includes('barber-1')) {
-    const barber = context.barbers.find(b => b.name.toLowerCase().includes('hemerson')) || context.barbers[0];
-    return {
-      reply: `Perfeito, com o *${barber.name}*! 👊\n\nPara qual dia?`,
-      intent: 'SELECT_BARBER',
-      component: 'dates_list',
-      quickReplies: [
-        { label: 'Hoje', action: 'SELECT_DATE', payload: { date: todayIso } },
-        { label: 'Amanhã', action: 'SELECT_DATE', payload: { date: getNextDayIso(1) } }
-      ],
-      newDraftState: { barber }
-    };
+  // SELECT_BARBER — Escolher profissional (dynamic from config)
+  if (norm.includes('com o dono') || norm.includes('barber-1') || (context.barbers[0] && norm.includes(context.barbers[0].name.toLowerCase().split(' ')[0]))) {
+    const barber = context.barbers[0];
+    if (barber) {
+      return {
+        reply: `Perfeito, com o *${barber.name}*! 👊\n\nPara qual dia?`,
+        intent: 'SELECT_BARBER',
+        component: 'dates_list',
+        quickReplies: [
+          { label: 'Hoje', action: 'SELECT_DATE', payload: { date: todayIso } },
+          { label: 'Amanhã', action: 'SELECT_DATE', payload: { date: getNextDayIso(1) } }
+        ],
+        newDraftState: { barber }
+      };
+    }
   }
 
-  if (norm.includes('douglas') || norm.includes('doglas') || norm.includes('barber-2')) {
-    const barber = context.barbers.find(b => b.name.toLowerCase().includes('douglas')) || context.barbers[1] || context.barbers[0];
-    return {
-      reply: `Beleza, com o *${barber.name}*! 💈\n\nPara qual dia?`,
-      intent: 'SELECT_BARBER',
-      component: 'dates_list',
-      quickReplies: [
-        { label: 'Hoje', action: 'SELECT_DATE', payload: { date: todayIso } },
-        { label: 'Amanhã', action: 'SELECT_DATE', payload: { date: getNextDayIso(1) } }
-      ],
-      newDraftState: { barber }
-    };
+  if (norm.includes('barber-2') || (context.barbers[1] && norm.includes(context.barbers[1].name.toLowerCase().split(' ')[0]))) {
+    const barber = context.barbers[1] || context.barbers[0];
+    if (barber) {
+      return {
+        reply: `Beleza, com o *${barber.name}*! 💈\n\nPara qual dia?`,
+        intent: 'SELECT_BARBER',
+        component: 'dates_list',
+        quickReplies: [
+          { label: 'Hoje', action: 'SELECT_DATE', payload: { date: todayIso } },
+          { label: 'Amanhã', action: 'SELECT_DATE', payload: { date: getNextDayIso(1) } }
+        ],
+        newDraftState: { barber }
+      };
+    }
   }
 
   if (norm.includes('tanto faz') || norm.includes('qualquer') || norm.includes('primeiro disponivel') || norm.includes('primeiro disponível')) {

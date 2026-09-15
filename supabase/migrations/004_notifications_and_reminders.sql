@@ -1,6 +1,6 @@
 -- =============================================================
 -- MIGRATION 004: NOTIFICAÇÕES, LEMBRETES E PUSH PWA (SPRINT 04)
--- Mamuty Barbearia — Infraestrutura Oficial de Notificações
+-- BarberOS Template — Infraestrutura Oficial de Notificações
 -- Execute no Supabase SQL Editor: https://supabase.com/dashboard
 -- =============================================================
 
