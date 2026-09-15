@@ -17,16 +17,16 @@ async function seed() {
   console.log('--- 1. Sincronizando Barbeiros ---');
   const officialBarbers = [
     {
-      name: 'Carlos Silva',
-      description: 'Fundador & Barbeiro Chefe (Proprietário)',
-      specialty: 'Degradê, Tesoura & Barba',
-      photo_url: '/barber-1.jpg',
+      name: 'Rafael Mendes',
+      description: 'Master Barber & Proprietário',
+      specialty: 'Degradê, Navalha & Atendimento VIP',
+      photo_url: '/barber-hemerson.jpg',
       active: true
     },
     {
-      name: 'André',
-      description: 'Especialista em Degradê & Barba',
-      specialty: 'Degradê / Fade & Barba',
+      name: 'Lucas Ferreira',
+      description: 'Especialista em Degradê & Coloração',
+      specialty: 'Degradê / Fade & Coloração',
       photo_url: '/barber-douglas.jpg',
       active: true
     }

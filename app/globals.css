@@ -8,22 +8,22 @@
    ============================================================================ */
 
 :root {
-  /* Primary / Brand */
-  --color-primary: #f59e0b;
-  --color-primary-dark: #d97706;
-  --color-primary-light: #fbbf24;
+  /* Primary / Brand — Barbearia Imperial */
+  --color-primary: #c9a84c;
+  --color-primary-dark: #a8893a;
+  --color-primary-light: #d4b96a;
 
-  /* Backgrounds */
-  --color-bg: #070a12;
-  --color-bg-card: #0f172a;
-  --color-bg-card-hover: #1e293b;
+  /* Backgrounds — Navy */
+  --color-bg: #0f0f1a;
+  --color-bg-card: #1a1a2e;
+  --color-bg-card-hover: #252542;
 
   /* Text */
   --color-text: #ffffff;
-  --color-text-secondary: #94a3b8;
+  --color-text-secondary: #a0a0b8;
 
   /* Borders */
-  --color-border: #1e293b;
+  --color-border: #2a2a45;
 
   /* PWA */
   --pwa-bg: #090d16;
