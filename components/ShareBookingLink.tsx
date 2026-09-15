@@ -22,7 +22,7 @@ export default function ShareBookingLink({ className = '' }: ShareBookingLinkPro
 
   const bookingUrl = typeof window !== 'undefined' 
     ? `${window.location.origin}/agendar`
-    : 'https://barberos-demo.vercel.app/agendar';
+    : `${SALON.url}/agendar`;
 
   const handleCopy = async () => {
     try {

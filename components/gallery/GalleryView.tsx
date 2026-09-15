@@ -132,7 +132,7 @@ export const GalleryView: React.FC = () => {
             Inspire-se na Arte dos Nossos Barbeiros
           </h1>
           <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-2xl">
-            Cada corte reflete a assinatura de um especialista. Explore os trabalhos realizados por Matheus BarberOS, Diego Alcantara, Gabriel Santos e Lucas Barreto. Escolha seu estilo e agende direto com o mestre.
+            Cada corte reflete a assinatura de um especialista. Explore os trabalhos realizados por nossos profissionais. Escolha seu estilo e agende direto com o mestre.
           </p>
 
           {/* Search bar */}
@@ -230,7 +230,7 @@ export const GalleryView: React.FC = () => {
                 </div>
                 <div className="min-w-0">
                   <span className="text-xs font-bold block truncate leading-tight">
-                    {barber.name.replace('Matheus "BarberOS" Rocha', 'Matheus BarberOS')}
+                    {barber.name}
                   </span>
                   <span className="text-[10px] text-slate-400 block truncate">
                     {barberPhotosCount} fotos • {barber.rating}★

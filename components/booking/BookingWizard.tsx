@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useApp } from '@/context/AppContext';
 import { Barber, Service, PaymentMethod, Customer } from '@/lib/types';
 import { consultarDisponibilidade } from '@/lib/availability';
+import { SALON } from '@/lib/config/salon';
 import Link from 'next/link';
 import {
   Scissors,
@@ -255,13 +256,13 @@ export const BookingWizard: React.FC = () => {
           setSubmitError('');
         }, 2000);
       } else if (message.includes('fechada') || message.includes('CLOSED')) {
-        setSubmitError('A BarberOS está fechada nesse dia.');
+        setSubmitError(`A ${SALON.nome} está fechada nesse dia.`);
       } else if (message.includes('intervalo') || message.includes('LUNCH')) {
-        setSubmitError('Nesse horário a BarberOS está fechada para o intervalo. Os atendimentos retornam às 14:00.');
+        setSubmitError(`Nesse horário a ${SALON.nome} está fechada para o intervalo. Os atendimentos retornam às 14:00.`);
       } else if (message.includes('ultrapassa') || message.includes('CLOSING')) {
         setSubmitError('Esse horário ultrapassa o horário de funcionamento.');
       } else if (message.includes('domingo') || message.includes('SUNDAY')) {
-        setSubmitError('A BarberOS atende aos domingos das 08:00 às 12:00.');
+        setSubmitError(`A ${SALON.nome} atende aos domingos das 08:00 às 12:00.`);
       } else {
         setSubmitError(message);
       }

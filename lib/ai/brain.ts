@@ -1,5 +1,6 @@
 import { Appointment, Barber, Customer, PaymentMethod, Service } from '../types';
 import { SALON_KNOWLEDGE_BASE } from './knowledgeBase';
+import { SALON } from '../config/salon';
 import {
   tool_consultar_lista_servicos,
   tool_consultar_preco_servico,
@@ -166,7 +167,7 @@ export async function pensarEResponderMarcos(
   ) {
     const handoff = tool_encaminhar_para_humano('Solicitação direta de contato humano');
     return {
-      reply: 'Com certeza! 😊 Vou encaminhar você agora para a equipe da BarberOS.\n\nToque no botão abaixo para falar direto com o *Proprietário*:',
+      reply: `Com certeza! 😊 Vou encaminhar você agora para a equipe da ${SALON.nome}.\n\nToque no botão abaixo para falar direto com o *Proprietário*:`,
       intent: 'HUMAN_HANDOFF',
       toolUsed: 'encaminhar_para_humano',
       component: 'human_handoff',
@@ -236,7 +237,7 @@ export async function pensarEResponderMarcos(
     const horario = tool_consultar_horario_funcionamento(todayIso);
     const { diaSemana, abertura, fechamento, temIntervalo, intervalo, horariosSemanais } = horario.data;
 
-    let texto = `📋 *Horário de funcionamento da BarberOS:*\n\n`;
+    let texto = `📋 *Horário de funcionamento da ${SALON.nome}:*\n\n`;
     horariosSemanais.forEach((h: any) => {
       texto += `• ${h.dias}: ${h.horario}\n  ↳ Intervalo: ${h.intervalo}\n\n`;
     });
@@ -393,7 +394,7 @@ export async function pensarEResponderMarcos(
   ) {
     const endereco = tool_consultar_endereco();
     return {
-      reply: `📍 *Endereço da BarberOS Barbearia:*\n\n${endereco.data.enderecoCompleto}\n\n📲 WhatsApp: ${endereco.data.whatsapp}`,
+      reply: `📍 *Endereço da ${SALON.nome}:*\n\n${endereco.data.enderecoCompleto}\n\n📲 WhatsApp: ${endereco.data.whatsapp}`,
       intent: 'ADDRESS',
       toolUsed: 'consultar_endereco',
       quickReplies: [
@@ -508,7 +509,7 @@ export async function pensarEResponderMarcos(
     
     const servicos = await tool_consultar_lista_servicos();
     return {
-      reply: `Show de bola! 💈 Vamos agendar seu atendimento na BarberOS.\n\nQual serviço você gostaria de fazer? 👇`,
+      reply: `Show de bola! 💈 Vamos agendar seu atendimento na ${SALON.nome}.\n\nQual serviço você gostaria de fazer? 👇`,
       intent: 'START_BOOKING',
       toolUsed: 'consultar_lista_servicos',
       component: 'services_list',
@@ -769,7 +770,7 @@ export async function pensarEResponderMarcos(
     if (nota >= 1 && nota <= 5) {
       const estrelas = '⭐'.repeat(nota);
       return {
-        reply: `Obrigado pela avaliação, ${context.currentCustomer?.name || 'amigo'}! ${estrelas}\n\nSua opinião é muito importante para a BarberOS. Se quiser deixar um comentário sobre o atendimento, é só enviar! 🙏`,
+        reply: `Obrigado pela avaliação, ${context.currentCustomer?.name || 'amigo'}! ${estrelas}\n\nSua opinião é muito importante para a ${SALON.nome}. Se quiser deixar um comentário sobre o atendimento, é só enviar! 🙏`,
         intent: 'RATING_RECEIVED',
         quickReplies: [
           { label: 'Menu inicial', action: 'GREETING' },
@@ -793,7 +794,7 @@ export async function pensarEResponderMarcos(
     const positivo = !norm.includes('ruim') && !norm.includes('péssimo') && !norm.includes('não gostei');
     return {
       reply: positivo
-        ? `Que bom que você gostou, ${context.currentCustomer?.name || 'amigo'}! 🙏 Isso nos motiva a continuar melhorando. Esperamos ver você de novo na BarberOS! 💈`
+        ? `Que bom que você gostou, ${context.currentCustomer?.name || 'amigo'}! 🙏 Isso nos motiva a continuar melhorando. Esperamos ver você de novo na ${SALON.nome}! 💈`
         : `Lamentamos que não tenha sido uma experiência ideal, ${context.currentCustomer?.name || 'amigo'}. 🙏 Sua opinião é importante para nós melhorarmos. Se quiser conversar sobre isso, posso encaminhar para o proprietário.`,
       intent: 'FEEDBACK_RECEIVED',
       quickReplies: [
@@ -878,7 +879,7 @@ export async function pensarEResponderMarcos(
     norm === 'oi' || norm === 'ola' || norm === 'opa' || norm.startsWith('bom dia') || norm.startsWith('boa tarde') || norm.startsWith('boa noite') || norm === 'e ai' || norm === 'eai'
   ) {
     return {
-      reply: `Fala! 👊 Sou o *Alfred*, assistente da *BarberOS Barbearia*.\n\nComo posso te ajudar? 💈`,
+      reply: `Fala! 👊 Sou o *Alfred*, assistente da *${SALON.nome}*.\n\nComo posso te ajudar? 💈`,
       intent: 'GREETING',
       quickReplies: [
         { label: 'Quero agendar', action: 'START_BOOKING' },
@@ -902,7 +903,7 @@ export async function pensarEResponderMarcos(
   // Adeus
   if (norm.includes('tchau') || norm.includes('ate mais') || norm.includes('até mais') || norm.includes('flw') || norm.includes('falou')) {
     return {
-      reply: `Valeu! 👊 Até a próxima na BarberOS! 💈`,
+      reply: `Valeu! 👊 Até a próxima na ${SALON.nome}! 💈`,
       intent: 'GOODBYE',
       quickReplies: []
     };
@@ -927,7 +928,7 @@ export async function pensarEResponderMarcos(
   }
   
   return {
-    reply: `Fala, tudo bem? Sou o *Alfred*, assistente da *BarberOS Barbearia*! 💈\n\nPosso te ajudar a agendar, consultar preços ou ver horários.\n\nO que você precisa?`,
+    reply: `Fala, tudo bem? Sou o *Alfred*, assistente da *${SALON.nome}*! 💈\n\nPosso te ajudar a agendar, consultar preços ou ver horários.\n\nO que você precisa?`,
     intent: 'UNKNOWN',
     leadStatus: classificacaoLead.status,
     intencao: intencaoFinal,

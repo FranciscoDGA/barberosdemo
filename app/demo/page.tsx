@@ -235,7 +235,7 @@ export default function DemoPage() {
               ))}
             </ul>
             <a
-              href={`https://wa.me/${SALON.contato.whatsapp}?text=Olá! Tenho interesse no deploy do BarberOS para minha barbearia.`}
+              href={`https://wa.me/${SALON.contato.whatsapp}?text=Olá! Tenho interesse no sistema de agendamento para minha barbearia.`}
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-center text-sm font-extrabold text-black transition-all"
@@ -268,7 +268,7 @@ export default function DemoPage() {
               <ArrowRight className="w-4 h-4" />
             </a>
             <a
-              href={`https://wa.me/${SALON.contato.whatsapp}?text=Olá! Quero saber mais sobre o BarberOS.`}
+              href={`https://wa.me/${SALON.contato.whatsapp}?text=Olá! Quero saber mais sobre o sistema de agendamento.`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm flex items-center gap-2 transition-all active:scale-95"
@@ -283,7 +283,7 @@ export default function DemoPage() {
       {/* Footer */}
       <footer className="border-t border-slate-800/60 py-6">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-          <span>BarberOS — {SALON.nome}</span>
+          <span>{SALON.nome} — Sistema de Agendamento</span>
           <span>{SALON.endereco.cidade} - {SALON.endereco.estado}</span>
         </div>
       </footer>

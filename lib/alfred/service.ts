@@ -54,7 +54,11 @@ function buildSystemPrompt(): string {
 
   const regrasText = kb.regrasGerais.map((r, i) => `${i + 1}. ${r}`).join('\n');
 
-  return `Você é o ${SALON.assistente.nome}, funcionário digital da ${SALON.nome} Barbearia.
+  // Find the signature service (highest price combo)
+  const comboServico = [...kb.servicos].sort((a, b) => b.preco - a.preco)[0];
+  const comboInfo = comboServico ? `${comboServico.nome} (R$ ${comboServico.preco}, ${comboServico.duracaoMinutos} min)` : 'Combo';
+
+  return `Você é o ${SALON.assistente.nome}, funcionário digital da ${SALON.nome}.
 
 ## IDENTIDADE
 Nome: ${p.nome}
@@ -69,12 +73,12 @@ Preço NÃO é diferencial.
 
 ## HORÁRIO
 ${SALON.horariosResumoAI}
-Em feriados: preço normal + 10% de acréscimo.
+Em feriados: preço normal + ${SALON.regras.acrescimoFeriados * 100}% de acréscimo.
 Tolerância de atraso: ${SALON.regras.toleranciaMinutos} minutos.
 
 ## SERVIÇOS
-Carro-chefe: Combo Completo (R$ 110, 60 min)
-Mais pedidos: Degradê, Social e Combo.
+Carro-chefe: ${comboInfo}
+Mais pedidos: ${kb.servicos.slice(0, 3).map(s => s.nome).join(', ')}.
 
 ${servicosText}
 
@@ -82,9 +86,10 @@ ${servicosText}
 ${barbeirosText}
 
 ## COMPATIBILIDADE
-Carlos (barber-1) atende TODOS os serviços.
-André (barber-2) atende: Corte social, Corte degradê, Barba simples, Cabelo + Barba.
-NÃO indique André para Cabelo + Sobrancelha ou Combo Completo.
+${kb.barbeiros.map(b => {
+  const servicosDoBarbeiro = kb.servicos.filter(s => s.profissionaisIds.includes(b.id));
+  return `${b.nome} (${b.id}) atende: ${servicosDoBarbeiro.map(s => s.nome).join(', ')}.`;
+}).join('\n')}
 
 ## PAGAMENTO
 ${SALON.formasPagamento.join(', ')}.
@@ -110,7 +115,7 @@ NUNCA invente dados que podem ser obtidos via tools.
 1. Seja profissional, moderno, educado, confiante e objetivo.
 2. Respostas curtas e diretas. Sem textos enormes.
 3. Destaque qualidade, excelência e estilo — não preço.
-4. Sugira o Combo Completo quando apropriado (carro-chefe).
+4. Sugira o ${comboInfo.split(' (')[0]} quando apropriado (carro-chefe).
 5. Verifique compatibilidade profissional/serviço antes de sugerir.
 6. Para agendamento, use as tools para verificar disponibilidade real.
 7. Nunca confirme agendamento sem verificar disponibilidade.
@@ -164,7 +169,7 @@ function getToolsDeclarations() {
     },
     {
       name: 'get_barber_by_name',
-      description: 'Busca um profissional pelo nome (ex: "Carlos", "André").',
+      description: `Busca um profissional pelo nome (ex: "${kb.barbeiros[0]?.nome}", "${kb.barbeiros[1]?.nome}").`,
       parameters: {
         type: 'object',
         properties: { name: { type: 'string', description: 'Nome do profissional' } },

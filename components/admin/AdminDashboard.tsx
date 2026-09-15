@@ -5,6 +5,7 @@ import { useApp } from '@/context/AppContext';
 import { Appointment, Customer, FinancialTransaction, Service } from '@/lib/types';
 import { formatWhatsAppMessage, generateWhatsAppUrl } from '@/lib/whatsapp';
 import { WhatsAppNotificationModal } from '@/components/WhatsAppNotificationModal';
+import { SALON } from '@/lib/config/salon';
 import {
   BarChart3,
   TrendingUp,
@@ -176,7 +177,7 @@ export const AdminDashboard: React.FC = () => {
     const phone = cleanPhone.length <= 11 ? `55${cleanPhone}` : cleanPhone;
     const msg =
       `Fala, *${customer.name.split(' ')[0]}*! Tudo certo? 💈\n\n` +
-      `Sentimos sua falta aqui na *Barbearia BarberOS*! Você tem *${customer.loyaltyStamps} selos* e *${customer.loyaltyPoints} pontos* acumulados no seu Clube VIP.\n\n` +
+      `Sentimos sua falta aqui na *${SALON.nome}*! Você tem *${customer.loyaltyStamps} selos* e *${customer.loyaltyPoints} pontos* acumulados no seu Clube VIP.\n\n` +
       `Que tal dar aquele talento no visual essa semana? Temos horários disponíveis!\n\n` +
       `Acesse nosso app e agende em segundos:\n` +
       `📍 ${salonConfig.address}`;
@@ -195,7 +196,7 @@ export const AdminDashboard: React.FC = () => {
             </h2>
           </div>
           <p className="text-xs text-slate-400 mt-1">
-            Controle central da Barbearia BarberOS: faturamento, agenda, clientes e fidelidade.
+            Controle central da ${SALON.nome}: faturamento, agenda, clientes e fidelidade.
           </p>
         </div>
 
@@ -749,7 +750,7 @@ export const AdminDashboard: React.FC = () => {
         <div className="bg-slate-900 rounded-2xl p-5 border border-slate-800 space-y-4 max-w-2xl animate-in fade-in duration-200">
           <h3 className="text-sm font-bold text-white pb-2 border-b border-slate-800 flex items-center gap-2">
             <Settings className="w-4 h-4 text-amber-400" />
-            <span>Configurações Oficiais da Barbearia BarberOS</span>
+            <span>Configurações Oficiais da {SALON.nome}</span>
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
@@ -819,7 +820,7 @@ export const AdminDashboard: React.FC = () => {
 
             <button
               onClick={() => {
-                if (confirm('Tem certeza que deseja restaurar os dados de demonstração da Barbearia BarberOS?')) {
+                if (confirm(`Tem certeza que deseja restaurar os dados de demonstração da ${SALON.nome}?`)) {
                   resetAllData();
                   alert('Dados redefinidos com sucesso!');
                 }
@@ -948,7 +949,7 @@ export const AdminDashboard: React.FC = () => {
             onSubmit={handleCreateService}
             className="bg-slate-900 rounded-2xl p-5 border border-slate-800 shadow-2xl max-w-md w-full space-y-4"
           >
-            <h3 className="font-bold text-sm text-white">Adicionar Novo Serviço ao BarberOS</h3>
+            <h3 className="font-bold text-sm text-white">Adicionar Novo Serviço</h3>
 
             <div>
               <label className="block text-xs font-semibold text-slate-300 mb-1">Nome do Serviço *</label>

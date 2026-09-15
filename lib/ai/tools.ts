@@ -2,6 +2,7 @@ import { supabase } from '../supabase';
 import { Appointment, Barber, Customer, PaymentMethod, Service } from '../types';
 import { consultarDisponibilidade, getHorarioFuncionamentoDia, ResultadoDisponibilidade } from '../availability';
 import { SALON_KNOWLEDGE_BASE } from './knowledgeBase';
+import { SALON } from '../config/salon';
 
 export interface ToolExecutionResult {
   toolName: string;
@@ -378,10 +379,10 @@ export function tool_encaminhar_para_humano(motivo?: string): ToolExecutionResul
     toolName: 'encaminhar_para_humano',
     success: true,
     data: {
-      responsavel: 'Proprietário (BarberOS Demo)',
-      whatsapp: '5511999990000',
-      whatsappFormatado: '(11) 99999-0000',
-      linkDireto: 'https://wa.me/5511999990000?text=Ol%C3%A1%2C%20o%20assistente%20me%20encaminhou%20para%20falar%20com%20voc%C3%AA.'
+      responsavel: `Proprietário (${SALON.nome})`,
+      whatsapp: SALON.contato.whatsapp,
+      whatsappFormatado: SALON.contato.whatsappFormatado,
+      linkDireto: `https://wa.me/${SALON.contato.whatsapp}?text=Ol%C3%A1%2C%20o%20assistente%20me%20encaminhou%20para%20falar%20com%20voc%C3%AA.`
     }
   };
 }
