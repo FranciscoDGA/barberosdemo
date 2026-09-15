@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   BARBEROS — CSS VARIABLES (from lib/config/salon.ts)
+   ============================================================================
+   Keep these in sync with lib/config/salon.ts → cores
+   To rebrand: update salon.ts colors AND here.
+   ============================================================================ */
+
+:root {
+  /* Primary / Brand */
+  --color-primary: #f59e0b;
+  --color-primary-dark: #d97706;
+  --color-primary-light: #fbbf24;
+
+  /* Backgrounds */
+  --color-bg: #070a12;
+  --color-bg-card: #0f172a;
+  --color-bg-card-hover: #1e293b;
+
+  /* Text */
+  --color-text: #ffffff;
+  --color-text-secondary: #94a3b8;
+
+  /* Borders */
+  --color-border: #1e293b;
+
+  /* PWA */
+  --pwa-bg: #090d16;
+  --pwa-theme: #0f172a;
+}
