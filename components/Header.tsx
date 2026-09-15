@@ -22,7 +22,8 @@ import {
   DollarSign,
   Settings,
   Award,
-  Star
+  Star,
+  MonitorPlay
 } from 'lucide-react';
 import { SALON } from '@/lib/config/salon';
 
@@ -143,6 +144,18 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
           >
             <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
             <span>WhatsApp Bot</span>
+          </Link>
+
+          <Link
+            href="/demo"
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1 ${
+              pathname === '/demo'
+                ? 'bg-amber-500 text-slate-950 shadow-xs'
+                : 'text-slate-300 hover:text-white hover:bg-slate-800'
+            }`}
+          >
+            <MonitorPlay className="w-3.5 h-3.5 text-amber-400" />
+            <span>Demonstração</span>
           </Link>
 
           <Link
@@ -419,6 +432,27 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
                       </span>
                     </div>
                     <span className="text-xs text-slate-400">Faturamento, despesas e comissões</span>
+                  </div>
+                </div>
+                <ChevronRight className="w-4 h-4 text-slate-500" />
+              </Link>
+
+              <Link
+                href="/demo"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center justify-between p-3.5 rounded-2xl border transition ${
+                  pathname === '/demo'
+                    ? 'bg-amber-500/15 border-amber-500/40 text-amber-400'
+                    : 'bg-slate-900/70 border-slate-800 text-slate-200 hover:bg-slate-800'
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400">
+                    <MonitorPlay className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="font-bold text-sm block text-white">Demonstração</span>
+                    <span className="text-xs text-slate-400">Conheça o Alfred trabalhando</span>
                   </div>
                 </div>
                 <ChevronRight className="w-4 h-4 text-slate-500" />

@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useApp } from '@/context/AppContext';
-import { Scissors, Sparkles, MessageCircle, ShieldCheck, Award } from 'lucide-react';
+import { Scissors, Sparkles, MessageCircle, ShieldCheck, Award, MonitorPlay } from 'lucide-react';
 
 export const BottomNav: React.FC = () => {
   const { activeTab, setActiveTab } = useApp();
@@ -13,7 +13,7 @@ export const BottomNav: React.FC = () => {
   const isAgendar = pathname === '/' && activeTab === 'agendar';
   const isGaleria = pathname === '/' && activeTab === 'galeria';
   const isFidelidade = pathname === '/' && activeTab === 'fidelidade';
-  const isWhatsapp = pathname === '/whatsapp';
+  const isDemo = pathname === '/demo';
   const isAdmin = pathname.startsWith('/admin') || (pathname === '/' && activeTab === 'admin');
 
   return (
@@ -73,21 +73,21 @@ export const BottomNav: React.FC = () => {
           <span className="text-[10px] mt-0.5">Fidelidade</span>
         </Link>
 
-        {/* WhatsApp Bot */}
+        {/* Demo */}
         <Link
-          href="/whatsapp"
+          href="/demo"
           className={`flex flex-col items-center justify-center py-1 px-2 rounded-xl transition ${
-            isWhatsapp ? 'text-emerald-400 font-bold' : 'text-slate-400 hover:text-slate-200'
+            isDemo ? 'text-amber-400 font-bold' : 'text-slate-400 hover:text-slate-200'
           }`}
         >
           <div
             className={`p-1.5 rounded-lg transition ${
-              isWhatsapp ? 'bg-emerald-500/20 text-emerald-400' : 'text-slate-400'
+              isDemo ? 'bg-amber-500/20 text-amber-400' : 'text-slate-400'
             }`}
           >
-            <MessageCircle className="w-4 h-4" />
+            <MonitorPlay className="w-4 h-4" />
           </div>
-          <span className="text-[10px] mt-0.5">WhatsApp</span>
+          <span className="text-[10px] mt-0.5">Demo</span>
         </Link>
 
         {/* Painel Admin */}
