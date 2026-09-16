@@ -55,7 +55,7 @@ export function processUserMessage(
       return {
         reply: {
           id: 'msg-' + Date.now(),
-          sender: 'marcos',
+          sender: 'assistant',
           text: `Perfeito! E qual o seu *Nome Completo*? 👤`,
           timestamp: timeStr
         },
@@ -77,7 +77,7 @@ export function processUserMessage(
     return {
       reply: {
         id: 'msg-' + Date.now(),
-        sender: 'marcos',
+        sender: 'assistant',
         text: `Claro! 😊 Vou encaminhar você agora mesmo para o atendimento humano com a equipe da ${SALON.nome}.\n\nToque no botão abaixo para falar direto com o *Proprietário* no WhatsApp pessoal:`,
         timestamp: timeStr,
         intent: 'FALAR_COM_HUMANO',
@@ -97,7 +97,7 @@ export function processUserMessage(
     return {
       reply: {
         id: 'msg-' + Date.now(),
-        sender: 'marcos',
+        sender: 'assistant',
         text: texto,
         timestamp: timeStr,
         intent: 'HORARIO_FUNCIONAMENTO',
@@ -118,7 +118,7 @@ export function processUserMessage(
     return {
       reply: {
         id: 'msg-' + Date.now(),
-        sender: 'marcos',
+        sender: 'assistant',
         text: texto,
         timestamp: timeStr,
         intent: 'CONSULTAR_SERVICOS',
@@ -150,7 +150,7 @@ export function processUserMessage(
     return {
       reply: {
         id: 'msg-' + Date.now(),
-        sender: 'marcos',
+        sender: 'assistant',
         text: `Olá! 👋 Sim, estamos funcionando hoje.\n\n${textoVagas}`,
         timestamp: timeStr,
         intent: 'CONSULTAR_DISPONIBILIDADE',
@@ -174,7 +174,7 @@ export function processUserMessage(
       return {
         reply: {
           id: 'msg-' + Date.now(),
-          sender: 'marcos',
+          sender: 'assistant',
           text: `Para localizar seu agendamento e cancelar, por favor me informe o seu *WhatsApp* com DDD: 👇`,
           timestamp: timeStr,
           quickReplies: [
@@ -189,7 +189,7 @@ export function processUserMessage(
     return {
       reply: {
         id: 'msg-' + Date.now(),
-        sender: 'marcos',
+        sender: 'assistant',
         text: `Claro! Encontrei seu agendamento ativo:\n\n📅 *${userApt.date.split('-').reverse().join('/')} às ${userApt.time}*\n✂️ *${userApt.serviceNames?.[0]}*\n💈 *${userApt.barberName}*\n\nDeseja realmente cancelar este horário?`,
         timestamp: timeStr,
         component: 'cancel_card',
@@ -209,7 +209,7 @@ export function processUserMessage(
     return {
       reply: {
         id: 'msg-' + Date.now(),
-        sender: 'marcos',
+        sender: 'assistant',
         text: `Sem problemas! Vamos remarcar seu atendimento. Para qual dia você prefere? 👇`,
         timestamp: timeStr,
         component: 'dates_list',
@@ -228,7 +228,7 @@ export function processUserMessage(
     return {
       reply: {
         id: 'msg-' + Date.now(),
-        sender: 'marcos',
+        sender: 'assistant',
         text: consultar_informacoes_gerais(),
         timestamp: timeStr,
         quickReplies: [
@@ -245,7 +245,7 @@ export function processUserMessage(
   return {
     reply: {
       id: 'msg-' + Date.now(),
-      sender: 'marcos',
+      sender: 'assistant',
       text: `Olá! 👋 Sou o *${SALON.assistente.nome}*, assistente digital da *${SALON.nome}*.\n\nComo posso ajudar você hoje?\n\n• Escolha uma opção rápida abaixo ou envie sua dúvida:`,
       timestamp: timeStr,
       intent: 'GREETING',
@@ -278,7 +278,7 @@ function handleStructuredAction(
     return {
       reply: {
         id: 'msg-' + Date.now(),
-        sender: 'marcos',
+        sender: 'assistant',
         text: `Olá! Sou o *${SALON.assistente.nome}*, assistente da *${SALON.nome}*. Como posso ajudar você agora? 💈`,
         timestamp: timeStr,
         quickReplies: [
@@ -298,7 +298,7 @@ function handleStructuredAction(
     return {
       reply: {
         id: 'msg-' + Date.now(),
-        sender: 'marcos',
+        sender: 'assistant',
         text: `Show de bola! 💈 Vamos agendar seu atendimento na ${SALON.nome}.\n\nQual serviço você gostaria de fazer? 👇`,
         timestamp: timeStr,
         component: 'services_list',
@@ -322,7 +322,7 @@ function handleStructuredAction(
     return {
       reply: {
         id: 'msg-' + Date.now(),
-        sender: 'marcos',
+        sender: 'assistant',
         text: `Excelente escolha: *${srv.name}* (R$ ${srv.price} — ${srv.durationMinutes} min).\n\nCom quem você gostaria de ser atendido? 💈`,
         timestamp: timeStr,
         component: 'barbers_list',
@@ -347,7 +347,7 @@ function handleStructuredAction(
     return {
       reply: {
         id: 'msg-' + Date.now(),
-        sender: 'marcos',
+        sender: 'assistant',
         text: `Perfeito, com *${foundBarber.name}*! 👊\n\nPara qual dia você prefere o atendimento? 👇`,
         timestamp: timeStr,
         component: 'dates_list',
@@ -375,7 +375,7 @@ function handleStructuredAction(
       return {
         reply: {
           id: 'msg-' + Date.now(),
-          sender: 'marcos',
+          sender: 'assistant',
           text: `Para esta data não encontramos horários livres disponíveis com os critérios selecionados.\n\nDeseja verificar outro dia?`,
           timestamp: timeStr,
           quickReplies: [
@@ -391,7 +391,7 @@ function handleStructuredAction(
     return {
       reply: {
         id: 'msg-' + Date.now(),
-        sender: 'marcos',
+        sender: 'assistant',
         text: `Encontrei estes horários disponíveis para *${targetDate.split('-').reverse().join('/')}*: 👇\n(Lembrando que das 12h às 14h fazemos intervalo)`,
         timestamp: timeStr,
         component: 'slots_list',
@@ -415,7 +415,7 @@ function handleStructuredAction(
     return {
       reply: {
         id: 'msg-' + Date.now(),
-        sender: 'marcos',
+        sender: 'assistant',
         text: `Horário selecionado: *${time}*!\n\nComo você prefere realizar o pagamento? 💳\n*(O acerto é feito no balcão no momento do corte)*`,
         timestamp: timeStr,
         component: 'payment_methods',
@@ -449,7 +449,7 @@ function handleStructuredAction(
       return {
         reply: {
           id: 'msg-' + Date.now(),
-          sender: 'marcos',
+          sender: 'assistant',
           text: `Encontramos seu cadastro! 👋\nOlá de volta, *${cust.name}* (${cust.phone}).\n\nVamos conferir os dados para finalizar? 👇`,
           timestamp: timeStr,
           quickReplies: [
@@ -466,7 +466,7 @@ function handleStructuredAction(
     return {
       reply: {
         id: 'msg-' + Date.now(),
-        sender: 'marcos',
+        sender: 'assistant',
         text: `Quase pronto! Para finalizar, por favor me informe o seu *WhatsApp* com DDD (ex: ${SALON.whatsapp}): 👇`,
         timestamp: timeStr
       },
@@ -480,7 +480,7 @@ function handleStructuredAction(
     return {
       reply: {
         id: 'msg-' + Date.now(),
-        sender: 'marcos',
+        sender: 'assistant',
         text: `🎉 *Horário reservado com sucesso!*\n\n${draft.customerName}, seu atendimento está confirmado no sistema:\n\n💈 *${draft.service?.name}*\n👤 *${draft.barber?.name}*\n📅 *${draft.date?.split('-').reverse().join('/')}*\n🕐 *${draft.time}*\n💰 *R$ ${draft.service?.price}*\n💳 *${draft.paymentMethod?.toUpperCase()}*\n📍 *${SALON.endereco.completo}*\n\nEsperamos você! *~${SALON.nome} barbearia estilo forte.* 👊`,
         timestamp: timeStr,
         component: 'confirmed_card',
@@ -519,7 +519,7 @@ function handleStructuredAction(
     return {
       reply: {
         id: 'msg-' + Date.now(),
-        sender: 'marcos',
+        sender: 'assistant',
         text: `Agendamento cancelado com sucesso. ✅\n\nO horário foi liberado no sistema e o histórico mantido. Quando quiser agendar novamente, só me chamar! 💈`,
         timestamp: timeStr,
         quickReplies: [
@@ -540,7 +540,7 @@ function handleStructuredAction(
     return {
       reply: {
         id: 'msg-' + Date.now(),
-        sender: 'marcos',
+        sender: 'assistant',
         text: `Perfeito! Seu agendamento foi mantido normalmente. Esperamos você na ${SALON.nome}! 💈👊`,
         timestamp: timeStr,
         quickReplies: [
@@ -556,7 +556,7 @@ function handleStructuredAction(
   return {
     reply: {
       id: 'msg-' + Date.now(),
-      sender: 'marcos',
+      sender: 'assistant',
       text: `Entendido! Como posso ajudar você agora?`,
       timestamp: timeStr,
       quickReplies: [
@@ -573,7 +573,7 @@ function buildConfirmationSummary(draft: BookingDraft, timeStr: string): EngineR
   return {
     reply: {
       id: 'msg-' + Date.now(),
-      sender: 'marcos',
+      sender: 'assistant',
       text: `Confira os detalhes do seu agendamento antes de confirmar:\n\n✂️ *Serviço:* ${draft.service?.name}\n💈 *Profissional:* ${draft.barber?.name}\n📅 *Data:* ${draft.date?.split('-').reverse().join('/')}\n🕐 *Horário:* ${draft.time}\n💰 *Valor:* R$ ${draft.service?.price}\n💳 *Pagamento:* ${draft.paymentMethod?.toUpperCase()}\n👤 *Cliente:* ${draft.customerName} (${draft.customerPhone})\n\nEstá tudo certo?`,
       timestamp: timeStr,
       component: 'summary_card',

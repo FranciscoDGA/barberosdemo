@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 import { INITIAL_SERVICES, INITIAL_BARBERS, INITIAL_APPOINTMENTS } from '@/lib/data';
 import { SALON_KNOWLEDGE_BASE } from '@/lib/ai/knowledgeBase';
-import { pensarEResponderMarcos } from '@/lib/ai/brain';
+import { pensarEResponder } from '@/lib/ai/brain';
 import { checkApiRateLimit } from '@/lib/rateLimit';
 import { SALON } from '@/lib/config/salon';
 
@@ -87,13 +87,13 @@ export async function POST(req: NextRequest) {
       console.warn('Nota de dados Supabase na API:', e);
     }
 
-    // 2. Chamar o Cérebro do Marcos
+    // 2. Chamar o Cérebro do Alfred
     const history = messages.map((m: any) => ({
       role: (m.role === 'user' || m.sender === 'user') ? ('user' as const) : ('assistant' as const),
       content: m.content || m.text || ''
     }));
 
-    const brainResult = await pensarEResponderMarcos(userText, {
+    const brainResult = await pensarEResponder(userText, {
       services,
       barbers,
       appointments,
@@ -111,7 +111,7 @@ export async function POST(req: NextRequest) {
       componentData: brainResult.componentData,
       newDraftState: brainResult.newDraftState,
       actionToExecute: brainResult.actionToExecute,
-      source: 'marcos-brain'
+      source: 'assistant-brain'
     });
 
   } catch (err: any) {

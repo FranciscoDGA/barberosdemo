@@ -101,7 +101,7 @@ export interface BrainOutput {
 }
 
 /**
- * CÉREBRO DO FUNCIONÁRIO DIGITAL MARCOS — SPRINT 4
+ * CÉREBRO DO ASSISTENTE DIGITAL — SPRINT 4
  * 
  * Arquitetura:
  * - IA interpreta linguagem e contexto
@@ -114,7 +114,7 @@ export interface BrainOutput {
  * 3. Respostas curtas e naturais (WhatsApp style)
  * 4. Conduzir para agendamento quando possível
  */
-export async function pensarEResponderMarcos(
+export async function pensarEResponder(
   userMessage: string,
   context: BrainContext
 ): Promise<BrainOutput> {

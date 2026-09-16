@@ -84,7 +84,7 @@ export interface QuickReply {
 
 export interface ChatMessage {
   id: string;
-  sender: 'user' | 'marcos' | 'system';
+  sender: 'user' | 'assistant' | 'system';
   text: string;
   timestamp: string; // HH:mm
   intent?: IntentType;

@@ -30,7 +30,7 @@ import {
 } from 'lucide-react';
 import { ChatMessage, DialogStep, BookingDraft } from '@/lib/conversation/types';
 import { processUserMessage } from '@/lib/conversation/engine';
-import { pensarEResponderMarcos } from '@/lib/ai/brain';
+import { pensarEResponder } from '@/lib/ai/brain';
 
 export default function WhatsAppSimulationPage() {
   const { 
@@ -67,7 +67,7 @@ export default function WhatsAppSimulationPage() {
     setMessages([
       {
         id: 'msg-init-1',
-        sender: 'marcos',
+        sender: 'assistant',
         text: `Fala, tudo bem? 👋 Sou o *Alfred*, assistente digital da *${SALON.nome}*!\n\nEstou aqui para tirar dúvidas sobre serviços, preços e horários, além de garantir seu agendamento sem fila de espera.\n\nComo posso te ajudar hoje? 💈`,
         timestamp: timeStr,
         intent: 'SAUDACAO',
@@ -140,7 +140,7 @@ export default function WhatsAppSimulationPage() {
 
         // 2. Fallback de regras caso a API não responda
         if (!replyText) {
-          const brainOutput = await pensarEResponderMarcos(queryText, {
+          const brainOutput = await pensarEResponder(queryText, {
             services,
             barbers,
             appointments,
@@ -158,7 +158,7 @@ export default function WhatsAppSimulationPage() {
 
         const alfredMsg: ChatMessage = {
           id: 'alfred-' + Date.now(),
-          sender: 'marcos',
+          sender: 'assistant',
           text: replyText,
           timestamp: timeStr,
           intent: 'GREETING' as any,
@@ -175,7 +175,7 @@ export default function WhatsAppSimulationPage() {
           ...prev,
           {
             id: 'err-' + Date.now(),
-            sender: 'marcos',
+            sender: 'assistant',
             text: 'Tive uma oscilação na conexão. Você pode agendar direto pelo link: ' + SALON.url + '/agendar',
             timestamp: timeStr
           }
