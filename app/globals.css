@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 /* ============================================================================
-   BARBEROS — CSS VARIABLES (from lib/config/salon.ts)
+   CSS VARIABLES — from lib/config/salon.ts
    ============================================================================
    Keep these in sync with lib/config/salon.ts → cores
    To rebrand: update salon.ts colors AND here.
    ============================================================================ */
 
 :root {
-  /* Primary / Brand — Barbearia Imperial */
+  /* Primary / Brand — from salon.ts */
   --color-primary: #c9a84c;
   --color-primary-dark: #a8893a;
   --color-primary-light: #d4b96a;

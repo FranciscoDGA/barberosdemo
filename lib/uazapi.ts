@@ -1,5 +1,5 @@
 // ============================================
-// INTEGRAÇÃO UAZAPI WHATSAPP (BarberOS Barbearia)
+// INTEGRAÇÃO UAZAPI WHATSAPP
 // ============================================
 
 const UAZAPI_BASE_URL = (process.env.UAZAPI_BASE_URL || 'https://api.uazapi.com').replace(/\/+$/, '');

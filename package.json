@@ -1,6 +1,6 @@
 {
   "name": "barberos",
-  "description": "BarberOS - Sistema de Agendamento para Barbearias",
+  "description": "BarberOS — Sistema de Atendimento, Agendamento e Gestão para Barbearias e Salões",
   "version": "0.1.0",
   "private": true,
   "scripts": {

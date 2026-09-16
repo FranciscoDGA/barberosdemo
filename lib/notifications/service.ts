@@ -1,7 +1,7 @@
 /**
  * lib/notifications/service.ts
  *
- * Central Notification & Communication Service for BarberOS Barbearia (Sprint 04).
+ * Central Notification & Communication Service.
  *
  * Principles:
  * - Decoupled: Emits and listens to system events.

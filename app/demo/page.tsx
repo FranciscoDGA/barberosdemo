@@ -18,31 +18,35 @@ import {
   Shield,
   Zap,
   ChevronRight,
+  Scissors,
+  Clock,
+  Users,
+  TrendingUp,
 } from 'lucide-react';
 
 const FEATURES = [
   {
     icon: Bot,
-    title: 'Assistente AI Inteligente',
-    description: 'Alfred responde dúvidas, agenda horários e identifica clientes automaticamente.',
+    title: 'Alfred — Funcionário Digital',
+    description: 'Atende via WhatsApp 24h. Agenda, responde preços e identifica clientes automaticamente.',
     color: 'amber',
   },
   {
     icon: Calendar,
     title: 'Agendamento Online',
-    description: 'Clientes agendam 24h pelo site, WhatsApp ou app. Sem ligações.',
+    description: 'Clientes agendam pelo site, WhatsApp ou app. Sem ligações, sem filas.',
     color: 'blue',
   },
   {
     icon: BarChart3,
     title: 'Painel Administrativo',
-    description: 'Dashboard completo: agenda, financeiro, clientes, relatórios.',
+    description: 'Dashboard completo: agenda do dia, financeiro, clientes, relatórios.',
     color: 'emerald',
   },
   {
     icon: CreditCard,
     title: 'PIX Integrado',
-    description: 'Pagamento antecipado via PIX reduz faltas em até 80%.',
+    description: 'Pagamento antecipado via PIX. Reduz faltas em até 80%.',
     color: 'purple',
   },
   {
@@ -68,10 +72,11 @@ const COLOR_MAP: Record<string, { bg: string; text: string; border: string }> = 
   cyan: { bg: 'bg-cyan-500/10', text: 'text-cyan-400', border: 'border-cyan-500/20' },
 };
 
-const STEPS = [
-  { step: '1', title: 'Configure', description: 'Edite salon.ts com seus dados' },
-  { step: '2', title: 'Deploy', description: 'Faça push para o GitHub' },
-  { step: '3', title: 'Pronto!', description: 'Seu sistema está no ar' },
+const STATS = [
+  { value: '80%', label: 'Redução de faltas', icon: TrendingUp },
+  { value: '24h', label: 'Atendimento automático', icon: Clock },
+  { value: '3x', label: 'Mais agendamentos', icon: Calendar },
+  { value: '95%', label: 'Satisfação dos clientes', icon: Users },
 ];
 
 export default function DemoPage() {
@@ -85,17 +90,18 @@ export default function DemoPage() {
         <div className="relative max-w-6xl mx-auto px-4 pt-16 pb-20 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold mb-6">
             <Zap className="w-3.5 h-3.5" />
-            <span>DEMO INTERATIVA</span>
+            <span>BARBEROS — SISTEMA COMPLETO</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4">
-            Conheça o{' '}
+            Seu próximo cliente{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">
-              Alfred
-            </span>{' '}
-            trabalhando.
+              já está no WhatsApp
+            </span>
+            .
           </h1>
           <p className="text-lg text-slate-400 max-w-xl mx-auto mb-8">
-            Experimente o assistente AI que agenda, responde e vende para sua barbearia — enquanto você corta cabelo.
+            BarberOS é o sistema de atendimento, agendamento e gestão para barbearias e salões.
+            Com o Alfred, funcionário digital que trabalha 24h por dia.
           </p>
           <div className="flex items-center justify-center gap-3">
             <a
@@ -116,11 +122,29 @@ export default function DemoPage() {
         </div>
       </section>
 
+      {/* Stats */}
+      <section className="max-w-4xl mx-auto px-4 pb-16">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          {STATS.map((stat, i) => {
+            const Icon = stat.icon;
+            return (
+              <div key={i} className="p-4 rounded-2xl bg-[#0f0f1a] border border-slate-800 text-center">
+                <Icon className="w-5 h-5 text-amber-400 mx-auto mb-2" />
+                <div className="text-2xl font-black text-white">{stat.value}</div>
+                <div className="text-xs text-slate-400 mt-1">{stat.label}</div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
       {/* Demo Chat Section */}
       <section id="demo-chat" className="max-w-4xl mx-auto px-4 pb-20">
         <div className="text-center mb-8">
-          <h2 className="text-2xl font-black text-white mb-2">Experimente agora</h2>
-          <p className="text-sm text-slate-400">Clique nos botões ou digite para conversar com o Alfred</p>
+          <h2 className="text-2xl font-black text-white mb-2">Conheça o Alfred</h2>
+          <p className="text-sm text-slate-400">
+            Funcionário digital de atendimento. Clique nos botões ou digite para conversar.
+          </p>
         </div>
         <DemoAlfredChat className="w-full max-w-lg mx-auto h-[600px]" />
       </section>
@@ -129,15 +153,19 @@ export default function DemoPage() {
       <section className="max-w-6xl mx-auto px-4 py-20">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-black text-white mb-3">
-            CÓDIGO + config ={' '}
-            <span className="text-amber-400">NOVO CLIENTE</span>
+            CÓDIGO + CONFIGURAÇÃO ={' '}
+            <span className="text-amber-400">SISTEMA RODANDO</span>
           </h2>
           <p className="text-slate-400 max-w-md mx-auto">
-            Um arquivo de configuração. Push para GitHub. Sistema rodando.
+            Um arquivo de configuração. Push para GitHub. Seu sistema no ar.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {STEPS.map((s, i) => (
+          {[
+            { step: '1', title: 'Configure', description: 'Edite salon.ts com os dados do estabelecimento' },
+            { step: '2', title: 'Deploy', description: 'Faça push para o GitHub' },
+            { step: '3', title: 'Pronto!', description: 'Seu sistema está no ar' },
+          ].map((s, i) => (
             <div key={i} className="relative p-6 rounded-2xl bg-[#0f0f1a] border border-slate-800 text-center">
               <div className="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center font-black text-lg mx-auto mb-4">
                 {s.step}
@@ -157,7 +185,7 @@ export default function DemoPage() {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-black text-white mb-3">Tudo que sua barbearia precisa</h2>
           <p className="text-slate-400 max-w-md mx-auto">
-            Agendamento, pagamentos, lembretes, painel e app — tudo pronto.
+            Atendimento, agendamento, pagamentos, lembretes, painel e app — tudo pronto.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -185,6 +213,49 @@ export default function DemoPage() {
         </div>
       </section>
 
+      {/* Alfred Section */}
+      <section className="max-w-4xl mx-auto px-4 py-20">
+        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-amber-500/10 via-[#0f0f1a] to-[#0f0f1a] border border-amber-500/20">
+          <div className="flex flex-col sm:flex-row items-center gap-8">
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold mb-4">
+                <Bot className="w-3.5 h-3.5" />
+                <span>ALFRED — FUNCIONÁRIO DIGITAL</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-black text-white mb-3">
+                Atendimento que nunca para.
+              </h2>
+              <p className="text-slate-400 mb-6">
+                O Alfred responde dúvidas, agenda horários, envia lembretes e identifica clientes
+                automaticamente pelo WhatsApp. Enquanto você corta cabelo, ele trabalha.
+              </p>
+              <ul className="space-y-2 mb-6">
+                {[
+                  'Responde preços e horários instantaneamente',
+                  'Agenda e confirma por WhatsApp',
+                  'Identifica clientes recorrentes',
+                  'Encaminha para humano quando necessário',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-2 text-sm text-slate-300">
+                    <Check className="w-4 h-4 text-amber-400 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="flex-shrink-0">
+              <div className="w-32 h-32 rounded-2xl overflow-hidden border-2 border-amber-500/40 shadow-xl shadow-amber-500/20">
+                <img
+                  src="/alfred-avatar.jpg"
+                  alt="Alfred — Funcionário Digital"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing */}
       <section className="max-w-4xl mx-auto px-4 py-20">
         <div className="text-center mb-12">
@@ -193,7 +264,7 @@ export default function DemoPage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="p-6 rounded-2xl bg-[#0f0f1a] border border-slate-800">
-            <div className="text-sm font-bold text-slate-400 mb-1">Template</div>
+            <div className="text-sm font-bold text-slate-400 mb-1">Código Aberto</div>
             <div className="text-3xl font-black text-white mb-3">Grátis</div>
             <ul className="space-y-2 mb-6">
               {['Código fonte completo', 'Configuração via salon.ts', 'Alfred AI integrado', 'PWA para clientes'].map((item, i) => (
@@ -221,7 +292,7 @@ export default function DemoPage() {
             <div className="text-3xl font-black text-white mb-3">Sob consulta</div>
             <ul className="space-y-2 mb-6">
               {[
-                'Tudo do Template',
+                'Tudo do Código Aberto',
                 'Deploy no Vercel',
                 'Domínio próprio',
                 'WhatsApp configurado',
@@ -235,7 +306,7 @@ export default function DemoPage() {
               ))}
             </ul>
             <a
-              href={`https://wa.me/${SALON.whatsapp}?text=Olá! Tenho interesse no sistema de agendamento para minha barbearia.`}
+              href={`https://wa.me/${SALON.whatsapp}?text=Olá! Tenho interesse no sistema BarberOS para minha barbearia.`}
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-center text-sm font-extrabold text-black transition-all"
@@ -251,7 +322,7 @@ export default function DemoPage() {
       <section className="max-w-4xl mx-auto px-4 py-20">
         <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-amber-500/10 via-[#0f0f1a] to-[#0f0f1a] border border-amber-500/20 text-center">
           <h2 className="text-2xl sm:text-3xl font-black text-white mb-3">
-            Pronto para automa<span className="text-amber-400">tizar</span>?
+            Pronto para <span className="text-amber-400">automatizar</span>?
           </h2>
           <p className="text-slate-400 max-w-md mx-auto mb-6">
             Configure, deploy e comece a atender. Sem complicação.
@@ -268,7 +339,7 @@ export default function DemoPage() {
               <ArrowRight className="w-4 h-4" />
             </a>
             <a
-              href={`https://wa.me/${SALON.whatsapp}?text=Olá! Quero saber mais sobre o sistema de agendamento.`}
+              href={`https://wa.me/${SALON.whatsapp}?text=Olá! Quero saber mais sobre o BarberOS.`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm flex items-center gap-2 transition-all active:scale-95"
@@ -283,7 +354,7 @@ export default function DemoPage() {
       {/* Footer */}
       <footer className="border-t border-slate-800/60 py-6">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-          <span>{SALON.nome} — Sistema de Agendamento</span>
+          <span>BarberOS — Sistema de Atendimento, Agendamento e Gestão</span>
           <span>{SALON.endereco.cidade} - {SALON.endereco.estado}</span>
         </div>
       </footer>

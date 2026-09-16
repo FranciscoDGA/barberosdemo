@@ -2,9 +2,9 @@
 // BARBEROS — BUSINESS CONFIGURATION
 // ============================================================================
 // Single Source of Truth for all business-specific data.
-// To customize for a new client, only edit this file.
+// To configure for a new establishment, only edit this file.
 //
-// CÓDIGO + CONFIGURAÇÃO = NOVO CLIENTE
+// CÓDIGO + CONFIGURAÇÃO = SISTEMA RODANDO
 // ============================================================================
 
 // ---------------------------------------------------------------------------
@@ -221,7 +221,7 @@ export interface BusinessConfig {
 }
 
 // ============================================================================
-// DADOS DEMO — BarberOS (structured BusinessConfig)
+// DADOS DEMO — Barberbearia Imperial (structured BusinessConfig)
 // ============================================================================
 
 export const BUSINESS_CONFIG: BusinessConfig = {

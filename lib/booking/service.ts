@@ -1,7 +1,7 @@
 /**
  * booking/service.ts
  *
- * Centralized booking business logic for BarberOS Barbearia.
+ * Centralized booking business logic.
  * Framework-agnostic — works with any Supabase client.
  *
  * RULES:

@@ -290,7 +290,7 @@ export function generateCalendarDays(
 // ─── Main availability engine ────────────────────────────────────────────────
 
 /**
- * Central availability engine for Barbearia BarberOS.
+ * Central availability engine.
  * Used by the Booking Wizard and queried by the Digital Employee Alfred.
  */
 export function consultarDisponibilidade(

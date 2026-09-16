@@ -1,19 +1,19 @@
-# Como Criar um Novo Cliente — BarberOS Template
+# Como Configurar o BarberOS
 
-Guia completo para transformar o template BarberOS em um sistema funcional para uma barbearia específica.
+Guia completo para colocar o BarberOS no ar para uma barbearia ou salão.
 
 ---
 
 ## Visão Geral
 
-O BarberOS é um template de sistema de agendamento para barbearias. Para criar um novo cliente, você precisa:
+O BarberOS é um sistema de atendimento, agendamento e gestão para barbearias e salões. Para configurar para um novo estabelecimento, você precisa:
 
-1. Copiar o template
+1. Copiar o código
 2. Configurar os dados do negócio
 3. Subir o banco de dados
 4. Deploy
 
-**Fórmula:** `CÓDIGO + lib/config/salon.ts = NOVO CLIENTE`
+**Fórmula:** `CÓDIGO + lib/config/salon.ts = SISTEMA RODANDO`
 
 ---
 
@@ -207,7 +207,7 @@ profissionais: [
 ],
 ```
 
-### 8. Configurar Alfred (Assistente AI)
+### 8. Configurar o Alfred (Assistente AI)
 
 Edite `lib/config/salon.ts` — seção `alfred`:
 
