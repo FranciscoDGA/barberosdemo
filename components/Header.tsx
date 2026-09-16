@@ -517,7 +517,7 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
                 <span>{salonConfig.openingHours || 'Seg-Sáb: 08:00–12:00 / 14:00–20:00 | Dom: 08:00–12:00'}</span>
               </div>
               <a
-                href={`https://wa.me/${(salonConfig.whatsappNumber || SALON.contato.whatsapp).replace(/\D/g, '')}`}
+                href={`https://wa.me/${(salonConfig.whatsappNumber || SALON.whatsapp).replace(/\D/g, '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-emerald-400 font-semibold pt-1"

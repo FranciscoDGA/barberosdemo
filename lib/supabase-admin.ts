@@ -11,39 +11,27 @@
  * (get it from: Supabase Dashboard → Settings → API → service_role key)
  */
 
-import { createClient } from '@supabase/supabase-js';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-if (!supabaseUrl) {
-  throw new Error('NEXT_PUBLIC_SUPABASE_URL must be set in environment variables');
-}
+let supabaseAdmin: SupabaseClient;
 
-if (!serviceRoleKey) {
-  console.warn(
-    '[supabase-admin] SUPABASE_SERVICE_ROLE_KEY not set. ' +
-    'API routes will fail to bypass RLS. ' +
-    'Get the key from Supabase Dashboard → Settings → API.'
-  );
-}
-
-if (!serviceRoleKey) {
-  throw new Error('SUPABASE_SERVICE_ROLE_KEY is required for server-side operations. Set it in .env.local');
-}
-
-/**
- * Server-side Supabase client with service role privileges.
- * Bypasses ALL RLS policies.
- * Use only in API routes and server-side code.
- */
-export const supabaseAdmin = createClient(
-  supabaseUrl,
-  serviceRoleKey,
-  {
+if (supabaseUrl && serviceRoleKey) {
+  supabaseAdmin = createClient(supabaseUrl, serviceRoleKey, {
     auth: {
       autoRefreshToken: false,
       persistSession: false,
     },
+  });
+} else {
+  // Graceful fallback for build time and demo mode
+  // API routes will fail at runtime if Supabase is not configured
+  supabaseAdmin = createClient('https://placeholder.supabase.co', 'placeholder-key');
+  if (typeof window === 'undefined') {
+    console.warn('[BarberOS] supabase-admin: SUPABASE_SERVICE_ROLE_KEY not set. API routes requiring admin access will fail.');
   }
-);
+}
+
+export { supabaseAdmin };

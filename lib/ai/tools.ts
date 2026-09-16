@@ -380,9 +380,9 @@ export function tool_encaminhar_para_humano(motivo?: string): ToolExecutionResul
     success: true,
     data: {
       responsavel: `Proprietário (${SALON.nome})`,
-      whatsapp: SALON.contato.whatsapp,
-      whatsappFormatado: SALON.contato.whatsappFormatado,
-      linkDireto: `https://wa.me/${SALON.contato.whatsapp}?text=Ol%C3%A1%2C%20o%20assistente%20me%20encaminhou%20para%20falar%20com%20voc%C3%AA.`
+      whatsapp: SALON.whatsapp,
+      whatsappFormatado: SALON.whatsappFormatado,
+      linkDireto: `https://wa.me/${SALON.whatsapp}?text=Ol%C3%A1%2C%20o%20assistente%20me%20encaminhou%20para%20falar%20com%20voc%C3%AA.`
     }
   };
 }

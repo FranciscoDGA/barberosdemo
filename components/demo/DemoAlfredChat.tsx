@@ -29,7 +29,7 @@ function formatCurrency(value: number): string {
 
 function getAlfredResponse(action: string): DemoMessage {
   const servicos = SALON.servicos.filter(s => s.ativo);
-  const profissionais = SALON.profissionais.filter(p => p.ativo);
+  const profissionais = SALON.barbeiros.filter(p => p.ativo);
 
   switch (action) {
     case 'agendar':
@@ -62,7 +62,7 @@ function getAlfredResponse(action: string): DemoMessage {
     case 'horarios':
       return {
         role: 'assistant',
-        content: `Nossos horários:\n\nSeg-Sáb: ${SALON.funcionamento.horarios.segSab.abertura} às ${SALON.funcionamento.horarios.segSab.fechamento}\nAlmoço: ${SALON.funcionamento.horarios.segSab.almocoInicio} às ${SALON.funcionamento.horarios.segSab.almocoFim}\nDom: ${SALON.funcionamento.horarios.domingo?.abertura} às ${SALON.funcionamento.horarios.domingo?.fechamento}\n\n${SALON.funcionamento.horariosResumo}`,
+        content: `Nossos horários:\n\nSeg-Sáb: ${SALON.horarios.segSab.abertura} às ${SALON.horarios.segSab.fechamento}\nAlmoço: ${SALON.horarios.segSab.almocoInicio} às ${SALON.horarios.segSab.almocoFim}\nDom: ${SALON.horarios.domingo?.abertura} às ${SALON.horarios.domingo?.fechamento}\n\n${SALON.horariosResumo}`,
         quickActions: [{ label: 'Agendar horário', action: 'agendar' }],
       };
 
@@ -232,7 +232,7 @@ export default function DemoAlfredChat({ className = '' }: DemoAlfredChatProps) 
 
     const userLabel = QUICK_ACTIONS.find(q => q.action === action)?.label
       || SALON.servicos.find(s => s.id === action.replace('servico_', ''))?.nome
-      || SALON.profissionais.find(p => p.id === action.replace('barbeiro_', ''))?.nome
+      || SALON.barbeiros.find(p => p.id === action.replace('barbeiro_', ''))?.nome
       || action;
 
     const userMsg: DemoMessage = { role: 'user', content: userLabel };

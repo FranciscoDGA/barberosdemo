@@ -11,7 +11,7 @@ export const INITIAL_SALON_CONFIG: SalonConfig = {
   pixKeyType: SALON.pix.tipo,
   pixBeneficiary: `${SALON.pix.beneficiario} - CNPJ ${SALON.pix.cnpj}`,
   pixCity: SALON.pix.cidade,
-  instagram: SALON.instagram,
+  instagram: SALON.instagram || '',
   openingHours: SALON.horariosResumo,
   loyaltyStampsGoal: SALON.regras.selosMeta,
   toleranceMinutes: SALON.regras.toleranciaMinutos,

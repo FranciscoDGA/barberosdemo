@@ -169,7 +169,7 @@ function getToolsDeclarations() {
     },
     {
       name: 'get_barber_by_name',
-      description: `Busca um profissional pelo nome (ex: "${kb.barbeiros[0]?.nome}", "${kb.barbeiros[1]?.nome}").`,
+      description: `Busca um profissional pelo nome (ex: "${SALON.barbeiros[0]?.nome}", "${SALON.barbeiros[1]?.nome}").`,
       parameters: {
         type: 'object',
         properties: { name: { type: 'string', description: 'Nome do profissional' } },

@@ -96,7 +96,7 @@ export interface Feriado {
 export interface Servico {
   id: string;
   nome: string;
-  categoria: 'cabelo' | 'barba' | 'combos' | 'outros';
+  categoria: 'cabelo' | 'barba' | 'combos' | 'tratamentos' | 'produtos';
   descricao: string;
   preco: number;
   duracaoMinutos: number;
