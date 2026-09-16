@@ -39,12 +39,12 @@ export default function AdminLoginPage() {
           </div>
           <h2 className="text-xl font-bold text-white">Conectado!</h2>
           <p className="text-xs text-slate-400">
-            Logado como <strong className="text-amber-400">{user.name}</strong>
+            Logado como <strong className="text-emerald-400">{user.name}</strong>
           </p>
           <div className="pt-2 flex flex-col gap-2">
             <button
               onClick={() => router.push('/admin')}
-              className="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-sm transition shadow-lg shadow-amber-500/20 active:scale-95"
+              className="w-full py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm transition shadow-lg shadow-emerald-500/20 active:scale-95"
             >
               Acessar Painel de Gestão &rarr;
             </button>
@@ -96,12 +96,12 @@ export default function AdminLoginPage() {
       <div className="w-full max-w-md mx-auto flex items-center justify-between mb-4">
         <Link
           href="/"
-          className="flex items-center gap-1.5 text-xs text-slate-300 hover:text-amber-400 bg-slate-900 hover:bg-slate-800 px-3.5 py-2 rounded-xl border border-slate-800 transition active:scale-95"
+          className="flex items-center gap-1.5 text-xs text-slate-300 hover:text-emerald-400 bg-slate-900 hover:bg-slate-800 px-3.5 py-2 rounded-xl border border-slate-800 transition active:scale-95"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Voltar ao Site</span>
         </Link>
-        <span className="text-[11px] text-amber-400 font-bold flex items-center gap-1">
+          <span className="text-[11px] text-emerald-400 font-bold flex items-center gap-1">
           <Zap className="w-3.5 h-3.5" /> Modo Demo
         </span>
       </div>
@@ -111,7 +111,7 @@ export default function AdminLoginPage() {
         
         {/* Brand Header */}
         <div className="text-center space-y-2 mb-6">
-          <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-amber-500/60 bg-black mx-auto flex items-center justify-center shadow-xl shadow-amber-500/20">
+          <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-emerald-500/60 bg-black mx-auto flex items-center justify-center shadow-xl shadow-emerald-500/20">
             <img src="/logo.png" alt={SALON.nome} className="w-full h-full object-cover" />
           </div>
           <h1 className="text-2xl font-black text-white tracking-wide">Painel de Gestão</h1>
@@ -121,7 +121,7 @@ export default function AdminLoginPage() {
         </div>
 
         {/* Demo Info */}
-        <div className="mb-5 p-3 bg-amber-500/10 border border-amber-500/20 rounded-2xl flex items-center gap-2.5 text-amber-400 text-xs">
+        <div className="mb-5 p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl flex items-center gap-2.5 text-emerald-400 text-xs">
           <Zap className="w-4 h-4 shrink-0" />
           <span>Credenciais de demonstração — não são salvas.</span>
         </div>
@@ -150,7 +150,7 @@ export default function AdminLoginPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="E-mail de demonstração"
                 required
-                className="w-full pl-10 pr-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition"
+                className="w-full pl-10 pr-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 transition"
               />
             </div>
           </div>
@@ -169,7 +169,7 @@ export default function AdminLoginPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Senha de demonstração"
                 required
-                className="w-full pl-10 pr-11 py-3 bg-slate-950 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition"
+                className="w-full pl-10 pr-11 py-3 bg-slate-950 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 transition"
               />
               <button
                 type="button"
@@ -184,7 +184,7 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm transition shadow-lg shadow-amber-500/20 active:scale-95 flex items-center justify-center gap-2 mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm transition shadow-lg shadow-emerald-500/20 active:scale-95 flex items-center justify-center gap-2 mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isLoading ? (
               <>

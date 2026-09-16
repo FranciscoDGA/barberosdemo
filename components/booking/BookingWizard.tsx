@@ -283,7 +283,7 @@ export const BookingWizard: React.FC = () => {
   if (isLoading) {
     return (
       <div className="flex flex-col items-center justify-center py-20 space-y-4">
-        <Loader2 className="w-10 h-10 text-amber-500 animate-spin" />
+        <Loader2 className="w-10 h-10 text-emerald-500 animate-spin" />
         <p className="text-slate-400">Carregando...</p>
       </div>
     );
@@ -306,13 +306,13 @@ export const BookingWizard: React.FC = () => {
                   }}
                   className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[11px] font-semibold whitespace-nowrap transition shrink-0 ${
                     isActive
-                      ? 'bg-amber-500/20 text-amber-400 border border-amber-500/40'
+                      ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40'
                       : isPassed
                       ? 'text-emerald-400 hover:text-emerald-300 cursor-pointer'
                       : 'text-slate-600'
                   }`}
                 >
-                  <Icon className={`w-3 h-3 ${isActive ? 'text-amber-400' : isPassed ? 'text-emerald-400' : 'text-slate-600'}`} />
+                  <Icon className={`w-3 h-3 ${isActive ? 'text-emerald-400' : isPassed ? 'text-emerald-400' : 'text-slate-600'}`} />
                   <span className="hidden sm:inline">{s.label}</span>
                   {isPassed && <Check className="w-2.5 h-2.5 text-emerald-400" />}
                 </button>
@@ -327,9 +327,9 @@ export const BookingWizard: React.FC = () => {
 
       {/* Scanned Barber Banner */}
       {scannedBarberParam && selectedBarber && (
-        <div className="bg-amber-500/10 border border-amber-500/30 p-3 rounded-xl flex items-center gap-3">
-          <Zap className="w-5 h-5 text-amber-400 shrink-0" />
-          <p className="text-xs text-amber-300">
+        <div className="bg-emerald-500/10 border border-emerald-500/30 p-3 rounded-xl flex items-center gap-3">
+          <Zap className="w-5 h-5 text-emerald-400 shrink-0" />
+          <p className="text-xs text-emerald-300">
             Agendando com <strong>{selectedBarber.name}</strong> (detectado automaticamente)
           </p>
         </div>
@@ -339,8 +339,8 @@ export const BookingWizard: React.FC = () => {
       {step === 0 && (
         <div className="space-y-4 animate-in fade-in">
           <div className="text-center py-4">
-            <div className="w-16 h-16 rounded-full bg-amber-500/20 flex items-center justify-center mx-auto mb-4">
-              <UserPlus className="w-8 h-8 text-amber-400" />
+            <div className="w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto mb-4">
+              <UserPlus className="w-8 h-8 text-emerald-400" />
             </div>
             <h2 className="text-xl font-bold text-white">Seja bem-vindo!</h2>
             <p className="text-sm text-slate-400 mt-1">Para agendar, precisamos dos seus dados</p>
@@ -354,7 +354,7 @@ export const BookingWizard: React.FC = () => {
                 value={customerName}
                 onChange={e => setCustomerName(e.target.value)}
                 placeholder="Como podemos te chamar?"
-                className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500"
+                className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500"
                 autoFocus
               />
             </div>
@@ -367,7 +367,7 @@ export const BookingWizard: React.FC = () => {
                   value={customerPhone}
                   onChange={e => setCustomerPhone(e.target.value)}
                   placeholder="(94) 99999-9999"
-                  className="w-full bg-slate-950 border border-slate-700 rounded-xl pl-10 pr-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 font-mono"
+                  className="w-full bg-slate-950 border border-slate-700 rounded-xl pl-10 pr-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500 font-mono"
                 />
               </div>
               <p className="text-[10px] text-slate-500 mt-1.5">Usado para confirmar seu agendamento</p>
@@ -377,7 +377,7 @@ export const BookingWizard: React.FC = () => {
           <button
             onClick={handleClientRegister}
             disabled={!customerName.trim() || !customerPhone.trim()}
-            className="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 disabled:opacity-50 disabled:from-slate-700 disabled:to-slate-700 text-slate-950 font-extrabold flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20 active:scale-95 transition"
+            className="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 disabled:opacity-50 disabled:from-slate-700 disabled:to-slate-700 text-slate-950 font-extrabold flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20 active:scale-95 transition"
           >
             Começar <ChevronRight className="w-4 h-4" />
           </button>
@@ -402,7 +402,7 @@ export const BookingWizard: React.FC = () => {
                 onClick={() => { setSelectedService(srv); setStep(2); }}
                 className={`p-4 rounded-2xl border transition text-left flex flex-col gap-3 ${
                   selectedService?.id === srv.id
-                    ? 'bg-amber-500/10 border-amber-500 shadow-md'
+                    ? 'bg-emerald-500/10 border-emerald-500 shadow-md'
                     : 'bg-slate-900/60 border-slate-800 hover:border-slate-700 active:scale-[0.98]'
                 }`}
               >
@@ -412,11 +412,11 @@ export const BookingWizard: React.FC = () => {
                 </div>
                 <p className="text-xs text-slate-400">{srv.description}</p>
                 <div className="flex items-center justify-between text-xs border-t border-slate-800/60 pt-2">
-                  <span className="flex items-center gap-1 text-amber-400 font-medium">
+                  <span className="flex items-center gap-1 text-emerald-400 font-medium">
                     <Clock className="w-3 h-3" /> {srv.durationMinutes} min
                   </span>
                   {srv.popular && (
-                    <span className="bg-amber-500/20 text-amber-300 text-[10px] font-bold px-2 py-0.5 rounded-full">
+                    <span className="bg-emerald-500/20 text-emerald-300 text-[10px] font-bold px-2 py-0.5 rounded-full">
                       Mais pedido
                     </span>
                   )}
@@ -459,11 +459,11 @@ export const BookingWizard: React.FC = () => {
                 onClick={() => { setSelectedBarber(barber); setStep(3); }}
                 className={`p-4 rounded-2xl border transition text-left flex items-center gap-4 ${
                   selectedBarber?.id === barber.id
-                    ? 'bg-amber-500/10 border-amber-500 shadow-md'
+                    ? 'bg-emerald-500/10 border-emerald-500 shadow-md'
                     : 'bg-slate-900/60 border-slate-800 hover:border-slate-700 active:scale-[0.98]'
                 }`}
               >
-                <div className="w-12 h-12 rounded-full overflow-hidden border border-amber-500/30 bg-slate-950 shrink-0">
+                <div className="w-12 h-12 rounded-full overflow-hidden border border-emerald-500/30 bg-slate-950 shrink-0">
                   <img src={barber.avatarUrl || '/logo.png'} alt={barber.name} className="w-full h-full object-cover" />
                 </div>
                 <div>
@@ -526,14 +526,14 @@ export const BookingWizard: React.FC = () => {
                     isDisabled
                       ? 'bg-slate-950/50 border-slate-800/50 text-slate-600 cursor-not-allowed opacity-50'
                       : selectedDate === date.iso
-                      ? 'bg-amber-500/10 border-amber-500 text-amber-400 font-bold shadow-md'
+                      ? 'bg-emerald-500/10 border-emerald-500 text-emerald-400 font-bold shadow-md'
                       : 'bg-slate-900/60 border-slate-800 text-slate-300 hover:border-slate-600 active:scale-[0.98]'
                   }`}
                 >
                   <span className="text-xs font-bold uppercase tracking-wider mb-1">{date.dayName}</span>
                   <span className="text-2xl font-extrabold">{date.dayNum}</span>
                   <span className="text-[10px] text-slate-400">{date.monthName}</span>
-                  {date.isSunday && <span className="text-[9px] text-amber-400/90 mt-1 font-bold">Até 12h</span>}
+                  {date.isSunday && <span className="text-[9px] text-emerald-400/90 mt-1 font-bold">Até 12h</span>}
                   {date.isClosed && <span className="text-[9px] text-rose-400/90 mt-1 font-bold">Fechado</span>}
                   {!date.isClosed && !date.isSunday && date.barberAvailable && selectedBarber && selectedBarber.id !== 'any' && (
                     <span className="text-[9px] text-emerald-400/90 mt-1 font-bold">Folga</span>
@@ -568,7 +568,7 @@ export const BookingWizard: React.FC = () => {
           <div className="flex items-center gap-4 text-[10px] text-slate-500">
             <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-emerald-500/30 border border-emerald-500/50"></span> Disponível</span>
             <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-slate-800 border border-slate-700 line-through"></span> Ocupado</span>
-            <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-amber-500/30 border border-amber-500/50"></span> Almoço</span>
+            <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-emerald-500/30 border border-emerald-500/50"></span> Almoço</span>
           </div>
 
           <div className="grid grid-cols-3 sm:grid-cols-4 gap-2.5">
@@ -585,16 +585,16 @@ export const BookingWizard: React.FC = () => {
                   className={`p-3 rounded-xl border text-sm font-bold transition text-center ${
                     !isFree
                       ? isLunch
-                        ? 'bg-amber-500/10 border-amber-500/30 text-amber-400/60 cursor-not-allowed'
+                        ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400/60 cursor-not-allowed'
                         : 'opacity-40 bg-slate-950/80 border-slate-800 text-slate-500 cursor-not-allowed line-through'
                       : isChosen
-                      ? 'bg-amber-500 border-amber-500 text-slate-950 shadow-md'
+                      ? 'bg-emerald-500 border-emerald-500 text-slate-950 shadow-md'
                       : 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300 hover:border-emerald-500/60 active:scale-95'
                   }`}
                 >
                   {slotObj.horario}
                   {isFree && <span className="block text-[9px] text-emerald-400/70 mt-0.5"> livre</span>}
-                  {!isFree && isLunch && <span className="block text-[9px] text-amber-400/60 mt-0.5"> almoço</span>}
+                  {!isFree && isLunch && <span className="block text-[9px] text-emerald-400/60 mt-0.5"> almoço</span>}
                 </button>
               );
             })}
@@ -622,13 +622,13 @@ export const BookingWizard: React.FC = () => {
           )}
 
           <div className="bg-slate-900/60 p-5 rounded-2xl border border-slate-800 space-y-4">
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-amber-500/10 border border-amber-500/30">
-              <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center shrink-0">
-                <span className="text-amber-400 font-bold text-sm">{customerName.charAt(0)}</span>
+            <div className="flex items-center gap-3 p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30">
+              <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0">
+                <span className="text-emerald-400 font-bold text-sm">{customerName.charAt(0)}</span>
               </div>
               <div>
                 <p className="text-sm font-bold text-white">{customerName}</p>
-                <p className="text-xs text-amber-300 font-mono">{customerPhone}</p>
+                <p className="text-xs text-emerald-300 font-mono">{customerPhone}</p>
               </div>
               <button
                 onClick={() => setStep(0)}
@@ -645,7 +645,7 @@ export const BookingWizard: React.FC = () => {
                 value={customerEmail}
                 onChange={e => setCustomerEmail(e.target.value)}
                 placeholder="email@exemplo.com"
-                className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500"
+                className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500"
               />
             </div>
           </div>
@@ -656,7 +656,7 @@ export const BookingWizard: React.FC = () => {
             </button>
             <button
               onClick={() => { setSubmitError(''); setStep(6); }}
-              className="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold flex items-center gap-2 transition active:scale-95"
+              className="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold flex items-center gap-2 transition active:scale-95"
             >
               Próximo <ChevronRight className="w-4 h-4" />
             </button>
@@ -687,13 +687,13 @@ export const BookingWizard: React.FC = () => {
                   onClick={() => setPaymentMethod(opt.id as PaymentMethod)}
                   className={`p-4 rounded-2xl border text-left transition flex flex-col gap-2 ${
                     isSel
-                      ? 'bg-amber-500/20 border-amber-500 shadow-md'
+                      ? 'bg-emerald-500/20 border-emerald-500 shadow-md'
                       : 'bg-slate-900/60 border-slate-800 hover:border-slate-700 active:scale-[0.98]'
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <Icon className={`w-5 h-5 ${isSel ? 'text-amber-400' : 'text-slate-400'}`} />
-                    {isSel && <Check className="w-4 h-4 text-amber-400" />}
+                    <Icon className={`w-5 h-5 ${isSel ? 'text-emerald-400' : 'text-slate-400'}`} />
+                    {isSel && <Check className="w-4 h-4 text-emerald-400" />}
                   </div>
                   <div>
                     <p className="text-sm font-bold text-white">{opt.label}</p>
@@ -705,13 +705,13 @@ export const BookingWizard: React.FC = () => {
           </div>
 
           <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 space-y-3">
-            <h3 className="text-xs font-bold text-amber-400 uppercase tracking-wider">Resumo</h3>
+            <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-wider">Resumo</h3>
             <div className="space-y-2 text-sm">
               <p className="flex justify-between"><span className="text-slate-400">Serviço</span> <span className="font-bold text-white">{selectedService?.name}</span></p>
               <p className="flex justify-between"><span className="text-slate-400">Profissional</span> <span className="font-bold text-white">{selectedBarber?.name}</span></p>
               <p className="flex justify-between"><span className="text-slate-400">Data</span> <span className="font-bold text-white">{selectedDate?.split('-').reverse().join('/')}</span></p>
               <p className="flex justify-between"><span className="text-slate-400">Horário</span> <span className="font-bold text-white">{selectedTime}</span></p>
-              <p className="flex justify-between"><span className="text-slate-400">Pagamento</span> <span className="font-bold text-amber-300 uppercase">{paymentMethod}</span></p>
+              <p className="flex justify-between"><span className="text-slate-400">Pagamento</span> <span className="font-bold text-emerald-300 uppercase">{paymentMethod}</span></p>
               <p className="flex justify-between border-t border-slate-800 pt-2"><span className="text-slate-400">Total</span> <span className="font-extrabold text-emerald-400 text-lg">R$ {selectedService?.price}</span></p>
             </div>
           </div>

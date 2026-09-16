@@ -138,9 +138,9 @@ export default function DashboardCharts({ appointments, barbers, services }: Das
           <p className="text-emerald-400/80 text-xs font-medium mb-1">Receita Total</p>
           <p className="text-emerald-400 text-2xl font-black">R$ {stats.totalRevenue.toFixed(0)}</p>
         </div>
-        <div className="bg-gradient-to-br from-amber-900/40 to-amber-950/40 border border-amber-500/20 rounded-xl p-4">
-          <p className="text-amber-400/80 text-xs font-medium mb-1">Ticket Médio</p>
-          <p className="text-amber-400 text-2xl font-black">R$ {stats.avgTicket.toFixed(0)}</p>
+        <div className="bg-gradient-to-br from-amber-900/40 to-amber-950/40 border border-emerald-500/20 rounded-xl p-4">
+          <p className="text-emerald-400/80 text-xs font-medium mb-1">Ticket Médio</p>
+          <p className="text-emerald-400 text-2xl font-black">R$ {stats.avgTicket.toFixed(0)}</p>
         </div>
         <div className="bg-gradient-to-br from-blue-900/40 to-blue-950/40 border border-blue-500/20 rounded-xl p-4">
           <p className="text-blue-400/80 text-xs font-medium mb-1">Atendimentos</p>
@@ -179,7 +179,7 @@ export default function DashboardCharts({ appointments, barbers, services }: Das
         {/* Horários de Pico */}
         <div className="bg-slate-900/60 border border-slate-700/40 rounded-xl p-4">
           <h3 className="text-white font-bold text-sm mb-4 flex items-center gap-2">
-            <span className="w-2 h-2 bg-amber-400 rounded-full"></span>
+            <span className="w-2 h-2 bg-emerald-400 rounded-full"></span>
             Horários de Pico
           </h3>
           <div className="h-48">

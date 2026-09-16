@@ -232,7 +232,7 @@ export default function AjudaAdminPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <HelpCircle className="w-5 h-5 text-amber-400" />
+            <HelpCircle className="w-5 h-5 text-emerald-400" />
             <h1 className="text-2xl font-black text-white">Central de Ajuda & Treinamento</h1>
           </div>
           <p className="text-xs text-slate-400">
@@ -258,7 +258,7 @@ export default function AjudaAdminPage() {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Qual funcionalidade você quer aprender? (ex: cadeira, selo, plaquinha, caixa...)"
-          className="w-full pl-10 pr-4 py-3 bg-slate-900/90 border border-slate-800 rounded-2xl text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition"
+          className="w-full pl-10 pr-4 py-3 bg-slate-900/90 border border-slate-800 rounded-2xl text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 transition"
         />
       </div>
 
@@ -273,7 +273,7 @@ export default function AjudaAdminPage() {
               key={topic.id}
               className={`rounded-2xl border transition overflow-hidden ${
                 isExpanded 
-                  ? 'bg-slate-900 border-amber-500/50 shadow-xl' 
+                  ? 'bg-slate-900 border-emerald-500/50 shadow-xl' 
                   : 'bg-slate-900/60 border-slate-800/80 hover:border-slate-700'
               }`}
             >
@@ -285,8 +285,8 @@ export default function AjudaAdminPage() {
                 <div className="flex items-center gap-3.5 min-w-0">
                   <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 border transition ${
                     isExpanded 
-                      ? 'bg-amber-500 text-slate-950 border-amber-400 font-bold shadow-md shadow-amber-500/20' 
-                      : 'bg-slate-800/80 text-amber-400 border-slate-700'
+                      ? 'bg-emerald-500 text-slate-950 border-emerald-400 font-bold shadow-md shadow-emerald-500/20' 
+                      : 'bg-slate-800/80 text-emerald-400 border-slate-700'
                   }`}>
                     <Icon className="w-5 h-5" />
                   </div>
@@ -296,7 +296,7 @@ export default function AjudaAdminPage() {
                         {topic.category}
                       </span>
                       {topic.badge && (
-                        <span className="text-[9px] bg-amber-500/20 text-amber-400 px-2 py-0.5 rounded-full font-bold">
+                        <span className="text-[9px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full font-bold">
                           {topic.badge}
                         </span>
                       )}
@@ -326,7 +326,7 @@ export default function AjudaAdminPage() {
                   <div className="space-y-2.5">
                     {topic.steps.map((step, idx) => (
                       <div key={idx} className="bg-slate-950/70 p-3 rounded-xl border border-slate-800/80 space-y-1">
-                        <h4 className="text-xs font-extrabold text-amber-300 flex items-center gap-1.5">
+                        <h4 className="text-xs font-extrabold text-emerald-300 flex items-center gap-1.5">
                           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                           <span>{step.title}</span>
                         </h4>
@@ -334,7 +334,7 @@ export default function AjudaAdminPage() {
                           {step.desc}
                         </p>
                         {step.tip && (
-                          <div className="ml-5 mt-1 text-[11px] text-amber-400/90 font-medium bg-amber-500/10 p-2 rounded-lg border border-amber-500/20">
+                          <div className="ml-5 mt-1 text-[11px] text-emerald-400/90 font-medium bg-emerald-500/10 p-2 rounded-lg border border-emerald-500/20">
                             💡 <strong>Dica de Ouro:</strong> {step.tip}
                           </div>
                         )}
@@ -358,7 +358,7 @@ export default function AjudaAdminPage() {
                   <div className="pt-2 flex justify-end">
                     <Link
                       href={topic.routeTarget}
-                      className="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition shadow-lg shadow-amber-500/20 active:scale-95 flex items-center gap-2"
+                      className="px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs transition shadow-lg shadow-emerald-500/20 active:scale-95 flex items-center gap-2"
                     >
                       <span>{topic.routeLabel}</span>
                       <ArrowRight className="w-3.5 h-3.5" />

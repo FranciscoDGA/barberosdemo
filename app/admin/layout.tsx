@@ -41,7 +41,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   if (isLoading) {
     return (
       <div className="min-h-screen bg-[#070a12] flex flex-col items-center justify-center space-y-4">
-        <Loader2 className="w-10 h-10 text-amber-500 animate-spin" />
+        <Loader2 className="w-10 h-10 text-emerald-500 animate-spin" />
         <p className="text-slate-400 text-xs tracking-wider uppercase font-bold">
           Verificando credenciais do dono...
         </p>
@@ -91,7 +91,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <Menu className="w-5 h-5" />
           </button>
           <div>
-            <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 block leading-tight">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400 block leading-tight">
               Dono Conectado
             </span>
             <h1 className="text-sm font-extrabold text-white truncate max-w-[170px]">
@@ -105,8 +105,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             href="/admin/ajuda"
             className={`p-2 rounded-xl border text-xs font-bold transition flex items-center gap-1 active:scale-95 ${
               pathname === '/admin/ajuda'
-                ? 'bg-amber-500 text-slate-950 border-amber-400 font-black'
-                : 'bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 border-amber-500/30'
+                ? 'bg-emerald-500 text-slate-950 border-emerald-400 font-black'
+                : 'bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
             }`}
             title="Central de Ajuda & Treinamento"
           >
@@ -126,7 +126,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs transition active:scale-95"
             title="Ir para o Site"
           >
-            <ArrowLeft className="w-4 h-4 text-amber-400" />
+            <ArrowLeft className="w-4 h-4 text-emerald-400" />
           </Link>
         </div>
       </header>
@@ -142,11 +142,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               href={item.href}
               className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition active:scale-95 ${
                 isActive
-                  ? 'bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20 font-black'
+                  ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20 font-black'
                   : 'bg-slate-950/60 text-slate-300 border border-slate-800 hover:bg-slate-800'
               }`}
             >
-              <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-slate-950' : 'text-amber-400'}`} />
+              <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-slate-950' : 'text-emerald-400'}`} />
               <span>{item.label}</span>
             </Link>
           );
@@ -170,12 +170,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               {/* Drawer Header */}
               <div className="flex items-center justify-between pb-4 border-b border-slate-800">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center font-bold">
                     <Scissors className="w-5 h-5" />
                   </div>
                   <div>
                     <h3 className="font-bold text-white text-sm">{SALON.nome} Admin</h3>
-                    <p className="text-[10px] text-amber-400 font-medium">Área Exclusiva do Dono</p>
+                    <p className="text-[10px] text-emerald-400 font-medium">Área Exclusiva do Dono</p>
                   </div>
                 </div>
                 <button
@@ -188,7 +188,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
               {/* Owner Info Chip */}
               <div className="bg-slate-950 p-3 rounded-2xl border border-slate-800 flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-amber-500 text-slate-950 font-black flex items-center justify-center text-sm">
+                <div className="w-9 h-9 rounded-xl bg-emerald-500 text-slate-950 font-black flex items-center justify-center text-sm">
                   {user.name.charAt(0)}
                 </div>
                 <div className="min-w-0 flex-1">
@@ -209,12 +209,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                       onClick={() => setMobileDrawerOpen(false)}
                       className={`flex items-center justify-between p-3 rounded-xl text-xs font-bold transition active:scale-95 ${
                         isActive
-                          ? 'bg-amber-500 text-slate-950 shadow-md font-black'
+                          ? 'bg-emerald-500 text-slate-950 shadow-md font-black'
                           : 'text-slate-300 hover:bg-slate-800 hover:text-white'
                       }`}
                     >
                       <div className="flex items-center gap-3">
-                        <Icon className={`w-4 h-4 ${isActive ? 'text-slate-950' : 'text-amber-400'}`} />
+                        <Icon className={`w-4 h-4 ${isActive ? 'text-slate-950' : 'text-emerald-400'}`} />
                         <span>{item.label}</span>
                       </div>
                       <ChevronRight className={`w-4 h-4 ${isActive ? 'text-slate-950' : 'text-slate-600'}`} />
@@ -231,7 +231,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 onClick={() => setMobileDrawerOpen(false)}
                 className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold transition"
               >
-                <ArrowLeft className="w-4 h-4 text-amber-400" />
+                <ArrowLeft className="w-4 h-4 text-emerald-400" />
                 <span>Voltar à Barbearia</span>
               </Link>
               <button
@@ -256,11 +256,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <div className="space-y-6">
           {/* Logo & Title */}
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-full overflow-hidden border border-amber-500/50 bg-black flex items-center justify-center shadow-md shrink-0">
+            <div className="w-11 h-11 rounded-full overflow-hidden border border-emerald-500/50 bg-black flex items-center justify-center shadow-md shrink-0">
               <img src="/logo.png" alt={`${SALON.nome} Admin`} className="w-full h-full object-cover" />
             </div>
             <div>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-amber-500 block">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-500 block">
                 Gestão da Barbearia
               </span>
               <h1 className="text-base font-black text-white tracking-wide flex items-center gap-1.5">
@@ -272,12 +272,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
           {/* Owner Profile Card */}
           <div className="bg-slate-950/80 p-3 rounded-2xl border border-slate-800 flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-amber-500 text-slate-950 font-black flex items-center justify-center text-sm shadow-sm">
+            <div className="w-9 h-9 rounded-xl bg-emerald-500 text-slate-950 font-black flex items-center justify-center text-sm shadow-sm">
               {user.name.charAt(0)}
             </div>
             <div className="min-w-0 flex-1">
               <p className="text-xs font-extrabold text-white truncate">{user.name}</p>
-              <span className="text-[10px] text-amber-400 font-semibold block">Proprietário</span>
+              <span className="text-[10px] text-emerald-400 font-semibold block">Proprietário</span>
             </div>
           </div>
           
@@ -292,11 +292,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   href={item.href}
                   className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl transition ${
                     isActive
-                      ? 'bg-amber-500 text-slate-950 font-black shadow-md shadow-amber-500/10'
+                      ? 'bg-emerald-500 text-slate-950 font-black shadow-md shadow-emerald-500/10'
                       : 'bg-slate-800/30 hover:bg-slate-800 text-slate-300 hover:text-white'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-slate-950' : 'text-amber-400'}`} />
+                  <Icon className={`w-4 h-4 ${isActive ? 'text-slate-950' : 'text-emerald-400'}`} />
                   <span>{item.label}</span>
                 </Link>
               );
@@ -310,7 +310,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             href="/"
             className="flex items-center gap-2 text-xs text-slate-400 hover:text-white bg-slate-800/60 hover:bg-slate-800 px-3.5 py-2.5 rounded-xl transition w-full font-bold"
           >
-            <ArrowLeft className="w-4 h-4 text-amber-400" />
+            <ArrowLeft className="w-4 h-4 text-emerald-400" />
             <span>Voltar à Barbearia</span>
           </Link>
           <button
@@ -338,7 +338,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <Link
           href="/admin"
           className={`flex flex-col items-center gap-1 py-1 px-2.5 rounded-xl text-[10px] font-bold transition active:scale-95 ${
-            pathname === '/admin' ? 'text-amber-400' : 'text-slate-400 hover:text-slate-200'
+            pathname === '/admin' ? 'text-emerald-400' : 'text-slate-400 hover:text-slate-200'
           }`}
         >
           <LayoutDashboard className="w-5 h-5" />
@@ -347,7 +347,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <Link
           href="/admin/financeiro"
           className={`flex flex-col items-center gap-1 py-1 px-2.5 rounded-xl text-[10px] font-bold transition active:scale-95 ${
-            pathname === '/admin/financeiro' ? 'text-amber-400' : 'text-slate-400 hover:text-slate-200'
+            pathname === '/admin/financeiro' ? 'text-emerald-400' : 'text-slate-400 hover:text-slate-200'
           }`}
         >
           <DollarSign className="w-5 h-5" />
@@ -356,7 +356,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <Link
           href="/admin/clientes"
           className={`flex flex-col items-center gap-1 py-1 px-2.5 rounded-xl text-[10px] font-bold transition active:scale-95 ${
-            pathname === '/admin/clientes' ? 'text-amber-400' : 'text-slate-400 hover:text-slate-200'
+            pathname === '/admin/clientes' ? 'text-emerald-400' : 'text-slate-400 hover:text-slate-200'
           }`}
         >
           <Users className="w-5 h-5" />
@@ -365,7 +365,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <Link
           href="/admin/servicos"
           className={`flex flex-col items-center gap-1 py-1 px-2.5 rounded-xl text-[10px] font-bold transition active:scale-95 ${
-            pathname === '/admin/servicos' ? 'text-amber-400' : 'text-slate-400 hover:text-slate-200'
+            pathname === '/admin/servicos' ? 'text-emerald-400' : 'text-slate-400 hover:text-slate-200'
           }`}
         >
           <Scissors className="w-5 h-5" />
@@ -373,7 +373,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         </Link>
         <button
           onClick={() => setMobileDrawerOpen(true)}
-          className="flex flex-col items-center gap-1 py-1 px-2.5 rounded-xl text-[10px] font-bold text-slate-400 hover:text-amber-400 transition active:scale-95"
+          className="flex flex-col items-center gap-1 py-1 px-2.5 rounded-xl text-[10px] font-bold text-slate-400 hover:text-emerald-400 transition active:scale-95"
         >
           <Menu className="w-5 h-5" />
           <span>Mais</span>

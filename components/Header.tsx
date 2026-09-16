@@ -61,7 +61,7 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
           }}
           className="flex items-center gap-2.5 text-left group transition shrink-0"
         >
-          <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-amber-500/50 bg-black flex items-center justify-center shadow-md shadow-amber-500/20 group-hover:scale-105 transition-transform shrink-0">
+          <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-emerald-500/50 bg-black flex items-center justify-center shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform shrink-0">
             <img 
               src={SALON.logo} 
               alt={`Logo ${SALON.nome}`} 
@@ -71,11 +71,11 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
           <div>
             <div className="flex items-center gap-1.5">
               <span className="font-black text-lg tracking-wider text-white">{SALON.nome.toUpperCase()}</span>
-              <span className="text-[10px] uppercase font-black tracking-wider px-1.5 py-0.5 rounded-sm bg-amber-500/20 text-amber-400 border border-amber-500/40">
+              <span className="text-[10px] uppercase font-black tracking-wider px-1.5 py-0.5 rounded-sm bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                 Barbearia
               </span>
             </div>
-            <p className="text-[11px] text-amber-400/90 font-medium hidden sm:block">
+            <p className="text-[11px] text-emerald-400/90 font-medium hidden sm:block">
               {salonConfig.tagline || SALON.slogan}
             </p>
           </div>
@@ -88,7 +88,7 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
             onClick={() => setActiveTab('agendar')}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition ${
               pathname === '/' && activeTab === 'agendar'
-                ? 'bg-amber-500 text-slate-950 shadow-xs'
+                ? 'bg-emerald-500 text-slate-950 shadow-xs'
                 : 'text-slate-300 hover:text-white hover:bg-slate-800'
             }`}
           >
@@ -100,11 +100,11 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
             onClick={() => setActiveTab('galeria')}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1 ${
               pathname === '/' && activeTab === 'galeria'
-                ? 'bg-amber-500 text-slate-950 shadow-xs font-bold'
+                ? 'bg-emerald-500 text-slate-950 shadow-xs font-bold'
                 : 'text-slate-300 hover:text-white hover:bg-slate-800'
             }`}
           >
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+            <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
             <span>Galeria</span>
           </Link>
 
@@ -113,11 +113,11 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
             onClick={() => setActiveTab('fidelidade')}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1 ${
               pathname === '/' && activeTab === 'fidelidade'
-                ? 'bg-amber-500 text-slate-950 shadow-xs font-bold'
+                ? 'bg-emerald-500 text-slate-950 shadow-xs font-bold'
                 : 'text-slate-300 hover:text-white hover:bg-slate-800'
             }`}
           >
-            <Award className="w-3.5 h-3.5 text-amber-400" />
+            <Award className="w-3.5 h-3.5 text-emerald-400" />
             <span>Fidelidade</span>
           </Link>
 
@@ -126,11 +126,11 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
             onClick={() => setActiveTab('avaliacoes')}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1 ${
               pathname === '/' && activeTab === 'avaliacoes'
-                ? 'bg-amber-500 text-slate-950 shadow-xs font-bold'
+                ? 'bg-emerald-500 text-slate-950 shadow-xs font-bold'
                 : 'text-slate-300 hover:text-white hover:bg-slate-800'
             }`}
           >
-            <Star className="w-3.5 h-3.5 text-amber-400" />
+            <Star className="w-3.5 h-3.5 text-emerald-400" />
             <span>Avaliações</span>
           </Link>
 
@@ -150,11 +150,11 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
             href="/demo"
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1 ${
               pathname === '/demo'
-                ? 'bg-amber-500 text-slate-950 shadow-xs'
+                ? 'bg-emerald-500 text-slate-950 shadow-xs'
                 : 'text-slate-300 hover:text-white hover:bg-slate-800'
             }`}
           >
-            <MonitorPlay className="w-3.5 h-3.5 text-amber-400" />
+            <MonitorPlay className="w-3.5 h-3.5 text-emerald-400" />
             <span>Demonstração</span>
           </Link>
 
@@ -162,11 +162,11 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
             href="/admin"
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1 ${
               pathname.startsWith('/admin')
-                ? 'bg-amber-500 text-slate-950 shadow-xs'
+                ? 'bg-emerald-500 text-slate-950 shadow-xs'
                 : 'text-slate-300 hover:text-white hover:bg-slate-800'
             }`}
           >
-            <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
             <span>Painel Admin</span>
           </Link>
         </nav>
@@ -182,14 +182,14 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
               className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 text-left transition"
               title="Trocar cliente ativo"
             >
-              <div className="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs">
+              <div className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs">
                 {currentCustomer.name.charAt(0)}
               </div>
               <div className="hidden lg:block text-left leading-tight">
                 <span className="text-xs font-semibold text-slate-200 block truncate max-w-[100px]">
                   {currentCustomer.name.split(' ')[0]}
                 </span>
-                <span className="text-[10px] text-amber-400 font-medium flex items-center gap-0.5">
+                <span className="text-[10px] text-emerald-400 font-medium flex items-center gap-0.5">
                   <Sparkles className="w-2.5 h-2.5" />
                   {currentCustomer.tier}
                 </span>
@@ -203,7 +203,7 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
           <NotificationBell variant="mobile" />
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 hover:text-amber-400 hover:border-slate-700 transition focus:outline-hidden"
+            className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 hover:text-emerald-400 hover:border-slate-700 transition focus:outline-hidden"
             aria-label="Abrir Menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -217,12 +217,12 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
           {/* Top Bar of Drawer */}
           <div className="h-16 px-4 flex items-center justify-between border-b border-slate-800 shrink-0 bg-[#090d16]">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-full overflow-hidden border border-amber-500/50 bg-black flex items-center justify-center shadow-md shrink-0">
+              <div className="w-9 h-9 rounded-full overflow-hidden border border-emerald-500/50 bg-black flex items-center justify-center shadow-md shrink-0">
                 <img src={SALON.logo} alt={SALON.nome} className="w-full h-full object-cover" />
               </div>
               <div>
                 <span className="font-black text-base tracking-wider text-white block leading-tight">{SALON.nome.toUpperCase()}</span>
-                <span className="text-[10px] text-amber-400 font-semibold">Estilo Forte &bull; {SALON.endereco.cidade} - {SALON.endereco.estado}</span>
+                <span className="text-[10px] text-emerald-400 font-semibold">Estilo Forte &bull; {SALON.endereco.cidade} - {SALON.endereco.estado}</span>
               </div>
             </div>
             <button
@@ -246,7 +246,7 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
                 className="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800 flex items-center justify-between cursor-pointer active:scale-98 transition-transform"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm">
+                  <div className="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">
                     {currentCustomer.name.charAt(0)}
                   </div>
                   <div>
@@ -255,7 +255,7 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
                   </div>
                 </div>
                 <div className="text-right">
-                  <span className="text-xs bg-amber-500/15 text-amber-400 px-2.5 py-1 rounded-lg font-bold block">
+                  <span className="text-xs bg-emerald-500/15 text-emerald-400 px-2.5 py-1 rounded-lg font-bold block">
                     {currentCustomer.tier}
                   </span>
                   <span className="text-[10px] text-slate-400 block mt-0.5">Trocar perfil</span>
@@ -273,12 +273,12 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
                 }}
                 className={`flex items-center justify-between p-3.5 rounded-2xl border transition ${
                   pathname === '/' && activeTab === 'agendar'
-                    ? 'bg-amber-500/15 border-amber-500/40 text-amber-400'
+                    ? 'bg-emerald-500/15 border-emerald-500/40 text-emerald-400'
                     : 'bg-slate-900/70 border-slate-800 text-slate-200 hover:bg-slate-800'
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400">
+                  <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400">
                     <Calendar className="w-5 h-5" />
                   </div>
                   <div>
@@ -297,12 +297,12 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
                 }}
                 className={`flex items-center justify-between p-3.5 rounded-2xl border transition ${
                   pathname === '/' && activeTab === 'galeria'
-                    ? 'bg-amber-500/15 border-amber-500/40 text-amber-400'
+                    ? 'bg-emerald-500/15 border-emerald-500/40 text-emerald-400'
                     : 'bg-slate-900/70 border-slate-800 text-slate-200 hover:bg-slate-800'
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400">
+                  <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400">
                     <Sparkles className="w-5 h-5" />
                   </div>
                   <div>
@@ -321,12 +321,12 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
                 }}
                 className={`flex items-center justify-between p-3.5 rounded-2xl border transition ${
                   pathname === '/' && activeTab === 'fidelidade'
-                    ? 'bg-amber-500/15 border-amber-500/40 text-amber-400'
+                    ? 'bg-emerald-500/15 border-emerald-500/40 text-emerald-400'
                     : 'bg-slate-900/70 border-slate-800 text-slate-200 hover:bg-slate-800'
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400">
+                  <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400">
                     <Award className="w-5 h-5" />
                   </div>
                   <div>
@@ -345,12 +345,12 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
                 }}
                 className={`flex items-center justify-between p-3.5 rounded-2xl border transition ${
                   pathname === '/' && activeTab === 'meus-agendamentos'
-                    ? 'bg-amber-500/15 border-amber-500/40 text-amber-400'
+                    ? 'bg-emerald-500/15 border-emerald-500/40 text-emerald-400'
                     : 'bg-slate-900/70 border-slate-800 text-slate-200 hover:bg-slate-800'
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400">
+                  <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
@@ -369,12 +369,12 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
                 }}
                 className={`flex items-center justify-between p-3.5 rounded-2xl border transition ${
                   pathname === '/' && activeTab === 'avaliacoes'
-                    ? 'bg-amber-500/15 border-amber-500/40 text-amber-400'
+                    ? 'bg-emerald-500/15 border-emerald-500/40 text-emerald-400'
                     : 'bg-slate-900/70 border-slate-800 text-slate-200 hover:bg-slate-800'
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400">
+                  <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400">
                     <Star className="w-5 h-5" />
                   </div>
                   <div>
@@ -442,12 +442,12 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
                 onClick={() => setMobileMenuOpen(false)}
                 className={`flex items-center justify-between p-3.5 rounded-2xl border transition ${
                   pathname === '/demo'
-                    ? 'bg-amber-500/15 border-amber-500/40 text-amber-400'
+                    ? 'bg-emerald-500/15 border-emerald-500/40 text-emerald-400'
                     : 'bg-slate-900/70 border-slate-800 text-slate-200 hover:bg-slate-800'
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400">
+                  <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400">
                     <MonitorPlay className="w-5 h-5" />
                   </div>
                   <div>
@@ -463,12 +463,12 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
                 onClick={() => setMobileMenuOpen(false)}
                 className={`flex items-center justify-between p-3.5 rounded-2xl border transition ${
                   pathname === '/admin'
-                    ? 'bg-amber-500/15 border-amber-500/40 text-amber-400'
+                    ? 'bg-emerald-500/15 border-emerald-500/40 text-emerald-400'
                     : 'bg-slate-900/70 border-slate-800 text-slate-200 hover:bg-slate-800'
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400">
+                  <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400">
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div>
@@ -484,12 +484,12 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
                 onClick={() => setMobileMenuOpen(false)}
                 className={`flex items-center justify-between p-3.5 rounded-2xl border transition ${
                   pathname === '/admin/configuracoes'
-                    ? 'bg-amber-500/15 border-amber-500/40 text-amber-400'
+                    ? 'bg-emerald-500/15 border-emerald-500/40 text-emerald-400'
                     : 'bg-slate-900/70 border-slate-800 text-slate-200 hover:bg-slate-800'
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400">
+                  <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400">
                     <Settings className="w-5 h-5" />
                   </div>
                   <div>
@@ -509,11 +509,11 @@ export const Header: React.FC<{ onOpenUserSwitcher?: () => void }> = ({ onOpenUs
             {/* Salon Info */}
             <div className="pt-4 border-t border-slate-800 text-xs text-slate-400 space-y-2.5">
               <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                 <span>{salonConfig.address || 'Av. Paulista, 1842 - Bela Vista, SP'}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-amber-400 shrink-0" />
+                <Clock className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>{salonConfig.openingHours || 'Seg-Sáb: 08:00–12:00 / 14:00–20:00 | Dom: 08:00–12:00'}</span>
               </div>
               <a

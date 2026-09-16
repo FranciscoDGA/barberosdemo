@@ -58,7 +58,7 @@ export const LoyaltyProgram: React.FC = () => {
     return (
       <div className="w-full max-w-xl mx-auto p-6 bg-slate-900/90 rounded-3xl border border-slate-800 space-y-5 shadow-2xl">
         <div className="text-center space-y-2">
-          <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center mx-auto border border-amber-500/20">
+          <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mx-auto border border-emerald-500/20">
             <Award className="w-6 h-6" />
           </div>
           <h3 className="text-lg font-bold text-white">Consulte seu Cartão Fidelidade</h3>
@@ -69,20 +69,20 @@ export const LoyaltyProgram: React.FC = () => {
 
         <form onSubmit={handleLookupPhone} className="space-y-3">
           <div className="relative">
-            <Phone className="w-4 h-4 text-amber-400 absolute left-3.5 top-3.5" />
+            <Phone className="w-4 h-4 text-emerald-400 absolute left-3.5 top-3.5" />
             <input
               type="tel"
               required
               value={phoneSearch}
               onChange={e => setPhoneSearch(e.target.value)}
               placeholder="Digite seu WhatsApp: (11) 99999-0000"
-              className="w-full bg-slate-950 border border-slate-700 rounded-2xl pl-10 pr-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 transition"
+              className="w-full bg-slate-950 border border-slate-700 rounded-2xl pl-10 pr-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full py-3 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold text-sm transition shadow-lg shadow-amber-500/20 cursor-pointer flex items-center justify-center gap-2"
+            className="w-full py-3 rounded-2xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-slate-950 font-extrabold text-sm transition shadow-lg shadow-emerald-500/20 cursor-pointer flex items-center justify-center gap-2"
           >
             <Search className="w-4 h-4" />
             <span>Consultar Meus Selos</span>
@@ -92,9 +92,9 @@ export const LoyaltyProgram: React.FC = () => {
         <div className="pt-3 border-t border-slate-800 text-center">
           <button
             onClick={() => setActiveTab('agendar')}
-            className="text-xs text-slate-400 hover:text-amber-400 transition"
+            className="text-xs text-slate-400 hover:text-emerald-400 transition"
           >
-            Ainda não cortou? <strong className="text-amber-400">Agende seu corte agora &rarr;</strong>
+            Ainda não cortou? <strong className="text-emerald-400">Agende seu corte agora &rarr;</strong>
           </button>
         </div>
       </div>
@@ -130,7 +130,7 @@ export const LoyaltyProgram: React.FC = () => {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
           <h2 className="text-xl font-bold text-white flex items-center gap-2">
-            <Crown className="w-5 h-5 text-amber-400" />
+            <Crown className="w-5 h-5 text-emerald-400" />
             <span>Clube Fidelidade {SALON.nome}</span>
           </h2>
           <p className="text-xs text-slate-400">
@@ -141,17 +141,17 @@ export const LoyaltyProgram: React.FC = () => {
         <div className="flex items-center gap-2 self-start sm:self-auto flex-wrap">
           <button
             onClick={() => setCurrentCustomer(null)}
-            className="text-[11px] font-bold text-slate-400 hover:text-amber-400 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl transition flex items-center gap-1.5 cursor-pointer"
+            className="text-[11px] font-bold text-slate-400 hover:text-emerald-400 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl transition flex items-center gap-1.5 cursor-pointer"
           >
             <RotateCcw className="w-3 h-3" />
             <span>Consultar Outro Número</span>
           </button>
 
           {/* Current Tier Badge */}
-          <div className="flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 px-3.5 py-1.5 rounded-2xl">
-            <Sparkles className="w-4 h-4 text-amber-400" />
+          <div className="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 px-3.5 py-1.5 rounded-2xl">
+            <Sparkles className="w-4 h-4 text-emerald-400" />
             <div className="text-left leading-none">
-              <span className="text-[10px] uppercase font-bold text-amber-400/80 block">Categoria</span>
+              <span className="text-[10px] uppercase font-bold text-emerald-400/80 block">Categoria</span>
               <span className="text-xs font-black text-white">{currentCustomer.tier}</span>
             </div>
           </div>
@@ -159,8 +159,8 @@ export const LoyaltyProgram: React.FC = () => {
       </div>
 
       {notFoundMsg && (
-        <div className="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs flex items-center gap-2">
-          <Info className="w-4 h-4 text-amber-400 shrink-0" />
+        <div className="p-3.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs flex items-center gap-2">
+          <Info className="w-4 h-4 text-emerald-400 shrink-0" />
           <span>{notFoundMsg}</span>
         </div>
       )}
@@ -174,15 +174,15 @@ export const LoyaltyProgram: React.FC = () => {
       )}
 
       {/* === DIGITAL STAMP CARD (CARTELA DIGITAL DE SELOS) === */}
-      <div className="bg-gradient-to-br from-slate-900 via-[#0d1527] to-slate-900 rounded-3xl p-6 border border-amber-500/30 shadow-2xl relative overflow-hidden">
+      <div className="bg-gradient-to-br from-slate-900 via-[#0d1527] to-slate-900 rounded-3xl p-6 border border-emerald-500/30 shadow-2xl relative overflow-hidden">
         {/* Background Mammoth watermark / accent */}
-        <div className="absolute -right-8 -bottom-8 opacity-5 text-amber-400 pointer-events-none">
+        <div className="absolute -right-8 -bottom-8 opacity-5 text-emerald-400 pointer-events-none">
           <Scissors className="w-64 h-64" />
         </div>
 
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
           <div>
-            <span className="text-[10px] font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-md border border-amber-500/20">
+            <span className="text-[10px] font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-md border border-emerald-500/20">
               Cartela Fidelidade Digital
             </span>
             <h3 className="text-lg font-black text-white mt-1">
@@ -192,7 +192,7 @@ export const LoyaltyProgram: React.FC = () => {
 
           <div className="text-left sm:text-right">
             <span className="text-xs text-slate-400 block">Saldo de Pontos:</span>
-            <span className="text-xl font-black text-amber-400">
+            <span className="text-xl font-black text-emerald-400">
               {currentCustomer.loyaltyPoints} pts
             </span>
           </div>
@@ -211,7 +211,7 @@ export const LoyaltyProgram: React.FC = () => {
                 key={stampNumber}
                 className={`relative flex flex-col items-center justify-center aspect-square rounded-2xl border transition-all duration-300 select-none ${
                   isStamped
-                    ? 'bg-gradient-to-br from-amber-400 to-amber-600 border-amber-300 text-slate-950 shadow-lg shadow-amber-500/20 scale-100'
+                    ? 'bg-gradient-to-br from-emerald-400 to-emerald-600 border-emerald-300 text-slate-950 shadow-lg shadow-emerald-500/20 scale-100'
                     : 'bg-slate-950/80 border-slate-800 text-slate-600'
                 }`}
               >
@@ -224,10 +224,10 @@ export const LoyaltyProgram: React.FC = () => {
                   <>
                     <span className="text-xs font-bold text-slate-500">{stampNumber}</span>
                     {isMilestone5 && (
-                      <span className="text-[8px] font-bold text-amber-400/80 uppercase">50% OFF</span>
+                      <span className="text-[8px] font-bold text-emerald-400/80 uppercase">50% OFF</span>
                     )}
                     {isMilestone10 && (
-                      <span className="text-[8px] font-black text-amber-400 uppercase">Grátis</span>
+                      <span className="text-[8px] font-black text-emerald-400 uppercase">Grátis</span>
                     )}
                   </>
                 )}
@@ -239,11 +239,11 @@ export const LoyaltyProgram: React.FC = () => {
         {/* Stamp Status Banner */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 p-3.5 rounded-2xl bg-slate-950/70 border border-slate-800/80 text-xs">
           <div className="flex items-center gap-2">
-            <Flame className="w-4 h-4 text-amber-400 shrink-0" />
+            <Flame className="w-4 h-4 text-emerald-400 shrink-0" />
             <span className="text-slate-300">
               {stampsRemaining > 0 ? (
                 <>
-                  Faltam apenas <strong className="text-amber-400">{stampsRemaining} corte{stampsRemaining > 1 ? 's' : ''}</strong> para você ganhar um atendimento 100% gratuito!
+                  Faltam apenas <strong className="text-emerald-400">{stampsRemaining} corte{stampsRemaining > 1 ? 's' : ''}</strong> para você ganhar um atendimento 100% gratuito!
                 </>
               ) : (
                 <strong className="text-emerald-400">
@@ -255,7 +255,7 @@ export const LoyaltyProgram: React.FC = () => {
 
           <button
             onClick={() => setActiveTab('agendar')}
-            className="w-full sm:w-auto px-3.5 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold transition text-xs shrink-0"
+            className="w-full sm:w-auto px-3.5 py-1.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold transition text-xs shrink-0"
           >
             Agendar Novo Corte
           </button>
@@ -264,8 +264,8 @@ export const LoyaltyProgram: React.FC = () => {
 
       {/* === VIP PERKS BY TIER === */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-        <div className={`p-4 rounded-2xl border ${currentCustomer.tier === 'Bronze' ? 'bg-amber-500/10 border-amber-500/40' : 'bg-slate-900 border-slate-800'}`}>
-          <div className="flex items-center gap-1.5 font-bold text-amber-400 mb-2">
+        <div className={`p-4 rounded-2xl border ${currentCustomer.tier === 'Bronze' ? 'bg-emerald-500/10 border-emerald-500/40' : 'bg-slate-900 border-slate-800'}`}>
+          <div className="flex items-center gap-1.5 font-bold text-emerald-400 mb-2">
             <Coffee className="w-4 h-4" />
             <span>Nível Bronze</span>
           </div>
@@ -276,8 +276,8 @@ export const LoyaltyProgram: React.FC = () => {
           </p>
         </div>
 
-        <div className={`p-4 rounded-2xl border ${currentCustomer.tier === 'Prata' ? 'bg-amber-500/10 border-amber-500/40' : 'bg-slate-900 border-slate-800'}`}>
-          <div className="flex items-center gap-1.5 font-bold text-amber-400 mb-2">
+        <div className={`p-4 rounded-2xl border ${currentCustomer.tier === 'Prata' ? 'bg-emerald-500/10 border-emerald-500/40' : 'bg-slate-900 border-slate-800'}`}>
+          <div className="flex items-center gap-1.5 font-bold text-emerald-400 mb-2">
             <Beer className="w-4 h-4" />
             <span>Nível Prata (4+ visitas)</span>
           </div>
@@ -288,8 +288,8 @@ export const LoyaltyProgram: React.FC = () => {
           </p>
         </div>
 
-        <div className={`p-4 rounded-2xl border ${currentCustomer.tier === 'Ouro VIP' ? 'bg-amber-500/10 border-amber-500/40' : 'bg-slate-900 border-slate-800'}`}>
-          <div className="flex items-center gap-1.5 font-bold text-amber-400 mb-2">
+        <div className={`p-4 rounded-2xl border ${currentCustomer.tier === 'Ouro VIP' ? 'bg-emerald-500/10 border-emerald-500/40' : 'bg-slate-900 border-slate-800'}`}>
+          <div className="flex items-center gap-1.5 font-bold text-emerald-400 mb-2">
             <Crown className="w-4 h-4" />
             <span>Nível Ouro VIP (10+ visitas)</span>
           </div>
@@ -305,11 +305,11 @@ export const LoyaltyProgram: React.FC = () => {
       <div className="space-y-3">
         <div className="flex items-center justify-between">
           <h3 className="text-sm font-bold text-white flex items-center gap-2">
-            <Gift className="w-4 h-4 text-amber-400" />
+            <Gift className="w-4 h-4 text-emerald-400" />
             <span>Recompensas Disponíveis para Resgate</span>
           </h3>
           <span className="text-xs text-slate-400">
-            Seu saldo: <strong className="text-amber-400">{currentCustomer.loyaltyPoints} pts</strong>
+            Seu saldo: <strong className="text-emerald-400">{currentCustomer.loyaltyPoints} pts</strong>
           </span>
         </div>
 
@@ -328,7 +328,7 @@ export const LoyaltyProgram: React.FC = () => {
                 <div>
                   <div className="flex items-start justify-between gap-2 mb-2">
                     <h4 className="font-bold text-sm text-white">{reward.title}</h4>
-                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-bold border border-amber-500/30 whitespace-nowrap">
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/30 whitespace-nowrap">
                       {reward.badge}
                     </span>
                   </div>
@@ -349,7 +349,7 @@ export const LoyaltyProgram: React.FC = () => {
                     disabled={!canAfford}
                     className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 ${
                       canAfford
-                        ? 'bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-md shadow-amber-500/20'
+                        ? 'bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-md shadow-emerald-500/20'
                         : 'bg-slate-800 text-slate-500 cursor-not-allowed'
                     }`}
                   >

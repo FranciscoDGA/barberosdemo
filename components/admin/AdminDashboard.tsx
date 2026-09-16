@@ -240,7 +240,7 @@ export const AdminDashboard: React.FC = () => {
           id="tab-admin-finance"
           className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition ${
             activeAdminTab === 'financeiro'
-              ? 'bg-amber-500 text-slate-950 shadow-sm'
+              ? 'bg-emerald-500 text-slate-950 shadow-sm'
               : 'text-slate-400 hover:text-white'
           }`}
         >
@@ -253,7 +253,7 @@ export const AdminDashboard: React.FC = () => {
           id="tab-admin-agenda"
           className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition ${
             activeAdminTab === 'agenda'
-              ? 'bg-amber-500 text-slate-950 shadow-sm'
+              ? 'bg-emerald-500 text-slate-950 shadow-sm'
               : 'text-slate-400 hover:text-white'
           }`}
         >
@@ -266,7 +266,7 @@ export const AdminDashboard: React.FC = () => {
           id="tab-admin-clients"
           className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition ${
             activeAdminTab === 'clientes'
-              ? 'bg-amber-500 text-slate-950 shadow-sm'
+              ? 'bg-emerald-500 text-slate-950 shadow-sm'
               : 'text-slate-400 hover:text-white'
           }`}
         >
@@ -279,7 +279,7 @@ export const AdminDashboard: React.FC = () => {
           id="tab-admin-services"
           className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition ${
             activeAdminTab === 'servicos'
-              ? 'bg-amber-500 text-slate-950 shadow-sm'
+              ? 'bg-emerald-500 text-slate-950 shadow-sm'
               : 'text-slate-400 hover:text-white'
           }`}
         >
@@ -292,7 +292,7 @@ export const AdminDashboard: React.FC = () => {
           id="tab-admin-config"
           className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition ${
             activeAdminTab === 'config'
-              ? 'bg-amber-500 text-slate-950 shadow-sm'
+              ? 'bg-emerald-500 text-slate-950 shadow-sm'
               : 'text-slate-400 hover:text-white'
           }`}
         >
@@ -334,7 +334,7 @@ export const AdminDashboard: React.FC = () => {
               <span className="text-[11px] text-slate-400 uppercase font-semibold block">
                 Lucro Líquido
               </span>
-              <span className="text-xl sm:text-2xl font-black text-amber-400 mt-1 block">
+              <span className="text-xl sm:text-2xl font-black text-emerald-400 mt-1 block">
                 R$ {lucroLiquido.toFixed(2).replace('.', ',')}
               </span>
               <span className="text-[10px] text-slate-500 mt-0.5 block">
@@ -358,7 +358,7 @@ export const AdminDashboard: React.FC = () => {
           {/* Payment Method Distribution */}
           <div className="bg-slate-900 rounded-2xl p-5 border border-slate-800">
             <h3 className="text-sm font-bold text-white mb-3 flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-amber-400" />
+              <TrendingUp className="w-4 h-4 text-emerald-400" />
               <span>Receitas por Método de Pagamento</span>
             </h3>
 
@@ -395,7 +395,7 @@ export const AdminDashboard: React.FC = () => {
 
               <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
                     <Banknote className="w-4 h-4" />
                   </div>
                   <div>
@@ -414,7 +414,7 @@ export const AdminDashboard: React.FC = () => {
           <div className="bg-slate-900 rounded-2xl p-5 border border-slate-800 space-y-3">
             <div className="flex items-center justify-between">
               <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                <DollarSign className="w-4 h-4 text-amber-400" />
+                <DollarSign className="w-4 h-4 text-emerald-400" />
                 <span>Livro Caixa / Transações Recentes</span>
               </h3>
               <span className="text-xs text-slate-400">
@@ -485,7 +485,7 @@ export const AdminDashboard: React.FC = () => {
                 value={agendaSearch}
                 onChange={(e) => setAgendaSearch(e.target.value)}
                 placeholder="Buscar por cliente, telefone ou serviço..."
-                className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-hidden focus:border-amber-500"
+                className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-hidden focus:border-emerald-500"
               />
             </div>
 
@@ -493,7 +493,7 @@ export const AdminDashboard: React.FC = () => {
               <select
                 value={agendaBarberFilter}
                 onChange={(e) => setAgendaBarberFilter(e.target.value)}
-                className="bg-slate-900 border border-slate-800 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-hidden focus:border-amber-500 w-full sm:w-auto"
+                className="bg-slate-900 border border-slate-800 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-hidden focus:border-emerald-500 w-full sm:w-auto"
               >
                 <option value="todos">Todos os Barbeiros</option>
                 {barbers.map((b) => (
@@ -518,7 +518,7 @@ export const AdminDashboard: React.FC = () => {
                   className="bg-slate-900 rounded-2xl border border-slate-800 p-4 flex flex-col md:flex-row md:items-center justify-between gap-3 hover:border-slate-700 transition"
                 >
                   <div className="flex items-start gap-3">
-                    <div className="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex flex-col items-center justify-center shrink-0">
+                    <div className="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex flex-col items-center justify-center shrink-0">
                       <Clock className="w-4 h-4 mb-0.5" />
                       <span className="text-[10px] font-black">{apt.time}</span>
                     </div>
@@ -530,7 +530,7 @@ export const AdminDashboard: React.FC = () => {
                         <span
                           className={`text-[9px] font-bold px-2 py-0.2 rounded-full uppercase ${
                             apt.status === 'confirmed'
-                              ? 'bg-amber-500/15 text-amber-400 border border-amber-500/30'
+                              ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
                               : apt.status === 'completed'
                               ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
                               : 'bg-rose-500/15 text-rose-400 border border-rose-500/30'
@@ -541,7 +541,7 @@ export const AdminDashboard: React.FC = () => {
                       </div>
 
                       <p className="text-xs text-slate-300 mt-0.5">
-                        {apt.serviceNames.join(' + ')} • <strong className="text-amber-400">{apt.barberName}</strong>
+                        {apt.serviceNames.join(' + ')} • <strong className="text-emerald-400">{apt.barberName}</strong>
                       </p>
 
                       <div className="flex items-center gap-3 text-[11px] text-slate-400 mt-1">
@@ -630,7 +630,7 @@ export const AdminDashboard: React.FC = () => {
                     <div>
                       <div className="flex items-center gap-2">
                         <h4 className="font-bold text-sm text-white">{c.name}</h4>
-                        <span className="text-[10px] font-bold px-2 py-0.2 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                        <span className="text-[10px] font-bold px-2 py-0.2 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
                           {c.tier}
                         </span>
                       </div>
@@ -656,7 +656,7 @@ export const AdminDashboard: React.FC = () => {
                     </div>
                     <div>
                       <span className="text-[10px] text-slate-500 block uppercase">Gasto Total</span>
-                      <span className="font-black text-sm text-amber-400">
+                      <span className="font-black text-sm text-emerald-400">
                         R$ {c.totalSpent.toFixed(0)}
                       </span>
                     </div>
@@ -698,7 +698,7 @@ export const AdminDashboard: React.FC = () => {
 
             <button
               onClick={() => setShowServiceModal(true)}
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold transition shadow-md"
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold transition shadow-md"
             >
               <Plus className="w-3.5 h-3.5" />
               <span>Novo Serviço</span>
@@ -714,13 +714,13 @@ export const AdminDashboard: React.FC = () => {
                 <div>
                   <div className="flex items-center gap-2">
                     <h4 className="font-bold text-sm text-white">{srv.name}</h4>
-                    <span className="text-[10px] uppercase font-bold px-1.5 py-0.2 rounded bg-slate-800 text-amber-400 border border-slate-700">
+                    <span className="text-[10px] uppercase font-bold px-1.5 py-0.2 rounded bg-slate-800 text-emerald-400 border border-slate-700">
                       {srv.category}
                     </span>
                   </div>
                   <p className="text-xs text-slate-400 mt-1 line-clamp-2">{srv.description}</p>
                   <div className="flex items-center gap-3 text-xs text-slate-300 font-semibold mt-2">
-                    <span className="text-amber-400 font-extrabold text-sm">
+                    <span className="text-emerald-400 font-extrabold text-sm">
                       R$ {srv.price.toFixed(2).replace('.', ',')}
                     </span>
                     <span>• {srv.durationMinutes} min</span>
@@ -749,7 +749,7 @@ export const AdminDashboard: React.FC = () => {
       {activeAdminTab === 'config' && (
         <div className="bg-slate-900 rounded-2xl p-5 border border-slate-800 space-y-4 max-w-2xl animate-in fade-in duration-200">
           <h3 className="text-sm font-bold text-white pb-2 border-b border-slate-800 flex items-center gap-2">
-            <Settings className="w-4 h-4 text-amber-400" />
+            <Settings className="w-4 h-4 text-emerald-400" />
             <span>Configurações Oficiais da {SALON.nome}</span>
           </h3>
 
@@ -1025,7 +1025,7 @@ export const AdminDashboard: React.FC = () => {
               </button>
               <button
                 type="submit"
-                className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs shadow-md"
+                className="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shadow-md"
               >
                 Cadastrar Serviço
               </button>

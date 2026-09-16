@@ -157,7 +157,7 @@ export default function MarketingPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <Sparkles className="w-5 h-5 text-amber-400" />
+            <Sparkles className="w-5 h-5 text-emerald-400" />
             <h1 className="text-2xl font-extrabold text-white">Marketing & Aceleração de Clientes</h1>
           </div>
           <p className="text-xs text-slate-400">
@@ -171,7 +171,7 @@ export default function MarketingPage() {
             onClick={() => setActiveTab('lembretes')}
             className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition ${
               activeTab === 'lembretes'
-                ? 'bg-amber-500 text-slate-950 shadow-md'
+                ? 'bg-emerald-500 text-slate-950 shadow-md'
                 : 'text-slate-400 hover:text-white'
             }`}
           >
@@ -182,7 +182,7 @@ export default function MarketingPage() {
             onClick={() => setActiveTab('plaquinhas')}
             className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition ${
               activeTab === 'plaquinhas'
-                ? 'bg-amber-500 text-slate-950 shadow-md'
+                ? 'bg-emerald-500 text-slate-950 shadow-md'
                 : 'text-slate-400 hover:text-white'
             }`}
           >
@@ -198,7 +198,7 @@ export default function MarketingPage() {
           {/* KPI Retention Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div className="bg-slate-900/70 p-4 rounded-2xl border border-slate-800 flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold">
+              <div className="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold">
                 <Users className="w-6 h-6" />
               </div>
               <div>
@@ -232,7 +232,7 @@ export default function MarketingPage() {
           <div className="bg-slate-900/90 p-4 rounded-2xl border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
               <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                <Filter className="w-4 h-4 text-amber-400" /> Segmentação por Ciclo de Corte:
+                <Filter className="w-4 h-4 text-emerald-400" /> Segmentação por Ciclo de Corte:
               </h3>
               <p className="text-xs text-slate-400">
                 Escolha a régua de tempo para adaptar a abordagem no WhatsApp
@@ -243,7 +243,7 @@ export default function MarketingPage() {
               <button
                 onClick={() => setFilterDays(15)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-bold transition ${
-                  filterDays === 15 ? 'bg-amber-500 text-slate-950 shadow-sm' : 'text-slate-300 hover:text-white'
+                  filterDays === 15 ? 'bg-emerald-500 text-slate-950 shadow-sm' : 'text-slate-300 hover:text-white'
                 }`}
               >
                 +15 dias (Degradê / Fade)
@@ -251,7 +251,7 @@ export default function MarketingPage() {
               <button
                 onClick={() => setFilterDays(20)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-bold transition ${
-                  filterDays === 20 ? 'bg-amber-500 text-slate-950 shadow-sm' : 'text-slate-300 hover:text-white'
+                  filterDays === 20 ? 'bg-emerald-500 text-slate-950 shadow-sm' : 'text-slate-300 hover:text-white'
                 }`}
               >
                 +20 dias (Alinhamento)
@@ -259,7 +259,7 @@ export default function MarketingPage() {
               <button
                 onClick={() => setFilterDays(30)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-bold transition ${
-                  filterDays === 30 ? 'bg-amber-500 text-slate-950 shadow-sm' : 'text-slate-300 hover:text-white'
+                  filterDays === 30 ? 'bg-emerald-500 text-slate-950 shadow-sm' : 'text-slate-300 hover:text-white'
                 }`}
               >
                 +30 dias (Completo)
@@ -309,7 +309,7 @@ export default function MarketingPage() {
                       </div>
 
                       <p className="text-xs text-slate-400">
-                        WhatsApp: <span className="text-slate-300 font-mono">{client.phone}</span> &bull; Barbeiro: <span className="text-amber-400 font-bold">{client.preferredBarber}</span>
+                        WhatsApp: <span className="text-slate-300 font-mono">{client.phone}</span> &bull; Barbeiro: <span className="text-emerald-400 font-bold">{client.preferredBarber}</span>
                       </p>
 
                       <div className="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/80 text-[11px] text-slate-300 italic max-w-xl">
@@ -349,10 +349,10 @@ export default function MarketingPage() {
       {activeTab === 'plaquinhas' && (
         <div className="space-y-6">
           {/* Instructions Box */}
-          <div className="bg-gradient-to-r from-amber-500/15 via-slate-900 to-slate-900 p-5 rounded-3xl border border-amber-500/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div className="bg-gradient-to-r from-emerald-500/15 via-slate-900 to-slate-900 p-5 rounded-3xl border border-emerald-500/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div className="space-y-1">
               <h2 className="text-base font-extrabold text-white flex items-center gap-2">
-                <Scissors className="w-5 h-5 text-amber-400" /> Plaquinha de Acrílico para o Espelho da Cadeira
+                <Scissors className="w-5 h-5 text-emerald-400" /> Plaquinha de Acrílico para o Espelho da Cadeira
               </h2>
               <p className="text-xs text-slate-300 max-w-2xl leading-relaxed">
                 Coloque esta plaquinha luxuosa no espelho de cada cadeira. Quando o cliente estiver finalizando o corte, ele aponta a câmera do celular e já agenda o retorno para daqui a 15 ou 21 dias diretamente com você, sem fila nem espera!
@@ -363,7 +363,7 @@ export default function MarketingPage() {
             <div className="flex items-center gap-2 w-full md:w-auto shrink-0">
               <button
                 onClick={handlePrintPlaque}
-                className="flex-1 md:flex-none px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs flex items-center justify-center gap-2 transition shadow-lg shadow-amber-500/20 active:scale-95"
+                className="flex-1 md:flex-none px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs flex items-center justify-center gap-2 transition shadow-lg shadow-emerald-500/20 active:scale-95"
               >
                 <Printer className="w-4 h-4" />
                 <span>Imprimir Placa (A5)</span>
@@ -389,7 +389,7 @@ export default function MarketingPage() {
                 onClick={() => setSelectedBarberId('all')}
                 className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition active:scale-95 ${
                   selectedBarberId === 'all'
-                    ? 'bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20 font-black'
+                    ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20 font-black'
                     : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700'
                 }`}
               >
@@ -401,7 +401,7 @@ export default function MarketingPage() {
                   onClick={() => setSelectedBarberId(barber.id)}
                   className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition active:scale-95 flex items-center gap-2 ${
                     selectedBarberId === barber.id
-                      ? 'bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20 font-black'
+                      ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20 font-black'
                       : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700'
                   }`}
                 >
@@ -416,20 +416,20 @@ export default function MarketingPage() {
             <div 
               id="printable-mirror-plaque"
               ref={printRef}
-              className="w-full max-w-sm sm:max-w-md bg-gradient-to-b from-[#161a23] via-[#0d1017] to-[#07090e] border-2 border-amber-500/60 rounded-3xl p-6 sm:p-8 text-center relative shadow-2xl overflow-hidden"
+              className="w-full max-w-sm sm:max-w-md bg-gradient-to-b from-[#161a23] via-[#0d1017] to-[#07090e] border-2 border-emerald-500/60 rounded-3xl p-6 sm:p-8 text-center relative shadow-2xl overflow-hidden"
             >
               {/* Luxury Accent Corner Borders */}
-              <div className="absolute top-2 left-2 w-6 h-6 border-t-2 border-l-2 border-amber-400" />
-              <div className="absolute top-2 right-2 w-6 h-6 border-t-2 border-r-2 border-amber-400" />
-              <div className="absolute bottom-2 left-2 w-6 h-6 border-b-2 border-l-2 border-amber-400" />
-              <div className="absolute bottom-2 right-2 w-6 h-6 border-b-2 border-r-2 border-amber-400" />
+              <div className="absolute top-2 left-2 w-6 h-6 border-t-2 border-l-2 border-emerald-400" />
+              <div className="absolute top-2 right-2 w-6 h-6 border-t-2 border-r-2 border-emerald-400" />
+              <div className="absolute bottom-2 left-2 w-6 h-6 border-b-2 border-l-2 border-emerald-400" />
+              <div className="absolute bottom-2 right-2 w-6 h-6 border-b-2 border-r-2 border-emerald-400" />
 
               {/* Plaque Header */}
               <div className="space-y-1 mb-4">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 mb-1 border border-amber-500/30">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 mb-1 border border-emerald-500/30">
                   <Scissors className="w-6 h-6" />
                 </div>
-                   <h3 className="text-xl sm:text-2xl font-black text-amber-400 tracking-wider uppercase">
+                   <h3 className="text-xl sm:text-2xl font-black text-emerald-400 tracking-wider uppercase">
                    {SALON.nome.toUpperCase()}
                  </h3>
                 <p className="text-[10px] sm:text-xs text-slate-400 uppercase tracking-widest font-semibold">
@@ -438,14 +438,14 @@ export default function MarketingPage() {
               </div>
 
               {/* Dedicated Barber Chair Badge */}
-              <div className="my-3 inline-block bg-amber-500/10 border border-amber-500/40 px-4 py-1.5 rounded-full">
-                <span className="text-xs sm:text-sm font-extrabold text-amber-300">
+              <div className="my-3 inline-block bg-emerald-500/10 border border-emerald-500/40 px-4 py-1.5 rounded-full">
+                <span className="text-xs sm:text-sm font-extrabold text-emerald-300">
                   {selectedBarber ? `CADEIRA DO ${selectedBarber.name.toUpperCase()}` : 'CADEIRA VIP &bull; AGENDAMENTO RÁPIDO'}
                 </span>
               </div>
 
               {/* QR Code Container */}
-              <div className="bg-white p-3.5 rounded-2xl mx-auto w-48 h-48 sm:w-56 sm:h-56 my-4 shadow-lg flex items-center justify-center border-4 border-amber-400/80">
+              <div className="bg-white p-3.5 rounded-2xl mx-auto w-48 h-48 sm:w-56 sm:h-56 my-4 shadow-lg flex items-center justify-center border-4 border-emerald-400/80">
                 {qrCodeDataUrl ? (
                   <img 
                     src={qrCodeDataUrl} 
@@ -463,9 +463,9 @@ export default function MarketingPage() {
                   Aponte a Câmera do Seu Celular
                 </h4>
                 <p className="text-xs text-slate-300 max-w-xs mx-auto leading-relaxed">
-                  Garanta seu próximo corte para daqui a <strong className="text-amber-400">15 ou 21 dias</strong> direto na cadeira em 10 segundos!
+                  Garanta seu próximo corte para daqui a <strong className="text-emerald-400">15 ou 21 dias</strong> direto na cadeira em 10 segundos!
                 </p>
-                <div className="pt-2 text-[10px] text-amber-400 font-bold uppercase tracking-wider flex items-center justify-center gap-1">
+                <div className="pt-2 text-[10px] text-emerald-400 font-bold uppercase tracking-wider flex items-center justify-center gap-1">
                   <Sparkles className="w-3 h-3" /> Sem senha &bull; Sem app para baixar &bull; 100% Celular
                 </div>
               </div>

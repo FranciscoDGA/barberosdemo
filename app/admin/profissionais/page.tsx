@@ -79,7 +79,7 @@ export default function ProfissionaisPage() {
           <h1 className="text-2xl font-extrabold text-white">Equipe</h1>
           <p className="text-xs text-slate-400 mt-1">{barbers.filter(b => b.id !== 'any').length} profissional{barbers.filter(b => b.id !== 'any').length === 1 ? '' : 'eis'}</p>
         </div>
-        <button onClick={openNewModal} className="bg-amber-500 hover:bg-amber-400 text-slate-950 px-4 py-2.5 rounded-xl font-bold text-sm transition flex items-center gap-1.5 shadow-lg shadow-amber-500/20">
+        <button onClick={openNewModal} className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 px-4 py-2.5 rounded-xl font-bold text-sm transition flex items-center gap-1.5 shadow-lg shadow-emerald-500/20">
           <Plus className="w-4 h-4" /> Novo Profissional
         </button>
       </div>
@@ -106,7 +106,7 @@ export default function ProfissionaisPage() {
                       </span>
                     )}
                   </div>
-                  <p className="text-xs text-amber-400 font-bold mt-0.5">{barber.role}</p>
+                  <p className="text-xs text-emerald-400 font-bold mt-0.5">{barber.role}</p>
                   <p className="text-sm text-slate-400 mt-1">{barber.specialties?.join(', ')}</p>
                 </div>
               </div>
@@ -116,7 +116,7 @@ export default function ProfissionaisPage() {
                   {isActive ? <><EyeOff className="w-3 h-3" /> Desativar</> : <><Eye className="w-3 h-3" /> Ativar</>}
                 </button>
                 <div className="flex items-center gap-1">
-                  <button onClick={() => openEditModal(barber)} className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-amber-400 transition flex items-center gap-1 text-xs font-semibold">
+                  <button onClick={() => openEditModal(barber)} className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-emerald-400 transition flex items-center gap-1 text-xs font-semibold">
                     <Pencil className="w-3.5 h-3.5" /> <span>Editar</span>
                   </button>
                   <button onClick={() => handleDelete(barber.id, barber.name)} className="p-1.5 rounded-lg text-slate-500 hover:text-rose-400 hover:bg-rose-950/30 transition flex items-center gap-1 text-xs">
@@ -134,21 +134,21 @@ export default function ProfissionaisPage() {
           <form onSubmit={handleSave} className="bg-slate-900 rounded-3xl p-6 border border-slate-800 max-w-md w-full shadow-2xl space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-slate-800">
               <div className="flex items-center gap-2">
-                {editingBarber ? <Pencil className="w-5 h-5 text-amber-400" /> : <Plus className="w-5 h-5 text-amber-400" />}
+                {editingBarber ? <Pencil className="w-5 h-5 text-emerald-400" /> : <Plus className="w-5 h-5 text-emerald-400" />}
                 <h3 className="font-bold text-lg text-white">{editingBarber ? `Editar: ${editingBarber.name}` : 'Novo Profissional'}</h3>
               </div>
               <button type="button" onClick={() => setIsModalOpen(false)} className="text-slate-400 hover:text-white"><X className="w-5 h-5" /></button>
             </div>
             {error && <p className="text-sm text-rose-400 bg-rose-500/10 p-2 rounded">{error}</p>}
             <div className="space-y-3">
-              <div><label className="text-xs font-bold text-slate-400 mb-1 block">Nome *</label><input required value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-amber-500 outline-none" /></div>
-              <div><label className="text-xs font-bold text-slate-400 mb-1 block">Especialidade *</label><input required value={formData.specialty} onChange={e => setFormData({...formData, specialty: e.target.value})} className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-amber-500 outline-none" placeholder="Ex: Degradê e Barba" /></div>
-              <div><label className="text-xs font-bold text-slate-400 mb-1 block">Descrição</label><textarea value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})} className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-amber-500 outline-none resize-none" rows={2} placeholder="Sobre o profissional..." /></div>
-              <div><label className="text-xs font-bold text-slate-400 mb-1 block">URL da Foto</label><input value={formData.photo_url} onChange={e => setFormData({...formData, photo_url: e.target.value})} className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-amber-500 outline-none" placeholder="https://..." /></div>
+              <div><label className="text-xs font-bold text-slate-400 mb-1 block">Nome *</label><input required value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-emerald-500 outline-none" /></div>
+              <div><label className="text-xs font-bold text-slate-400 mb-1 block">Especialidade *</label><input required value={formData.specialty} onChange={e => setFormData({...formData, specialty: e.target.value})} className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-emerald-500 outline-none" placeholder="Ex: Degradê e Barba" /></div>
+              <div><label className="text-xs font-bold text-slate-400 mb-1 block">Descrição</label><textarea value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})} className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-emerald-500 outline-none resize-none" rows={2} placeholder="Sobre o profissional..." /></div>
+              <div><label className="text-xs font-bold text-slate-400 mb-1 block">URL da Foto</label><input value={formData.photo_url} onChange={e => setFormData({...formData, photo_url: e.target.value})} className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-emerald-500 outline-none" placeholder="https://..." /></div>
             </div>
             <div className="pt-3 border-t border-slate-800 flex gap-2">
               <button type="button" onClick={() => setIsModalOpen(false)} className="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs transition">Cancelar</button>
-              <button type="submit" disabled={isSubmitting} className="flex-1 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition">{isSubmitting ? 'Salvando...' : editingBarber ? 'Atualizar' : 'Salvar'}</button>
+              <button type="submit" disabled={isSubmitting} className="flex-1 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition">{isSubmitting ? 'Salvando...' : editingBarber ? 'Atualizar' : 'Salvar'}</button>
             </div>
           </form>
         </div>

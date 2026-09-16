@@ -86,7 +86,7 @@ export const MyAppointments: React.FC<{ onOpenReviewModal?: (apt: Appointment) =
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
           <h2 className="text-xl font-bold text-white flex items-center gap-2">
-            <CalendarDays className="w-5 h-5 text-amber-400" />
+            <CalendarDays className="w-5 h-5 text-emerald-400" />
             <span>Meus Agendamentos</span>
           </h2>
           <p className="text-xs text-slate-400">
@@ -97,7 +97,7 @@ export const MyAppointments: React.FC<{ onOpenReviewModal?: (apt: Appointment) =
         <button
           onClick={() => setActiveTab('agendar')}
           id="btn-new-booking-from-appointments"
-          className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold transition shadow-md shadow-amber-500/10 self-start sm:self-auto"
+          className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold transition shadow-md shadow-emerald-500/10 self-start sm:self-auto"
         >
           <Scissors className="w-3.5 h-3.5" />
           <span>Novo Agendamento</span>
@@ -112,7 +112,7 @@ export const MyAppointments: React.FC<{ onOpenReviewModal?: (apt: Appointment) =
           value={searchFilter}
           onChange={(e) => setSearchFilter(e.target.value)}
           placeholder="Buscar por seu nome ou telefone..."
-          className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-hidden focus:border-amber-500 transition"
+          className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-hidden focus:border-emerald-500 transition"
         />
       </div>
 
@@ -134,7 +134,7 @@ export const MyAppointments: React.FC<{ onOpenReviewModal?: (apt: Appointment) =
             </p>
             <button
               onClick={() => setActiveTab('agendar')}
-              className="px-4 py-2 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs hover:bg-amber-400 transition"
+              className="px-4 py-2 rounded-xl bg-emerald-500 text-slate-950 font-bold text-xs hover:bg-emerald-400 transition"
             >
               Agendar Horário Agora
             </button>
@@ -148,7 +148,7 @@ export const MyAppointments: React.FC<{ onOpenReviewModal?: (apt: Appointment) =
               >
                 <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-3 border-b border-slate-800/80">
                   <div className="flex items-start gap-3">
-                    <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex flex-col items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex flex-col items-center justify-center shrink-0">
                       <span className="text-[10px] font-extrabold uppercase">
                         {new Date(apt.date + 'T12:00:00').toLocaleDateString('pt-BR', { month: 'short' })}
                       </span>
@@ -165,14 +165,14 @@ export const MyAppointments: React.FC<{ onOpenReviewModal?: (apt: Appointment) =
                         </span>
                       </div>
                       <p className="text-xs text-slate-400 mt-0.5">
-                        Barbeiro: <strong className="text-amber-400">{apt.barberName}</strong>
+                        Barbeiro: <strong className="text-emerald-400">{apt.barberName}</strong>
                       </p>
                       <div className="flex items-center gap-3 text-xs text-slate-400 mt-1">
                         <span className="flex items-center gap-1 font-semibold text-white">
-                          <Clock className="w-3.5 h-3.5 text-amber-400" />
+                          <Clock className="w-3.5 h-3.5 text-emerald-400" />
                           {apt.time} ({apt.totalDurationMinutes} min)
                         </span>
-                        <span className="text-amber-400 font-bold">
+                        <span className="text-emerald-400 font-bold">
                           R$ {apt.totalPrice.toFixed(2).replace('.', ',')}
                         </span>
                       </div>
@@ -185,7 +185,7 @@ export const MyAppointments: React.FC<{ onOpenReviewModal?: (apt: Appointment) =
                       className={`text-[10px] font-bold px-2 py-0.5 rounded-md border ${
                         apt.paymentStatus === 'pago'
                           ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
-                          : 'bg-amber-500/15 text-amber-400 border-amber-500/30'
+                          : 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
                       }`}
                     >
                       {apt.paymentStatus === 'pago' ? '✅ Pago no App' : '⏳ Pagar no Balcão'}
@@ -210,7 +210,7 @@ export const MyAppointments: React.FC<{ onOpenReviewModal?: (apt: Appointment) =
                       rel="noopener noreferrer"
                       className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-750 text-slate-300 font-medium transition"
                     >
-                      <CalendarPlus className="w-3.5 h-3.5 text-amber-400" />
+                      <CalendarPlus className="w-3.5 h-3.5 text-emerald-400" />
                       <span>Adicionar à Agenda</span>
                     </a>
                   </div>
@@ -263,9 +263,9 @@ export const MyAppointments: React.FC<{ onOpenReviewModal?: (apt: Appointment) =
                   {apt.status === 'completed' && !apt.ratingSubmitted && onOpenReviewModal && (
                     <button
                       onClick={() => onOpenReviewModal(apt)}
-                      className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-400 font-semibold hover:bg-amber-500/25 transition"
+                      className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 font-semibold hover:bg-emerald-500/25 transition"
                     >
-                      <Star className="w-3 h-3 fill-amber-400" />
+                      <Star className="w-3 h-3 fill-emerald-400" />
                       <span>Avaliar Corte</span>
                     </button>
                   )}

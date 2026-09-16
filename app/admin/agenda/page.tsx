@@ -111,7 +111,7 @@ export default function AgendaPage() {
               onClick={() => setActiveTab(tab.key)}
               className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-xs font-bold transition ${
                 activeTab === tab.key
-                  ? 'bg-amber-500 text-slate-950'
+                  ? 'bg-emerald-500 text-slate-950'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
@@ -134,7 +134,7 @@ export default function AgendaPage() {
                   onClick={() => setSelectedBarber(barber.id)}
                   className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition ${
                     selectedBarber === barber.id
-                      ? 'bg-amber-500 text-slate-950'
+                      ? 'bg-emerald-500 text-slate-950'
                       : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
                   }`}
                 >
@@ -185,7 +185,7 @@ export default function AgendaPage() {
             <h3 className="text-sm font-bold text-white">Horários Bloqueados</h3>
             <button
               onClick={() => setShowAddBlock(true)}
-              className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-amber-500 text-slate-950 text-xs font-bold transition hover:bg-amber-400"
+              className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-emerald-500 text-slate-950 text-xs font-bold transition hover:bg-emerald-400"
             >
               <Plus className="w-3.5 h-3.5" /> Bloquear Horário
             </button>
@@ -193,9 +193,9 @@ export default function AgendaPage() {
 
           {/* Add Block Form */}
           {showAddBlock && (
-            <div className="bg-slate-900 rounded-2xl border border-amber-500/30 p-5 space-y-4">
+            <div className="bg-slate-900 rounded-2xl border border-emerald-500/30 p-5 space-y-4">
               <div className="flex items-center justify-between">
-                <h4 className="text-sm font-bold text-amber-400">Novo Bloqueio</h4>
+                <h4 className="text-sm font-bold text-emerald-400">Novo Bloqueio</h4>
                 <button onClick={() => setShowAddBlock(false)} className="text-slate-400 hover:text-white">
                   <X className="w-4 h-4" />
                 </button>
@@ -259,7 +259,7 @@ export default function AgendaPage() {
               <button
                 onClick={handleAddBlock}
                 disabled={!newBlockDate || !newBlockStart || !newBlockEnd}
-                className="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 disabled:opacity-50 text-slate-950 font-bold text-xs transition"
+                className="w-full py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 disabled:opacity-50 text-slate-950 font-bold text-xs transition"
               >
                 Adicionar Bloqueio
               </button>
@@ -316,7 +316,7 @@ export default function AgendaPage() {
             <h3 className="text-sm font-bold text-white">Dias Fechados</h3>
             <button
               onClick={() => setShowAddClosed(true)}
-              className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-amber-500 text-slate-950 text-xs font-bold transition hover:bg-amber-400"
+              className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-emerald-500 text-slate-950 text-xs font-bold transition hover:bg-emerald-400"
             >
               <Plus className="w-3.5 h-3.5" /> Adicionar Dia
             </button>
@@ -324,9 +324,9 @@ export default function AgendaPage() {
 
           {/* Add Closed Day Form */}
           {showAddClosed && (
-            <div className="bg-slate-900 rounded-2xl border border-amber-500/30 p-5 space-y-4">
+            <div className="bg-slate-900 rounded-2xl border border-emerald-500/30 p-5 space-y-4">
               <div className="flex items-center justify-between">
-                <h4 className="text-sm font-bold text-amber-400">Novo Dia Fechado</h4>
+                <h4 className="text-sm font-bold text-emerald-400">Novo Dia Fechado</h4>
                 <button onClick={() => setShowAddClosed(false)} className="text-slate-400 hover:text-white">
                   <X className="w-4 h-4" />
                 </button>
@@ -358,7 +358,7 @@ export default function AgendaPage() {
               <button
                 onClick={handleAddClosed}
                 disabled={!newClosedDate}
-                className="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 disabled:opacity-50 text-slate-950 font-bold text-xs transition"
+                className="w-full py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 disabled:opacity-50 text-slate-950 font-bold text-xs transition"
               >
                 Adicionar Dia Fechado
               </button>
@@ -379,8 +379,8 @@ export default function AgendaPage() {
                   .map(day => (
                     <div key={day.id} className="p-4 flex items-center justify-between gap-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center">
-                          <Calendar className="w-5 h-5 text-amber-400" />
+                        <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center">
+                          <Calendar className="w-5 h-5 text-emerald-400" />
                         </div>
                         <div>
                           <p className="text-sm font-bold text-white">

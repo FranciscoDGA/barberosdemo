@@ -122,9 +122,9 @@ export const GalleryView: React.FC = () => {
     <div className="space-y-8 animate-fadeIn pb-12">
       {/* Hero Header */}
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-[#0b101b] to-slate-950 border border-slate-800/80 p-6 md:p-8">
-        <div className="absolute top-0 right-0 -mt-8 -mr-8 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 -mt-8 -mr-8 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="relative z-10 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold mb-3">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Portfólio Oficial & Galeria de Cortes</span>
           </div>
@@ -136,7 +136,7 @@ export const GalleryView: React.FC = () => {
           </p>
 
           {/* Search bar */}
-          <div className="mt-6 flex items-center gap-2 bg-slate-950/70 border border-slate-800 rounded-2xl p-1.5 focus-within:border-amber-500/60 transition max-w-lg">
+          <div className="mt-6 flex items-center gap-2 bg-slate-950/70 border border-slate-800 rounded-2xl p-1.5 focus-within:border-emerald-500/60 transition max-w-lg">
             <div className="pl-3 text-slate-400">
               <Search className="w-4 h-4" />
             </div>
@@ -164,7 +164,7 @@ export const GalleryView: React.FC = () => {
       <div className="space-y-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Scissors className="w-4 h-4 text-amber-400" />
+            <Scissors className="w-4 h-4 text-emerald-400" />
             <h2 className="text-sm sm:text-base font-bold text-slate-200 uppercase tracking-wider">
               Filtrar por Barbeiro
             </h2>
@@ -181,13 +181,13 @@ export const GalleryView: React.FC = () => {
             id="filter-barber-all"
             className={`flex items-center gap-3 p-3 rounded-2xl border text-left transition ${
               selectedBarberId === 'all'
-                ? 'bg-amber-500/15 border-amber-500/60 text-amber-300 shadow-sm'
+                ? 'bg-emerald-500/15 border-emerald-500/60 text-emerald-300 shadow-sm'
                 : 'bg-slate-900/60 border-slate-800/80 text-slate-300 hover:bg-slate-800/60 hover:border-slate-700'
             }`}
           >
             <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm transition shrink-0 ${
               selectedBarberId === 'all'
-                ? 'bg-amber-500 text-slate-950'
+                ? 'bg-emerald-500 text-slate-950'
                 : 'bg-slate-800 text-slate-400'
             }`}>
               <Scissors className="w-5 h-5" />
@@ -212,7 +212,7 @@ export const GalleryView: React.FC = () => {
                 id={`filter-barber-${barber.id}`}
                 className={`flex items-center gap-3 p-2.5 rounded-2xl border text-left transition ${
                   isSelected
-                    ? 'bg-amber-500/15 border-amber-500/60 text-amber-300 shadow-sm'
+                    ? 'bg-emerald-500/15 border-emerald-500/60 text-emerald-300 shadow-sm'
                     : 'bg-slate-900/60 border-slate-800/80 text-slate-300 hover:bg-slate-800/60 hover:border-slate-700'
                 }`}
               >
@@ -225,7 +225,7 @@ export const GalleryView: React.FC = () => {
                     referrerPolicy="no-referrer"
                   />
                   {isSelected && (
-                    <div className="absolute inset-0 bg-amber-500/20 border-2 border-amber-400 rounded-xl" />
+                    <div className="absolute inset-0 bg-emerald-500/20 border-2 border-emerald-400 rounded-xl" />
                   )}
                 </div>
                 <div className="min-w-0">
@@ -254,7 +254,7 @@ export const GalleryView: React.FC = () => {
               id={`filter-cat-${cat.id}`}
               className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition ${
                 isSelected
-                  ? 'bg-amber-500 text-slate-950 font-bold shadow-xs'
+                  ? 'bg-emerald-500 text-slate-950 font-bold shadow-xs'
                   : 'bg-slate-900/80 text-slate-400 border border-slate-800 hover:text-slate-200 hover:bg-slate-800'
               }`}
             >
@@ -266,9 +266,9 @@ export const GalleryView: React.FC = () => {
 
       {/* Barber Spotlight Banner (Active when 1 barber is specifically selected) */}
       {currentFilteredBarber && (
-        <div className="bg-slate-900/90 border border-amber-500/30 rounded-3xl p-5 sm:p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-5 relative overflow-hidden">
+        <div className="bg-slate-900/90 border border-emerald-500/30 rounded-3xl p-5 sm:p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-5 relative overflow-hidden">
           <div className="flex items-center gap-4">
-            <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-amber-500/50 shadow-md shrink-0">
+            <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-emerald-500/50 shadow-md shrink-0">
               <Image
                 src={currentFilteredBarber.avatarUrl}
                 alt={currentFilteredBarber.name}
@@ -282,7 +282,7 @@ export const GalleryView: React.FC = () => {
                 <h3 className="text-base sm:text-lg font-bold text-slate-100">
                   {currentFilteredBarber.name}
                 </h3>
-                <span className="px-2 py-0.5 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-[11px] font-semibold">
+                <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 text-[11px] font-semibold">
                   {currentFilteredBarber.role}
                 </span>
               </div>
@@ -290,8 +290,8 @@ export const GalleryView: React.FC = () => {
                 {currentFilteredBarber.bio}
               </p>
               <div className="flex flex-wrap items-center gap-1.5 pt-1">
-                <span className="inline-flex items-center gap-1 text-xs text-amber-400 font-bold mr-2">
-                  <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                <span className="inline-flex items-center gap-1 text-xs text-emerald-400 font-bold mr-2">
+                  <Star className="w-3.5 h-3.5 fill-emerald-400 text-emerald-400" />
                   {currentFilteredBarber.rating} ({currentFilteredBarber.reviewsCount} avaliações)
                 </span>
                 {currentFilteredBarber.specialties.map((spec) => (
@@ -310,7 +310,7 @@ export const GalleryView: React.FC = () => {
             <button
               onClick={() => handleBookWithBarber(currentFilteredBarber.id)}
               id={`btn-book-barber-${currentFilteredBarber.id}`}
-              className="flex-1 md:flex-initial flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm shadow-md transition"
+              className="flex-1 md:flex-initial flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs sm:text-sm shadow-md transition"
             >
               <Scissors className="w-4 h-4" />
               <span>Agendar com {currentFilteredBarber.name.split(' ')[0]}</span>
@@ -344,7 +344,7 @@ export const GalleryView: React.FC = () => {
               setSelectedCategory('all');
               setSearchQuery('');
             }}
-            className="px-4 py-2 bg-amber-500 text-slate-950 font-bold text-xs rounded-xl hover:bg-amber-400 transition"
+            className="px-4 py-2 bg-emerald-500 text-slate-950 font-bold text-xs rounded-xl hover:bg-emerald-400 transition"
           >
             Limpar Todos os Filtros
           </button>
@@ -359,7 +359,7 @@ export const GalleryView: React.FC = () => {
                 key={photo.id}
                 onClick={() => setActivePhoto(photo)}
                 id={`card-photo-${photo.id}`}
-                className="group relative bg-slate-900/80 border border-slate-800/90 rounded-2xl overflow-hidden hover:border-amber-500/50 hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer"
+                className="group relative bg-slate-900/80 border border-slate-800/90 rounded-2xl overflow-hidden hover:border-emerald-500/50 hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer"
               >
                 {/* Image Container */}
                 <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-950">
@@ -375,7 +375,7 @@ export const GalleryView: React.FC = () => {
 
                   {/* Top Badges */}
                   <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2 pointer-events-none">
-                    <span className="px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-slate-700/80 text-[11px] font-semibold text-amber-300">
+                    <span className="px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-slate-700/80 text-[11px] font-semibold text-emerald-300">
                       {photo.styleTag}
                     </span>
 
@@ -401,7 +401,7 @@ export const GalleryView: React.FC = () => {
 
                   {/* Barber pill inside image bottom-left */}
                   <div className="absolute bottom-3 left-3 flex items-center gap-2">
-                    <div className="relative w-7 h-7 rounded-full overflow-hidden border border-amber-400/60 shrink-0">
+                    <div className="relative w-7 h-7 rounded-full overflow-hidden border border-emerald-400/60 shrink-0">
                       <Image
                         src={photo.barberAvatar}
                         alt={photo.barberName}
@@ -419,7 +419,7 @@ export const GalleryView: React.FC = () => {
                 {/* Card Content */}
                 <div className="p-4 flex-1 flex flex-col justify-between space-y-3">
                   <div>
-                    <h3 className="font-bold text-sm text-slate-100 group-hover:text-amber-300 transition-colors line-clamp-1">
+                    <h3 className="font-bold text-sm text-slate-100 group-hover:text-emerald-300 transition-colors line-clamp-1">
                       {photo.title}
                     </h3>
                     <p className="text-xs text-slate-400 mt-1 line-clamp-2 leading-relaxed">
@@ -429,7 +429,7 @@ export const GalleryView: React.FC = () => {
 
                   <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between gap-2">
                     {photo.suggestedServiceName ? (
-                      <span className="text-[11px] text-amber-400/90 font-medium truncate">
+                      <span className="text-[11px] text-emerald-400/90 font-medium truncate">
                         {photo.suggestedServiceName}
                       </span>
                     ) : (
@@ -441,7 +441,7 @@ export const GalleryView: React.FC = () => {
                         e.stopPropagation();
                         handleBookWithBarber(photo.barberId);
                       }}
-                      className="px-2.5 py-1 rounded-lg bg-amber-500/10 hover:bg-amber-500 text-amber-400 hover:text-slate-950 font-bold text-[11px] transition flex items-center gap-1 shrink-0"
+                      className="px-2.5 py-1 rounded-lg bg-emerald-500/10 hover:bg-emerald-500 text-emerald-400 hover:text-slate-950 font-bold text-[11px] transition flex items-center gap-1 shrink-0"
                     >
                       <span>Quero este</span>
                       <Scissors className="w-3 h-3" />
@@ -480,7 +480,7 @@ export const GalleryView: React.FC = () => {
                 referrerPolicy="no-referrer"
               />
               <div className="absolute bottom-3 left-3">
-                <span className="px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-slate-700 text-xs font-bold text-amber-300">
+                <span className="px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-slate-700 text-xs font-bold text-emerald-300">
                   {activePhoto.styleTag}
                 </span>
               </div>
@@ -491,7 +491,7 @@ export const GalleryView: React.FC = () => {
               <div className="space-y-4">
                 {/* Barber Profile Header */}
                 <div className="flex items-center gap-3 pb-3 border-b border-slate-800">
-                  <div className="relative w-12 h-12 rounded-xl overflow-hidden border border-amber-500/40 shrink-0">
+                  <div className="relative w-12 h-12 rounded-xl overflow-hidden border border-emerald-500/40 shrink-0">
                     <Image
                       src={activePhoto.barberAvatar}
                       alt={activePhoto.barberName}
@@ -520,8 +520,8 @@ export const GalleryView: React.FC = () => {
 
                 {/* Recommended Service Box */}
                 {activePhoto.suggestedServiceName && (
-                  <div className="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/20 space-y-1">
-                    <div className="flex items-center gap-1.5 text-amber-400 text-xs font-bold">
+                  <div className="p-3.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 space-y-1">
+                    <div className="flex items-center gap-1.5 text-emerald-400 text-xs font-bold">
                       <Sparkles className="w-3.5 h-3.5" />
                       <span>Serviço Recomendado</span>
                     </div>
@@ -551,7 +551,7 @@ export const GalleryView: React.FC = () => {
 
                   <button
                     onClick={() => handleSharePhoto(activePhoto)}
-                    className="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:text-amber-400 hover:border-amber-500/40 transition"
+                    className="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/40 transition"
                     title="Compartilhar no WhatsApp"
                   >
                     <Share2 className="w-4 h-4" />
@@ -559,7 +559,7 @@ export const GalleryView: React.FC = () => {
 
                   <button
                     onClick={handleCopyLink}
-                    className="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:text-amber-400 hover:border-amber-500/40 transition"
+                    className="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/40 transition"
                     title="Copiar Link"
                   >
                     {copiedLink ? <Check className="w-4 h-4 text-emerald-400" /> : <ExternalLink className="w-4 h-4" />}
@@ -575,7 +575,7 @@ export const GalleryView: React.FC = () => {
                     setActivePhoto(null);
                   }}
                   id="btn-modal-book-cut"
-                  className="w-full py-3 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm shadow-lg transition flex items-center justify-center gap-2"
+                  className="w-full py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm shadow-lg transition flex items-center justify-center gap-2"
                 >
                   <Scissors className="w-4 h-4" />
                   <span>Agendar Este Estilo com {activePhoto.barberName.split(' ')[0]}</span>

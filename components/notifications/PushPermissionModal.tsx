@@ -77,9 +77,9 @@ export const PushPermissionModal: React.FC = () => {
   if (!showPrompt) return null;
 
   return (
-    <div className="fixed bottom-4 right-4 z-50 max-w-sm w-[calc(100vw-2rem)] p-4 rounded-2xl bg-slate-900/95 border border-amber-500/40 shadow-2xl backdrop-blur-md animate-in slide-in-from-bottom-4 duration-300">
+    <div className="fixed bottom-4 right-4 z-50 max-w-sm w-[calc(100vw-2rem)] p-4 rounded-2xl bg-slate-900/95 border border-emerald-500/40 shadow-2xl backdrop-blur-md animate-in slide-in-from-bottom-4 duration-300">
       <div className="flex items-start gap-3">
-        <div className="p-2.5 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-400 shrink-0">
+        <div className="p-2.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 shrink-0">
           <BellRing className="w-5 h-5 animate-bounce" />
         </div>
 
@@ -103,7 +103,7 @@ export const PushPermissionModal: React.FC = () => {
             <button
               onClick={handleEnablePush}
               disabled={isSubscribing}
-              className="px-3.5 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs flex items-center gap-1.5 shadow-md shadow-amber-500/20 transition cursor-pointer"
+              className="px-3.5 py-1.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs flex items-center gap-1.5 shadow-md shadow-emerald-500/20 transition cursor-pointer"
             >
               <Check className="w-3.5 h-3.5" />
               {isSubscribing ? 'Ativando...' : 'Ativar Lembretes'}

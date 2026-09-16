@@ -97,7 +97,7 @@ export default function ConfiguracoesPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-extrabold text-white flex items-center gap-2">
-            <Settings className="w-7 h-7 text-amber-400" /> Configurações
+            <Settings className="w-7 h-7 text-emerald-400" /> Configurações
           </h1>
           <p className="text-xs text-slate-400 mt-1">Dados, horários, mensagens e regras da barbearia</p>
         </div>
@@ -105,7 +105,7 @@ export default function ConfiguracoesPage() {
           <button type="button" onClick={handleReset} className="px-3.5 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 font-semibold text-xs transition flex items-center gap-1.5">
             <RotateCcw className="w-3.5 h-3.5" /> Restaurar
           </button>
-          <button onClick={handleSave} className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-xl text-xs flex items-center gap-1.5 transition shadow-lg shadow-amber-500/20">
+          <button onClick={handleSave} className="px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-xs flex items-center gap-1.5 transition shadow-lg shadow-emerald-500/20">
             <Save className="w-4 h-4" /> Salvar
           </button>
         </div>
@@ -160,12 +160,12 @@ export default function ConfiguracoesPage() {
               <div className="bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 w-full">
                 <p className="text-[10px] text-slate-500 uppercase font-bold mb-1">Exemplo</p>
                 <p className="text-xs text-slate-300">
-                  Horário: <span className="text-amber-400 font-bold">14:00</span> | 
+                  Horário: <span className="text-emerald-400 font-bold">14:00</span> | 
                   Chegada: <span className="text-emerald-400 font-bold">14:08</span> = 
                   <span className="text-emerald-400 font-bold"> No tempo</span>
                 </p>
                 <p className="text-xs text-slate-300 mt-1">
-                  Horário: <span className="text-amber-400 font-bold">14:00</span> | 
+                  Horário: <span className="text-emerald-400 font-bold">14:00</span> | 
                   Chegada: <span className="text-rose-400 font-bold">14:25</span> = 
                   <span className="text-rose-400 font-bold"> Atraso</span>
                 </p>
@@ -186,8 +186,8 @@ export default function ConfiguracoesPage() {
                 { key: 'energetic' as const, label: 'Vendedor', desc: 'Focado em fechar rápido' },
               ].map(tone => (
                 <button key={tone.key} type="button" onClick={() => s('aiTone', tone.key)}
-                  className={`p-3 rounded-2xl border text-left transition ${settings.aiTone === tone.key ? 'bg-amber-500/10 border-amber-500 text-white' : 'bg-slate-950 border-slate-800 text-slate-400 hover:text-white'}`}>
-                  <p className="font-bold text-amber-400 text-xs">{tone.label}</p>
+                  className={`p-3 rounded-2xl border text-left transition ${settings.aiTone === tone.key ? 'bg-emerald-500/10 border-emerald-500 text-white' : 'bg-slate-950 border-slate-800 text-slate-400 hover:text-white'}`}>
+                  <p className="font-bold text-emerald-400 text-xs">{tone.label}</p>
                   <p className="text-[10px] text-slate-400 mt-1">{tone.desc}</p>
                 </button>
               ))}
@@ -224,11 +224,11 @@ export default function ConfiguracoesPage() {
           <div className="space-y-3">
             <div className="bg-slate-950 p-3 rounded-xl border border-slate-800">
               <p className="text-[10px] text-slate-500 uppercase font-bold mb-1">Confirmação Automática</p>
-              <p className="text-xs text-slate-300">"Fala <span className="text-amber-400">{'{{nome}}'}</span>! Seu horário hoje às <span className="text-amber-400">{'{{horário}}'}</span> está confirmado. Responda 1 para confirmar."</p>
+              <p className="text-xs text-slate-300">"Fala <span className="text-emerald-400">{'{{nome}}'}</span>! Seu horário hoje às <span className="text-emerald-400">{'{{horário}}'}</span> está confirmado. Responda 1 para confirmar."</p>
             </div>
             <div className="bg-slate-950 p-3 rounded-xl border border-slate-800">
               <p className="text-[10px] text-slate-500 uppercase font-bold mb-1">Lembrete</p>
-              <p className="text-xs text-slate-300">"Fala <span className="text-amber-400">{'{{nome}}'}</span>! Lembrando que você tem horário amanhã às <span className="text-amber-400">{'{{horário}}'}</span> com <span className="text-amber-400">{'{{barbeiro}}'}</span>. Até lá!"</p>
+              <p className="text-xs text-slate-300">"Fala <span className="text-emerald-400">{'{{nome}}'}</span>! Lembrando que você tem horário amanhã às <span className="text-emerald-400">{'{{horário}}'}</span> com <span className="text-emerald-400">{'{{barbeiro}}'}</span>. Até lá!"</p>
             </div>
           </div>
         </Section>
@@ -257,7 +257,7 @@ export default function ConfiguracoesPage() {
 
         <div className="flex justify-end gap-3 pt-4">
           <button type="button" onClick={handleReset} className="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs transition">Restaurar</button>
-          <button type="submit" className="px-6 py-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold rounded-xl text-sm flex items-center gap-2 transition shadow-xl shadow-amber-500/20">
+          <button type="submit" className="px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold rounded-xl text-sm flex items-center gap-2 transition shadow-xl shadow-emerald-500/20">
             <Save className="w-4 h-4" /> Salvar Tudo
           </button>
         </div>
@@ -270,7 +270,7 @@ function Section({ icon: Icon, title, children }: { icon: any; title: string; ch
   return (
     <div className="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-4">
       <div className="flex items-center gap-2 pb-3 border-b border-slate-800">
-        <Icon className="w-5 h-5 text-amber-400" />
+        <Icon className="w-5 h-5 text-emerald-400" />
         <h2 className="font-bold text-base text-white">{title}</h2>
       </div>
       <div className="space-y-3 text-xs">{children}</div>
@@ -283,7 +283,7 @@ function Input({ label, value, onChange, type = 'text', placeholder }: { label: 
     <div>
       <label className="font-bold text-slate-300 block mb-1.5">{label}</label>
       <input type={type} value={value} onChange={e => onChange(e.target.value)} placeholder={placeholder}
-        className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none" />
+        className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none" />
     </div>
   );
 }
@@ -292,7 +292,7 @@ function Select({ label, value, onChange, options }: { label: string; value: str
   return (
     <div>
       <label className="font-bold text-slate-300 block mb-1.5">{label}</label>
-      <select value={value} onChange={e => onChange(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none">
+      <select value={value} onChange={e => onChange(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none">
         {options.map(o => <option key={o.v} value={o.v}>{o.l}</option>)}
       </select>
     </div>
@@ -303,7 +303,7 @@ function Textarea({ label, value, onChange, rows = 2 }: { label: string; value: 
   return (
     <div>
       <label className="font-bold text-slate-300 block mb-1.5">{label}</label>
-      <textarea rows={rows} value={value} onChange={e => onChange(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-white focus:border-amber-500 outline-none leading-relaxed resize-none" />
+      <textarea rows={rows} value={value} onChange={e => onChange(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-white focus:border-emerald-500 outline-none leading-relaxed resize-none" />
     </div>
   );
 }
@@ -315,7 +315,7 @@ function Toggle({ label, desc, checked, onChange }: { label: string; desc?: stri
         <p className="font-bold text-white text-xs">{label}</p>
         {desc && <p className="text-[11px] text-slate-400">{desc}</p>}
       </div>
-      <input type="checkbox" checked={checked} onChange={e => onChange(e.target.checked)} className="w-4 h-4 accent-amber-500 cursor-pointer" />
+      <input type="checkbox" checked={checked} onChange={e => onChange(e.target.checked)} className="w-4 h-4 accent-emerald-500 cursor-pointer" />
     </div>
   );
 }

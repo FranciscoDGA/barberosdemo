@@ -229,7 +229,7 @@ export default function AdminPage() {
         <div>
           <div className="flex items-center gap-2">
             <span className="text-2xl font-black text-white tracking-wider">{SALON.nome.toUpperCase()}</span>
-            <span className="text-[10px] bg-amber-500/20 text-amber-400 border border-amber-500/30 px-2 py-0.5 rounded-full font-bold uppercase">
+            <span className="text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full font-bold uppercase">
               Painel Admin
             </span>
           </div>
@@ -239,7 +239,7 @@ export default function AdminPage() {
         </div>
         <button
           onClick={() => openNewBookingModal()}
-          className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-sm flex items-center gap-2 transition shadow-lg shadow-amber-500/20 shrink-0"
+          className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-sm flex items-center gap-2 transition shadow-lg shadow-emerald-500/20 shrink-0"
         >
           <Plus className="w-4 h-4" />
           <span>Novo Agendamento</span>
@@ -248,11 +248,11 @@ export default function AdminPage() {
 
       {/* New Booking Alert */}
       {latestNewBooking && (
-        <div className="bg-amber-500/10 border border-amber-500/30 p-4 rounded-2xl flex items-center justify-between gap-3">
+        <div className="bg-emerald-500/10 border border-emerald-500/30 p-4 rounded-2xl flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <Bell className="w-5 h-5 text-amber-400 animate-bounce" />
+            <Bell className="w-5 h-5 text-emerald-400 animate-bounce" />
             <div>
-              <p className="text-xs font-bold text-amber-300 uppercase">Novo Agendamento</p>
+              <p className="text-xs font-bold text-emerald-300 uppercase">Novo Agendamento</p>
               <p className="text-sm font-bold text-white">
                 {latestNewBooking.customerName} &bull; {latestNewBooking.serviceNames?.[0]}
               </p>
@@ -270,12 +270,12 @@ export default function AdminPage() {
       {/* Filters */}
       <div className="bg-slate-900/70 p-4 rounded-2xl border border-slate-800 flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2">
-          <Calendar className="w-4 h-4 text-amber-400" />
+          <Calendar className="w-4 h-4 text-emerald-400" />
           <input
             type="date"
             value={selectedDate}
             onChange={(e) => setSelectedDate(e.target.value)}
-            className="bg-slate-950 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white focus:border-amber-500 outline-none"
+            className="bg-slate-950 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white focus:border-emerald-500 outline-none"
           />
         </div>
         <div className="flex items-center gap-2">
@@ -283,7 +283,7 @@ export default function AdminPage() {
           <select 
             value={filterBarber} 
             onChange={(e) => setFilterBarber(e.target.value)}
-            className="bg-slate-950 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white focus:border-amber-500 outline-none"
+            className="bg-slate-950 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white focus:border-emerald-500 outline-none"
           >
             <option value="all">Todos</option>
             {activeBarbers.map(b => (
@@ -320,7 +320,7 @@ export default function AdminPage() {
                   ) : aptsInSlot.length === 0 ? (
                     <button
                       onClick={() => openNewBookingModal(slot)}
-                      className="w-full text-left py-1.5 px-3 rounded-lg border border-dashed border-slate-800/60 hover:border-amber-500/40 text-xs text-slate-600 hover:text-amber-400 flex items-center justify-between transition opacity-0 group-hover:opacity-100"
+                      className="w-full text-left py-1.5 px-3 rounded-lg border border-dashed border-slate-800/60 hover:border-emerald-500/40 text-xs text-slate-600 hover:text-emerald-400 flex items-center justify-between transition opacity-0 group-hover:opacity-100"
                     >
                       <span>Livre</span>
                       <Plus className="w-3 h-3" />
@@ -351,7 +351,7 @@ export default function AdminPage() {
                                     Atraso {apt.delayMinutes}min
                                   </span>
                                 ) : apt.delayMinutes > 0 ? (
-                                  <span className="text-[9px] bg-amber-500/20 text-amber-400 px-1.5 py-0.5 rounded font-bold">
+                                  <span className="text-[9px] bg-emerald-500/20 text-emerald-400 px-1.5 py-0.5 rounded font-bold">
                                     +{apt.delayMinutes}min
                                   </span>
                                 ) : (
@@ -365,7 +365,7 @@ export default function AdminPage() {
                               <span className="text-[9px] text-slate-600">chegou {apt.arrivalTime}</span>
                             )}
                             {apt.status === 'aguardando' && (
-                              <span className="text-[9px] bg-amber-500/20 text-amber-400 px-1.5 py-0.5 rounded font-bold">Aguardando</span>
+                              <span className="text-[9px] bg-emerald-500/20 text-emerald-400 px-1.5 py-0.5 rounded font-bold">Aguardando</span>
                             )}
                             {apt.status === 'confirmed' && (
                               <span className="text-[9px] bg-sky-500/20 text-sky-400 px-1.5 py-0.5 rounded font-bold">Confirmado</span>
@@ -387,7 +387,7 @@ export default function AdminPage() {
                             {apt.status === 'confirmed' && (
                               <button
                                 onClick={() => markArrival(apt.id)}
-                                className="px-2.5 py-1 bg-amber-600 hover:bg-amber-500 text-white rounded-lg text-[11px] font-bold transition"
+                                className="px-2.5 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-[11px] font-bold transition"
                                 title="Cliente chegou"
                               >
                                 <Clock className="w-3 h-3 inline mr-1" />Chegou
@@ -496,7 +496,7 @@ export default function AdminPage() {
                   required
                   value={manualName}
                   onChange={(e) => setManualName(e.target.value)}
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none"
+                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none"
                 />
               </div>
               <div>
@@ -506,19 +506,19 @@ export default function AdminPage() {
                   required
                   value={manualPhone}
                   onChange={(e) => setManualPhone(e.target.value)}
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none"
+                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none"
                 />
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="font-bold text-slate-300 block mb-1">Serviço</label>
-                  <select value={manualServiceId} onChange={(e) => setManualServiceId(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none">
+                  <select value={manualServiceId} onChange={(e) => setManualServiceId(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none">
                     {activeServices.map(s => <option key={s.id} value={s.id}>{s.name} - R$ {s.price}</option>)}
                   </select>
                 </div>
                 <div>
                   <label className="font-bold text-slate-300 block mb-1">Profissional</label>
-                  <select value={manualBarberId} onChange={(e) => setManualBarberId(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none">
+                  <select value={manualBarberId} onChange={(e) => setManualBarberId(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none">
                     {activeBarbers.map(b => <option key={b.id} value={b.id}>{b.name}</option>)}
                   </select>
                 </div>
@@ -526,11 +526,11 @@ export default function AdminPage() {
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="font-bold text-slate-300 block mb-1">Data</label>
-                  <input type="date" required value={manualDate} onChange={(e) => setManualDate(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white focus:border-amber-500 outline-none" />
+                  <input type="date" required value={manualDate} onChange={(e) => setManualDate(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white focus:border-emerald-500 outline-none" />
                 </div>
                 <div>
                   <label className="font-bold text-slate-300 block mb-1">Horário</label>
-                  <select value={manualTime} onChange={(e) => setManualTime(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none">
+                  <select value={manualTime} onChange={(e) => setManualTime(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none">
                     {timeSlots.map(t => <option key={t} value={t}>{t}</option>)}
                   </select>
                 </div>
@@ -541,7 +541,7 @@ export default function AdminPage() {
               <button type="button" onClick={() => setIsModalOpen(false)} className="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs transition">
                 Cancelar
               </button>
-              <button type="submit" disabled={isSubmitting} className="flex-1 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition">
+              <button type="submit" disabled={isSubmitting} className="flex-1 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition">
                 {isSubmitting ? 'Salvando...' : 'Salvar'}
               </button>
             </div>
@@ -563,24 +563,24 @@ export default function AdminPage() {
             <div className="space-y-3 text-xs">
               <div>
                 <label className="font-bold text-slate-300 block mb-1">Data</label>
-                <input type="date" required value={rescheduleDate} onChange={(e) => setRescheduleDate(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white focus:border-amber-500 outline-none" />
+                <input type="date" required value={rescheduleDate} onChange={(e) => setRescheduleDate(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white focus:border-emerald-500 outline-none" />
               </div>
               <div>
                 <label className="font-bold text-slate-300 block mb-1">Horário</label>
-                <select value={rescheduleTime} onChange={(e) => setRescheduleTime(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none">
+                <select value={rescheduleTime} onChange={(e) => setRescheduleTime(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none">
                   {timeSlots.map(t => <option key={t} value={t}>{t}</option>)}
                 </select>
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="font-bold text-slate-300 block mb-1">Profissional</label>
-                  <select value={rescheduleBarberId} onChange={(e) => setRescheduleBarberId(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none">
+                  <select value={rescheduleBarberId} onChange={(e) => setRescheduleBarberId(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none">
                     {activeBarbers.map(b => <option key={b.id} value={b.id}>{b.name}</option>)}
                   </select>
                 </div>
                 <div>
                   <label className="font-bold text-slate-300 block mb-1">Serviço</label>
-                  <select value={rescheduleServiceId} onChange={(e) => setRescheduleServiceId(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none">
+                  <select value={rescheduleServiceId} onChange={(e) => setRescheduleServiceId(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none">
                     {activeServices.map(s => <option key={s.id} value={s.id}>{s.name} - R$ {s.price}</option>)}
                   </select>
                 </div>
@@ -611,7 +611,7 @@ export default function AdminPage() {
                     alert(err.message || 'Erro ao reagendar.');
                   }
                 }}
-                className="flex-1 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition"
+                className="flex-1 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition"
               >
                 Confirmar Reagendamento
               </button>

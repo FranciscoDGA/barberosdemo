@@ -111,7 +111,7 @@ export const NotificationBell: React.FC<{ variant?: 'header' | 'mobile' }> = ({ 
   const getIcon = (type: string) => {
     switch (type) {
       case 'BOOKING_CREATED':
-        return <Scissors className="w-4 h-4 text-amber-400" />;
+        return <Scissors className="w-4 h-4 text-emerald-400" />;
       case 'BOOKING_CANCELLED':
         return <AlertTriangle className="w-4 h-4 text-red-400" />;
       case 'BOOKING_RESCHEDULED':
@@ -121,7 +121,7 @@ export const NotificationBell: React.FC<{ variant?: 'header' | 'mobile' }> = ({ 
       case 'REMINDER':
         return <Clock className="w-4 h-4 text-emerald-400" />;
       default:
-        return <Calendar className="w-4 h-4 text-amber-400" />;
+        return <Calendar className="w-4 h-4 text-emerald-400" />;
     }
   };
 
@@ -134,7 +134,7 @@ export const NotificationBell: React.FC<{ variant?: 'header' | 'mobile' }> = ({ 
       {/* Bell Trigger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-amber-400 hover:border-slate-700 transition flex items-center justify-center focus:outline-hidden"
+        className="relative p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-emerald-400 hover:border-slate-700 transition flex items-center justify-center focus:outline-hidden"
         title="Central de Notificações"
         aria-label="Central de Notificações"
       >
@@ -153,11 +153,11 @@ export const NotificationBell: React.FC<{ variant?: 'header' | 'mobile' }> = ({ 
           <div className="px-4 py-3 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <span className="font-bold text-sm text-white flex items-center gap-1.5">
-                <Bell className="w-4 h-4 text-amber-400" />
+                <Bell className="w-4 h-4 text-emerald-400" />
                 Notificações
               </span>
               {unreadCount > 0 && (
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/40">
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                   {unreadCount} nova{unreadCount > 1 ? 's' : ''}
                 </span>
               )}
@@ -167,7 +167,7 @@ export const NotificationBell: React.FC<{ variant?: 'header' | 'mobile' }> = ({ 
               {unreadCount > 0 && (
                 <button
                   onClick={markAllAsRead}
-                  className="text-[11px] text-slate-400 hover:text-amber-400 font-medium flex items-center gap-1 transition"
+                  className="text-[11px] text-slate-400 hover:text-emerald-400 font-medium flex items-center gap-1 transition"
                   title="Marcar todas como lidas"
                 >
                   <CheckCheck className="w-3.5 h-3.5" />
@@ -189,7 +189,7 @@ export const NotificationBell: React.FC<{ variant?: 'header' | 'mobile' }> = ({ 
               onClick={() => setFilter('all')}
               className={`px-3 py-1 rounded-lg text-xs font-semibold transition ${
                 filter === 'all'
-                  ? 'bg-slate-800 text-amber-400'
+                  ? 'bg-slate-800 text-emerald-400'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
@@ -199,7 +199,7 @@ export const NotificationBell: React.FC<{ variant?: 'header' | 'mobile' }> = ({ 
               onClick={() => setFilter('unread')}
               className={`px-3 py-1 rounded-lg text-xs font-semibold transition ${
                 filter === 'unread'
-                  ? 'bg-slate-800 text-amber-400'
+                  ? 'bg-slate-800 text-emerald-400'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
@@ -241,7 +241,7 @@ export const NotificationBell: React.FC<{ variant?: 'header' | 'mobile' }> = ({ 
                           {n.title}
                         </h4>
                         {isUnread && (
-                          <span className="w-2 h-2 rounded-full bg-amber-400 shrink-0" />
+                          <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" />
                         )}
                       </div>
 
@@ -263,7 +263,7 @@ export const NotificationBell: React.FC<{ variant?: 'header' | 'mobile' }> = ({ 
                               e.stopPropagation();
                               markAsRead(n.id);
                             }}
-                            className="text-amber-400 hover:text-amber-300 font-medium flex items-center gap-0.5"
+                            className="text-emerald-400 hover:text-emerald-300 font-medium flex items-center gap-0.5"
                           >
                             <Check className="w-3 h-3" />
                             Marcar lida

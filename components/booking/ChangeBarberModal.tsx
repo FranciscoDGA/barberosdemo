@@ -110,7 +110,7 @@ export const ChangeBarberModal: React.FC<ChangeBarberModalProps> = ({
                     isCurrent
                       ? 'bg-slate-800/30 border-slate-700 opacity-60 cursor-not-allowed'
                       : isSelected
-                      ? 'bg-amber-500/10 border-amber-500'
+                      ? 'bg-emerald-500/10 border-emerald-500'
                       : 'bg-slate-800/60 border-slate-800 hover:border-slate-600'
                   }`}
                 >
@@ -126,7 +126,7 @@ export const ChangeBarberModal: React.FC<ChangeBarberModalProps> = ({
                     </div>
                     <p className="text-xs text-slate-400">{barber.role}</p>
                   </div>
-                  {!isCurrent && isSelected && <Check className="w-5 h-5 text-amber-400" />}
+                  {!isCurrent && isSelected && <Check className="w-5 h-5 text-emerald-400" />}
                   {!isCurrent && !isSelected && <ChevronRight className="w-4 h-4 text-slate-600" />}
                 </button>
               );
@@ -143,7 +143,7 @@ export const ChangeBarberModal: React.FC<ChangeBarberModalProps> = ({
             <button
               onClick={handleChangeBarber}
               disabled={isSubmitting || selectedBarberId === currentBarberId}
-              className="flex-1 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm flex items-center justify-center gap-2 transition disabled:opacity-50"
+              className="flex-1 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm flex items-center justify-center gap-2 transition disabled:opacity-50"
             >
               {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Confirmar Troca'}
             </button>

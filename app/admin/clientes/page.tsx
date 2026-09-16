@@ -165,13 +165,13 @@ export default function ClientesPage() {
                 <h1 className="text-2xl font-black text-white">{selectedCustomer.name}</h1>
                 {selectedCustomer.tier && (
                   <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold uppercase ${
-                    selectedCustomer.tier === 'Ouro VIP' ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                    selectedCustomer.tier === 'Ouro VIP' ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
                     : selectedCustomer.tier === 'Prata' ? 'bg-slate-500/20 text-slate-300 border border-slate-500/40'
                     : 'bg-orange-950/40 text-orange-400 border border-orange-800/40'
                   }`}>{selectedCustomer.tier}</span>
                 )}
                 <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold uppercase ${
-                  customerType === 'vip' ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                  customerType === 'vip' ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
                   : customerType === 'recorrente' ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
                   : customerType === 'inativo' ? 'bg-slate-500/20 text-slate-400 border border-slate-500/40'
                   : 'bg-sky-500/20 text-sky-300 border border-sky-500/40'
@@ -183,13 +183,13 @@ export default function ClientesPage() {
                 <span className="flex items-center gap-1"><Phone className="w-3.5 h-3.5" /> {selectedCustomer.phone}</span>
                 {selectedCustomer.email && <span className="flex items-center gap-1"><Mail className="w-3.5 h-3.5" /> {selectedCustomer.email}</span>}
                 {selectedCustomer.preferredBarberId && (
-                  <span className="flex items-center gap-1 text-amber-400">
+                  <span className="flex items-center gap-1 text-emerald-400">
                     <UserCheck className="w-3.5 h-3.5" /> Prefere: {barbers.find(b => b.id === selectedCustomer.preferredBarberId)?.name || '—'}
                   </span>
                 )}
               </div>
               {selectedCustomer.notes && (
-                <p className="text-[11px] text-amber-300/80 bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 rounded-lg w-fit mt-2">
+                <p className="text-[11px] text-emerald-300/80 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-lg w-fit mt-2">
                   <strong>Obs:</strong> {selectedCustomer.notes}
                 </p>
               )}
@@ -217,8 +217,8 @@ export default function ClientesPage() {
             <p className="text-3xl font-black text-emerald-400 mt-1">{selectedCompletedApts.length}</p>
           </div>
           <div className="bg-slate-900/70 p-4 rounded-2xl border border-slate-800 text-center">
-            <p className="text-[10px] text-amber-400 uppercase font-bold">Total Gasto</p>
-            <p className="text-3xl font-black text-amber-400 mt-1">R$ {selectedTotalSpent}</p>
+            <p className="text-[10px] text-emerald-400 uppercase font-bold">Total Gasto</p>
+            <p className="text-3xl font-black text-emerald-400 mt-1">R$ {selectedTotalSpent}</p>
           </div>
           <div className="bg-slate-900/70 p-4 rounded-2xl border border-slate-800 text-center">
             <p className="text-[10px] text-sky-400 uppercase font-bold">Última Visita</p>
@@ -226,7 +226,7 @@ export default function ClientesPage() {
               {lastVisitDate ? `${lastVisitDate.split('-').reverse().join('/')}` : 'Nunca'}
             </p>
             {daysSinceLastVisit >= 0 && (
-              <p className={`text-[10px] mt-1 ${daysSinceLastVisit > 60 ? 'text-rose-400' : daysSinceLastVisit > 30 ? 'text-amber-400' : 'text-emerald-400'}`}>
+              <p className={`text-[10px] mt-1 ${daysSinceLastVisit > 60 ? 'text-rose-400' : daysSinceLastVisit > 30 ? 'text-emerald-400' : 'text-emerald-400'}`}>
                 {daysSinceLastVisit === 0 ? 'Hoje' : `${daysSinceLastVisit}d atrás`}
               </p>
             )}
@@ -242,7 +242,7 @@ export default function ClientesPage() {
             {customerApts.map(apt => (
               <div key={apt.id} className="p-4 flex items-center justify-between gap-3 hover:bg-slate-800/20 transition">
                 <div className="flex items-center gap-3">
-                  <Scissors className="w-4 h-4 text-amber-400" />
+                  <Scissors className="w-4 h-4 text-emerald-400" />
                   <div>
                     <p className="text-sm font-bold text-white">{apt.serviceNames?.[0] || 'Serviço'}</p>
                     <p className="text-[11px] text-slate-400">{apt.date.split('-').reverse().join('/')} às {apt.time} — {apt.barberName}</p>
@@ -268,7 +268,7 @@ export default function ClientesPage() {
             <form onSubmit={handleSaveCustomer} className="bg-slate-900 rounded-3xl p-6 border border-slate-800 max-w-lg w-full shadow-2xl space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-slate-800">
                 <div className="flex items-center gap-2">
-                  <Pencil className="w-5 h-5 text-amber-400" />
+                  <Pencil className="w-5 h-5 text-emerald-400" />
                   <h3 className="font-bold text-base text-white">Editar Cliente: {editingCustomer?.name}</h3>
                 </div>
                 <button type="button" onClick={() => setIsModalOpen(false)} className="text-slate-400 hover:text-white p-1"><X className="w-5 h-5" /></button>
@@ -277,34 +277,34 @@ export default function ClientesPage() {
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <label className="font-bold text-slate-300 block mb-1">Nome *</label>
-                    <input required value={name} onChange={e => setName(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none" />
+                    <input required value={name} onChange={e => setName(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none" />
                   </div>
                   <div>
                     <label className="font-bold text-slate-300 block mb-1">WhatsApp *</label>
-                    <input required type="tel" value={phone} onChange={e => setPhone(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none font-mono" />
+                    <input required type="tel" value={phone} onChange={e => setPhone(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none font-mono" />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <label className="font-bold text-slate-300 block mb-1">E-mail</label>
-                    <input type="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none" />
+                    <input type="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none" />
                   </div>
                   <div>
                     <label className="font-bold text-slate-300 block mb-1">Aniversário</label>
-                    <input type="date" value={birthdate} onChange={e => setBirthdate(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none" />
+                    <input type="date" value={birthdate} onChange={e => setBirthdate(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none" />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <label className="font-bold text-slate-300 block mb-1">Barbeiro Preferido</label>
-                    <select value={preferredBarberId} onChange={e => setPreferredBarberId(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none">
+                    <select value={preferredBarberId} onChange={e => setPreferredBarberId(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none">
                       <option value="">Sem preferência</option>
                       {barbers.filter(b => b.id !== 'any').map(b => <option key={b.id} value={b.id}>{b.name}</option>)}
                     </select>
                   </div>
                   <div>
                     <label className="font-bold text-slate-300 block mb-1">Nível</label>
-                    <select value={tier} onChange={e => setTier(e.target.value as any)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none">
+                    <select value={tier} onChange={e => setTier(e.target.value as any)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none">
                       <option value="Bronze">Bronze</option>
                       <option value="Prata">Prata</option>
                       <option value="Ouro VIP">Ouro VIP</option>
@@ -313,12 +313,12 @@ export default function ClientesPage() {
                 </div>
                 <div>
                   <label className="font-bold text-slate-300 block mb-1">Observações</label>
-                  <textarea rows={2} value={notes} onChange={e => setNotes(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-white focus:border-amber-500 outline-none resize-none" />
+                  <textarea rows={2} value={notes} onChange={e => setNotes(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-white focus:border-emerald-500 outline-none resize-none" />
                 </div>
               </div>
               <div className="pt-3 border-t border-slate-800 flex gap-2">
                 <button type="button" onClick={() => setIsModalOpen(false)} className="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs transition">Cancelar</button>
-                <button type="submit" disabled={isSubmitting} className="flex-1 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition">{isSubmitting ? 'Salvando...' : 'Atualizar'}</button>
+                <button type="submit" disabled={isSubmitting} className="flex-1 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition">{isSubmitting ? 'Salvando...' : 'Atualizar'}</button>
               </div>
             </form>
           </div>
@@ -335,7 +335,7 @@ export default function ClientesPage() {
           <h1 className="text-2xl font-extrabold text-white">Base de Clientes</h1>
           <p className="text-xs text-slate-400 mt-1">{filteredCustomers.length} cliente{filteredCustomers.length === 1 ? '' : 's'}</p>
         </div>
-        <button onClick={openNewCustomerModal} className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-sm flex items-center gap-2 transition shadow-lg shadow-amber-500/20">
+        <button onClick={openNewCustomerModal} className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-sm flex items-center gap-2 transition shadow-lg shadow-emerald-500/20">
           <UserPlus className="w-4 h-4" /> Novo Cliente
         </button>
       </div>
@@ -349,7 +349,7 @@ export default function ClientesPage() {
             placeholder="Buscar por nome ou telefone..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white focus:border-amber-500 outline-none"
+            className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white focus:border-emerald-500 outline-none"
           />
         </div>
         <div className="flex items-center gap-2">
@@ -357,7 +357,7 @@ export default function ClientesPage() {
           <select
             value={filterType}
             onChange={(e) => setFilterType(e.target.value as CustomerType | 'all')}
-            className="bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-xs text-white focus:border-amber-500 outline-none"
+            className="bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-xs text-white focus:border-emerald-500 outline-none"
           >
             <option value="all">Todos</option>
             <option value="novo">Novo</option>
@@ -375,7 +375,7 @@ export default function ClientesPage() {
             }).length;
             return (
               <span key={type} className={`px-2 py-1 rounded-lg font-bold ${
-                type === 'vip' ? 'bg-amber-500/10 text-amber-400' :
+                type === 'vip' ? 'bg-emerald-500/10 text-emerald-400' :
                 type === 'recorrente' ? 'bg-emerald-500/10 text-emerald-400' :
                 type === 'inativo' ? 'bg-slate-500/10 text-slate-400' :
                 'bg-sky-500/10 text-sky-400'
@@ -412,16 +412,16 @@ export default function ClientesPage() {
                 className="p-4 sm:p-5 hover:bg-slate-800/30 transition flex items-center justify-between gap-4 cursor-pointer group">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
-                    <h3 className="font-bold text-white text-base group-hover:text-amber-400 transition truncate">{customer.name}</h3>
+                    <h3 className="font-bold text-white text-base group-hover:text-emerald-400 transition truncate">{customer.name}</h3>
                     {customer.tier && (
                       <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold shrink-0 ${
-                        customer.tier === 'Ouro VIP' ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                        customer.tier === 'Ouro VIP' ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
                         : customer.tier === 'Prata' ? 'bg-slate-500/20 text-slate-300 border border-slate-500/40'
                         : 'bg-orange-950/40 text-orange-400 border border-orange-800/40'
                       }`}>{customer.tier}</span>
                     )}
                     <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold shrink-0 ${
-                      customerType === 'vip' ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                      customerType === 'vip' ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
                       : customerType === 'recorrente' ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
                       : customerType === 'inativo' ? 'bg-slate-500/20 text-slate-400 border border-slate-500/40'
                       : 'bg-sky-500/20 text-sky-300 border border-sky-500/40'
@@ -435,10 +435,10 @@ export default function ClientesPage() {
                   <div className="flex items-center gap-3 mt-1.5 text-xs text-slate-400">
                     <span className="flex items-center gap-1 font-mono"><Phone className="w-3 h-3" /> {customer.phone}</span>
                     {customer.preferredBarberId && (
-                      <span className="flex items-center gap-1 text-amber-400"><UserCheck className="w-3 h-3" /> {barbers.find(b => b.id === customer.preferredBarberId)?.name || '—'}</span>
+                      <span className="flex items-center gap-1 text-emerald-400"><UserCheck className="w-3 h-3" /> {barbers.find(b => b.id === customer.preferredBarberId)?.name || '—'}</span>
                     )}
                     {lastVisitDate && (
-                      <span className={`flex items-center gap-1 ${daysSinceLastVisit > 60 ? 'text-rose-400' : daysSinceLastVisit > 30 ? 'text-amber-400' : 'text-emerald-400'}`}>
+                      <span className={`flex items-center gap-1 ${daysSinceLastVisit > 60 ? 'text-rose-400' : daysSinceLastVisit > 30 ? 'text-emerald-400' : 'text-emerald-400'}`}>
                         <Calendar className="w-3 h-3" /> Último: {lastVisitDate.split('-').reverse().join('/')}
                         {daysSinceLastVisit >= 0 && ` (${daysSinceLastVisit}d)`}
                       </span>
@@ -460,14 +460,14 @@ export default function ClientesPage() {
                     <MessageCircle className="w-3.5 h-3.5" />
                   </a>
                   <button onClick={e => { e.stopPropagation(); openEditCustomerModal(customer); }}
-                    className="p-2 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 hover:text-amber-400 hover:border-amber-500 transition">
+                    className="p-2 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 hover:text-emerald-400 hover:border-emerald-500 transition">
                     <Pencil className="w-3.5 h-3.5" />
                   </button>
                   <button onClick={e => { e.stopPropagation(); handleDeleteCustomer(customer.id, customer.name); }}
                     className="p-2 rounded-xl bg-slate-950 border border-rose-900/40 text-rose-400 hover:bg-rose-950/40 hover:border-rose-500 transition">
                     <Trash2 className="w-3.5 h-3.5" />
                   </button>
-                  <ChevronRight className="w-4 h-4 text-slate-600 group-hover:text-amber-400 transition" />
+                  <ChevronRight className="w-4 h-4 text-slate-600 group-hover:text-emerald-400 transition" />
                 </div>
               </div>
             );
@@ -476,14 +476,14 @@ export default function ClientesPage() {
             <div className="p-12 text-center text-slate-500 space-y-3">
               <Search className="w-10 h-10 mx-auto text-slate-700" />
               <p className="text-sm">Nenhum cliente encontrado com esses filtros.</p>
-              <button onClick={() => { setSearchTerm(''); setFilterType('all'); }} className="text-xs text-amber-400 hover:underline font-bold">Limpar filtros</button>
+              <button onClick={() => { setSearchTerm(''); setFilterType('all'); }} className="text-xs text-emerald-400 hover:underline font-bold">Limpar filtros</button>
             </div>
           )}
           {customers.length === 0 && (
             <div className="p-12 text-center text-slate-500 space-y-3">
               <Users className="w-10 h-10 mx-auto text-slate-700" />
               <p className="text-sm">Nenhum cliente cadastrado ainda.</p>
-              <button onClick={openNewCustomerModal} className="text-xs text-amber-400 hover:underline font-bold">Cadastrar primeiro cliente</button>
+              <button onClick={openNewCustomerModal} className="text-xs text-emerald-400 hover:underline font-bold">Cadastrar primeiro cliente</button>
             </div>
           )}
         </div>
@@ -494,41 +494,41 @@ export default function ClientesPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-xs p-4 animate-in fade-in">
           <form onSubmit={handleSaveCustomer} className="bg-slate-900 rounded-3xl p-6 border border-slate-800 max-w-lg w-full shadow-2xl space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-              <div className="flex items-center gap-2"><UserPlus className="w-5 h-5 text-amber-400" /><h3 className="font-bold text-base text-white">Cadastrar Cliente</h3></div>
+              <div className="flex items-center gap-2"><UserPlus className="w-5 h-5 text-emerald-400" /><h3 className="font-bold text-base text-white">Cadastrar Cliente</h3></div>
               <button type="button" onClick={() => setIsModalOpen(false)} className="text-slate-400 hover:text-white p-1"><X className="w-5 h-5" /></button>
             </div>
             <div className="space-y-3 text-xs">
               <div className="grid grid-cols-2 gap-3">
-                <div><label className="font-bold text-slate-300 block mb-1">Nome *</label><input required value={name} onChange={e => setName(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none" /></div>
-                <div><label className="font-bold text-slate-300 block mb-1">WhatsApp *</label><input required type="tel" value={phone} onChange={e => setPhone(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none font-mono" /></div>
+                <div><label className="font-bold text-slate-300 block mb-1">Nome *</label><input required value={name} onChange={e => setName(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none" /></div>
+                <div><label className="font-bold text-slate-300 block mb-1">WhatsApp *</label><input required type="tel" value={phone} onChange={e => setPhone(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none font-mono" /></div>
               </div>
               <div className="grid grid-cols-2 gap-3">
-                <div><label className="font-bold text-slate-300 block mb-1">E-mail</label><input type="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none" /></div>
-                <div><label className="font-bold text-slate-300 block mb-1">Aniversário</label><input type="date" value={birthdate} onChange={e => setBirthdate(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none" /></div>
+                <div><label className="font-bold text-slate-300 block mb-1">E-mail</label><input type="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none" /></div>
+                <div><label className="font-bold text-slate-300 block mb-1">Aniversário</label><input type="date" value={birthdate} onChange={e => setBirthdate(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none" /></div>
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="font-bold text-slate-300 block mb-1">Barbeiro Preferido</label>
-                  <select value={preferredBarberId} onChange={e => setPreferredBarberId(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none">
+                  <select value={preferredBarberId} onChange={e => setPreferredBarberId(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none">
                     <option value="">Sem preferência</option>
                     {barbers.filter(b => b.id !== 'any').map(b => <option key={b.id} value={b.id}>{b.name}</option>)}
                   </select>
                 </div>
                 <div>
                   <label className="font-bold text-slate-300 block mb-1">Nível</label>
-                  <select value={tier} onChange={e => setTier(e.target.value as any)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-amber-500 outline-none">
+                  <select value={tier} onChange={e => setTier(e.target.value as any)} className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:border-emerald-500 outline-none">
                     <option value="Bronze">Bronze</option><option value="Prata">Prata</option><option value="Ouro VIP">Ouro VIP</option>
                   </select>
                 </div>
               </div>
               <div>
                 <label className="font-bold text-slate-300 block mb-1">Observações</label>
-                <textarea rows={2} value={notes} onChange={e => setNotes(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-white focus:border-amber-500 outline-none resize-none" placeholder="Preferências do cliente..." />
+                <textarea rows={2} value={notes} onChange={e => setNotes(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-white focus:border-emerald-500 outline-none resize-none" placeholder="Preferências do cliente..." />
               </div>
             </div>
             <div className="pt-3 border-t border-slate-800 flex gap-2">
               <button type="button" onClick={() => setIsModalOpen(false)} className="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs transition">Cancelar</button>
-              <button type="submit" disabled={isSubmitting} className="flex-1 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition">{isSubmitting ? 'Salvando...' : 'Salvar'}</button>
+              <button type="submit" disabled={isSubmitting} className="flex-1 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition">{isSubmitting ? 'Salvando...' : 'Salvar'}</button>
             </div>
           </form>
         </div>

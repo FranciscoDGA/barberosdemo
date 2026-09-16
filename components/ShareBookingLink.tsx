@@ -58,7 +58,7 @@ export default function ShareBookingLink({ className = '' }: ShareBookingLinkPro
   return (
     <div className={`bg-slate-900/60 border border-slate-800 rounded-2xl p-4 space-y-3 ${className}`}>
       <div className="flex items-center gap-2">
-        <Share2 className="w-4 h-4 text-amber-400" />
+        <Share2 className="w-4 h-4 text-emerald-400" />
         <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Compartilhar Link de Agendamento</span>
       </div>
       

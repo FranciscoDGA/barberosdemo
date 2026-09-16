@@ -240,7 +240,7 @@ export default function FinanceiroPage() {
           <button
             onClick={() => setDateFilter('today')}
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer ${
-              dateFilter === 'today' ? 'bg-amber-500 text-slate-950' : 'bg-slate-800 text-slate-300 hover:text-white'
+              dateFilter === 'today' ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-slate-300 hover:text-white'
             }`}
           >
             Hoje
@@ -248,7 +248,7 @@ export default function FinanceiroPage() {
           <button
             onClick={() => setDateFilter('week')}
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer ${
-              dateFilter === 'week' ? 'bg-amber-500 text-slate-950' : 'bg-slate-800 text-slate-300 hover:text-white'
+              dateFilter === 'week' ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-slate-300 hover:text-white'
             }`}
           >
             Semana
@@ -256,7 +256,7 @@ export default function FinanceiroPage() {
           <button
             onClick={() => setDateFilter('month')}
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer ${
-              dateFilter === 'month' ? 'bg-amber-500 text-slate-950' : 'bg-slate-800 text-slate-300 hover:text-white'
+              dateFilter === 'month' ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-slate-300 hover:text-white'
             }`}
           >
             Mês Atual
@@ -264,7 +264,7 @@ export default function FinanceiroPage() {
           <button
             onClick={() => setDateFilter('all')}
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer ${
-              dateFilter === 'all' ? 'bg-amber-500 text-slate-950' : 'bg-slate-800 text-slate-300 hover:text-white'
+              dateFilter === 'all' ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-slate-300 hover:text-white'
             }`}
           >
             Histórico Completo
@@ -276,7 +276,7 @@ export default function FinanceiroPage() {
           <select
             value={filterType}
             onChange={e => setFilterType(e.target.value as any)}
-            className="bg-slate-950 border border-slate-800 rounded-lg px-2.5 py-1 text-slate-200 focus:outline-none focus:border-amber-500 cursor-pointer"
+            className="bg-slate-950 border border-slate-800 rounded-lg px-2.5 py-1 text-slate-200 focus:outline-none focus:border-emerald-500 cursor-pointer"
           >
             <option value="all">Todas as Movimentações</option>
             <option value="receita">Apenas Receitas (+)</option>
@@ -287,7 +287,7 @@ export default function FinanceiroPage() {
 
       {/* Filter Status */}
       <div className="flex items-center gap-2 text-xs text-slate-500 px-1">
-        <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
         <span>
           Exibindo: <strong className="text-slate-300">
             {filterType === 'all' ? 'Todas' : filterType === 'receita' ? 'Receitas' : 'Despesas'}
@@ -296,7 +296,7 @@ export default function FinanceiroPage() {
           {dateFilter === 'week' && ' — Esta Semana'}
           {dateFilter === 'month' && ' — Mês Atual'}
           {dateFilter === 'all' && ' — Histórico Completo'}
-          {' • '}<strong className="text-amber-400">{filteredTransactions.length}</strong> registro(s)
+          {' • '}<strong className="text-emerald-400">{filteredTransactions.length}</strong> registro(s)
         </span>
       </div>
 
@@ -339,14 +339,14 @@ export default function FinanceiroPage() {
 
         {/* Lucro Líquido */}
         <div className="bg-slate-900/90 rounded-2xl p-4 border border-amber-900/30 relative overflow-hidden shadow-lg">
-          <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-full blur-2xl -mr-6 -mt-6 pointer-events-none" />
+          <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl -mr-6 -mt-6 pointer-events-none" />
           <div className="flex items-center justify-between">
             <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Lucro Líquido Real</span>
-            <div className="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
               <DollarSign className="w-4 h-4" />
             </div>
           </div>
-          <p className={`text-2xl sm:text-3xl font-black mt-2 ${lucroLiquido >= 0 ? 'text-amber-400' : 'text-rose-400'}`}>
+          <p className={`text-2xl sm:text-3xl font-black mt-2 ${lucroLiquido >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
             R$ {lucroLiquido.toFixed(2).replace('.', ',')}
           </p>
           <div className="flex items-center gap-1 mt-1 text-[11px] text-slate-400">
@@ -378,7 +378,7 @@ export default function FinanceiroPage() {
         <div className="bg-slate-900/90 rounded-2xl p-5 border border-slate-800 space-y-3">
           <div className="flex items-center justify-between border-b border-slate-800 pb-2">
             <div className="flex items-center gap-2">
-              <Receipt className="w-4 h-4 text-amber-400" />
+              <Receipt className="w-4 h-4 text-emerald-400" />
               <h3 className="font-bold text-sm text-white">Fechamento do Dia ({todayStr})</h3>
             </div>
             <span className="text-[10px] bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded font-bold uppercase">
@@ -397,7 +397,7 @@ export default function FinanceiroPage() {
             </div>
             <div className="flex justify-between items-center py-1 border-b border-slate-800/60">
               <span className="text-slate-400">Dinheiro Físico na Gaveta:</span>
-              <span className="font-extrabold text-amber-400">R$ {caixaHoje.dinheiroFisico.toFixed(2).replace('.', ',')}</span>
+              <span className="font-extrabold text-emerald-400">R$ {caixaHoje.dinheiroFisico.toFixed(2).replace('.', ',')}</span>
             </div>
             <div className="flex justify-between items-center py-1 border-b border-slate-800/60">
               <span className="text-slate-400">Recebido via PIX:</span>
@@ -413,7 +413,7 @@ export default function FinanceiroPage() {
         {/* Breakdown de Pagamentos */}
         <div className="lg:col-span-2 bg-slate-900/90 rounded-2xl p-5 border border-slate-800 space-y-3">
           <h3 className="font-bold text-sm text-white flex items-center gap-2 border-b border-slate-800 pb-2">
-            <PieChart className="w-4 h-4 text-amber-400" />
+            <PieChart className="w-4 h-4 text-emerald-400" />
             <span>Faturamento por Meio de Pagamento</span>
           </h3>
 
@@ -457,10 +457,10 @@ export default function FinanceiroPage() {
             {/* Dinheiro */}
             <div className="bg-slate-950 p-4 rounded-xl border border-amber-900/30 space-y-2">
               <div className="flex items-center justify-between">
-                <div className="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
                   <Banknote className="w-4 h-4" />
                 </div>
-                <span className="text-[10px] font-bold text-amber-400 uppercase bg-amber-500/10 px-2 py-0.5 rounded">
+                <span className="text-[10px] font-bold text-emerald-400 uppercase bg-emerald-500/10 px-2 py-0.5 rounded">
                   No Local
                 </span>
               </div>
@@ -480,7 +480,7 @@ export default function FinanceiroPage() {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
           <div>
             <h3 className="font-bold text-base text-white flex items-center gap-2">
-              <Scissors className="w-5 h-5 text-amber-400" />
+              <Scissors className="w-5 h-5 text-emerald-400" />
               <span>Controle de Comissões da Equipe</span>
             </h3>
             <p className="text-xs text-slate-400 mt-0.5">
@@ -493,7 +493,7 @@ export default function FinanceiroPage() {
             <select
               value={commissionRate}
               onChange={e => setCommissionRate(Number(e.target.value))}
-              className="bg-transparent text-amber-400 font-bold focus:outline-none cursor-pointer"
+              className="bg-transparent text-emerald-400 font-bold focus:outline-none cursor-pointer"
             >
               <option value="40" className="bg-slate-900">40% Barbeiro / 60% Barbearia</option>
               <option value="50" className="bg-slate-900">50% Barbeiro / 50% Barbearia</option>
@@ -508,7 +508,7 @@ export default function FinanceiroPage() {
             <div key={idx} className="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
               <div className="flex items-center justify-between">
                 <span className="font-bold text-white text-sm">{bc.name}</span>
-                <span className="text-[10px] font-bold bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded">
+                <span className="text-[10px] font-bold bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded">
                   {bc.count} cortes
                 </span>
               </div>
@@ -522,7 +522,7 @@ export default function FinanceiroPage() {
                   <span>Repasse Barbeiro ({commissionRate}%):</span>
                   <span>R$ {bc.barberVal.toFixed(2).replace('.', ',')}</span>
                 </div>
-                <div className="flex justify-between text-amber-400 font-bold pt-1 border-t border-slate-800">
+                <div className="flex justify-between text-emerald-400 font-bold pt-1 border-t border-slate-800">
                   <span>Fica com a Barbearia:</span>
                   <span>R$ {bc.houseVal.toFixed(2).replace('.', ',')}</span>
                 </div>
@@ -537,7 +537,7 @@ export default function FinanceiroPage() {
         <div className="flex items-center justify-between border-b border-slate-800 pb-3">
           <div>
             <h3 className="font-bold text-base text-white flex items-center gap-2">
-              <Receipt className="w-5 h-5 text-amber-400" />
+              <Receipt className="w-5 h-5 text-emerald-400" />
               <span>Livro Caixa & Movimentações</span>
             </h3>
             <p className="text-xs text-slate-400 mt-0.5">
@@ -593,7 +593,7 @@ export default function FinanceiroPage() {
                   </td>
                   <td className="py-3 px-3 text-slate-300">
                     {tx.barberName ? (
-                      <span className="bg-slate-800 px-2 py-0.5 rounded text-[11px] font-medium text-amber-300">
+                      <span className="bg-slate-800 px-2 py-0.5 rounded text-[11px] font-medium text-emerald-300">
                         {tx.barberName}
                       </span>
                     ) : (
@@ -699,7 +699,7 @@ export default function FinanceiroPage() {
                 required
                 value={txForm.description}
                 onChange={e => setTxForm({ ...txForm, description: e.target.value })}
-                className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-amber-500 outline-none"
+                className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-emerald-500 outline-none"
                 placeholder={txForm.type === 'receita' ? 'Ex: Corte Degradê + Pomada no Balcão' : 'Ex: Compra de lâminas descartáveis e toalhas'}
               />
             </div>
@@ -714,7 +714,7 @@ export default function FinanceiroPage() {
                   step="0.01"
                   value={txForm.amount}
                   onChange={e => setTxForm({ ...txForm, amount: e.target.value })}
-                  className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-amber-500 outline-none"
+                  className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-emerald-500 outline-none"
                   placeholder="50.00"
                 />
               </div>
@@ -724,7 +724,7 @@ export default function FinanceiroPage() {
                 <select
                   value={txForm.category}
                   onChange={e => setTxForm({ ...txForm, category: e.target.value })}
-                  className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-amber-500 outline-none cursor-pointer"
+                  className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-emerald-500 outline-none cursor-pointer"
                 >
                   {txForm.type === 'receita' ? (
                     <>
@@ -753,7 +753,7 @@ export default function FinanceiroPage() {
                 <select
                   value={txForm.paymentMethod}
                   onChange={e => setTxForm({ ...txForm, paymentMethod: e.target.value as any })}
-                  className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-amber-500 outline-none cursor-pointer"
+                  className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-emerald-500 outline-none cursor-pointer"
                 >
                   <option value="pix">📱 PIX Instantâneo</option>
                   <option value="cartao">💳 Cartão Crédito/Débito</option>
@@ -766,7 +766,7 @@ export default function FinanceiroPage() {
                 <select
                   value={txForm.barberName}
                   onChange={e => setTxForm({ ...txForm, barberName: e.target.value })}
-                  className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-amber-500 outline-none cursor-pointer"
+                  className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-emerald-500 outline-none cursor-pointer"
                 >
                   <option value="">Nenhum / Geral da Barbearia</option>
                   {barbers.map(b => (

@@ -24,7 +24,7 @@ export const PWAInstallButton: React.FC<{ variant?: 'compact' | 'full'; label?: 
         <button
           onClick={install}
           id="btn-install-pwa-full"
-          className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold shadow-lg shadow-amber-500/20 transition-all active:scale-[0.98]"
+          className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-slate-950 font-bold shadow-lg shadow-emerald-500/20 transition-all active:scale-[0.98]"
         >
           <Download className="w-5 h-5 text-slate-950" />
           <span>{btnLabel}</span>
@@ -36,7 +36,7 @@ export const PWAInstallButton: React.FC<{ variant?: 'compact' | 'full'; label?: 
       <button
         onClick={install}
         id="btn-install-pwa"
-        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-400 hover:bg-amber-500/25 text-xs font-semibold transition"
+        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/25 text-xs font-semibold transition"
       >
         <Download className="w-3.5 h-3.5" />
         <span>Instalar App</span>
@@ -53,7 +53,7 @@ export const PWAInstallButton: React.FC<{ variant?: 'compact' | 'full'; label?: 
           id="btn-install-ios"
           className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 hover:bg-slate-700 text-xs font-medium transition"
         >
-          <Share2 className="w-3.5 h-3.5 text-amber-400" />
+          <Share2 className="w-3.5 h-3.5 text-emerald-400" />
           <span>Instalar no iPhone</span>
         </button>
 
@@ -68,7 +68,7 @@ export const PWAInstallButton: React.FC<{ variant?: 'compact' | 'full'; label?: 
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4 text-amber-400">
+              <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4 text-emerald-400">
                 <Download className="w-6 h-6" />
               </div>
 
@@ -79,19 +79,19 @@ export const PWAInstallButton: React.FC<{ variant?: 'compact' | 'full'; label?: 
 
               <div className="space-y-3 bg-slate-950/60 rounded-xl p-3.5 border border-slate-800/80 text-sm">
                 <div className="flex items-start gap-2.5">
-                  <div className="w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center shrink-0 text-xs font-bold text-amber-400">1</div>
+                  <div className="w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center shrink-0 text-xs font-bold text-emerald-400">1</div>
                   <p className="text-xs text-slate-300">
                     Toque no botão <Share2 className="inline w-3.5 h-3.5 text-blue-400 mx-1" /> <strong>Compartilhar</strong> na barra do Safari.
                   </p>
                 </div>
                 <div className="flex items-start gap-2.5">
-                  <div className="w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center shrink-0 text-xs font-bold text-amber-400">2</div>
+                  <div className="w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center shrink-0 text-xs font-bold text-emerald-400">2</div>
                   <p className="text-xs text-slate-300">
-                    Role para baixo e selecione <PlusSquare className="inline w-3.5 h-3.5 text-amber-400 mx-1" /> <strong>Adicionar à Tela de Início</strong>.
+                    Role para baixo e selecione <PlusSquare className="inline w-3.5 h-3.5 text-emerald-400 mx-1" /> <strong>Adicionar à Tela de Início</strong>.
                   </p>
                 </div>
                 <div className="flex items-start gap-2.5">
-                  <div className="w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center shrink-0 text-xs font-bold text-amber-400">3</div>
+                  <div className="w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center shrink-0 text-xs font-bold text-emerald-400">3</div>
                   <p className="text-xs text-slate-300">
                     Toque em <strong>Adicionar</strong> no canto superior direito.
                   </p>
@@ -100,7 +100,7 @@ export const PWAInstallButton: React.FC<{ variant?: 'compact' | 'full'; label?: 
 
               <button
                 onClick={() => setShowIOSGuide(false)}
-                className="mt-5 w-full rounded-xl bg-amber-500 py-2.5 text-sm font-bold text-slate-950 hover:bg-amber-400 transition"
+                className="mt-5 w-full rounded-xl bg-emerald-500 py-2.5 text-sm font-bold text-slate-950 hover:bg-emerald-400 transition"
               >
                 Entendi
               </button>
@@ -120,7 +120,7 @@ export const PWAInstallButton: React.FC<{ variant?: 'compact' | 'full'; label?: 
       id="btn-install-info"
       className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 hover:bg-slate-700 text-xs font-medium transition"
     >
-      <Download className="w-3.5 h-3.5 text-amber-400" />
+      <Download className="w-3.5 h-3.5 text-emerald-400" />
       <span>Instalar App</span>
     </button>
   );

@@ -157,12 +157,12 @@ export const RescheduleWizard: React.FC<RescheduleWizardProps> = ({
           <div className="bg-slate-800/50 rounded-xl p-3 space-y-2">
             <p className="text-xs text-slate-400 font-bold uppercase">Agendamento Atual</p>
             <div className="flex items-center gap-4 text-xs text-slate-300">
-              <span className="flex items-center gap-1"><Scissors className="w-3 h-3 text-amber-400" /> {currentService?.name || 'Serviço'}</span>
-              <span className="flex items-center gap-1"><User className="w-3 h-3 text-amber-400" /> {currentBarber?.name || 'Profissional'}</span>
+              <span className="flex items-center gap-1"><Scissors className="w-3 h-3 text-emerald-400" /> {currentService?.name || 'Serviço'}</span>
+              <span className="flex items-center gap-1"><User className="w-3 h-3 text-emerald-400" /> {currentBarber?.name || 'Profissional'}</span>
             </div>
             <div className="flex items-center gap-4 text-xs text-slate-300">
-              <span className="flex items-center gap-1"><CalendarIcon className="w-3 h-3 text-amber-400" /> {currentDate.split('-').reverse().join('/')}</span>
-              <span className="flex items-center gap-1"><Clock className="w-3 h-3 text-amber-400" /> {currentTime}</span>
+              <span className="flex items-center gap-1"><CalendarIcon className="w-3 h-3 text-emerald-400" /> {currentDate.split('-').reverse().join('/')}</span>
+              <span className="flex items-center gap-1"><Clock className="w-3 h-3 text-emerald-400" /> {currentTime}</span>
             </div>
           </div>
 
@@ -208,7 +208,7 @@ export const RescheduleWizard: React.FC<RescheduleWizardProps> = ({
                         isDisabled
                           ? 'bg-slate-950/50 border-slate-800/50 text-slate-600 cursor-not-allowed opacity-50'
                           : selectedDate === date.iso
-                          ? 'bg-amber-500/10 border-amber-500 text-amber-400 font-bold'
+                          ? 'bg-emerald-500/10 border-emerald-500 text-emerald-400 font-bold'
                           : 'bg-slate-800/60 border-slate-800 text-slate-300 hover:border-slate-600'
                       }`}
                     >
@@ -227,7 +227,7 @@ export const RescheduleWizard: React.FC<RescheduleWizardProps> = ({
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <p className="text-sm font-bold text-white">Novo Horário</p>
-                <button onClick={() => setStep('date')} className="text-xs text-amber-400 hover:text-amber-300">
+                <button onClick={() => setStep('date')} className="text-xs text-emerald-400 hover:text-emerald-300">
                   Trocar data
                 </button>
               </div>
@@ -245,10 +245,10 @@ export const RescheduleWizard: React.FC<RescheduleWizardProps> = ({
                       className={`p-3 rounded-xl border text-sm font-bold transition text-center ${
                         !isFree
                           ? isLunch
-                            ? 'bg-amber-500/10 border-amber-500/30 text-amber-400/60 cursor-not-allowed'
+                            ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400/60 cursor-not-allowed'
                             : 'opacity-40 bg-slate-950/80 border-slate-800 text-slate-500 cursor-not-allowed line-through'
                           : isChosen
-                          ? 'bg-amber-500 border-amber-500 text-slate-950'
+                          ? 'bg-emerald-500 border-emerald-500 text-slate-950'
                           : 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300 hover:border-emerald-500/60'
                       }`}
                     >
@@ -265,12 +265,12 @@ export const RescheduleWizard: React.FC<RescheduleWizardProps> = ({
             <div className="space-y-3">
               <p className="text-sm font-bold text-white">Confirmar Remarcação</p>
 
-              <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 space-y-2">
+              <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-4 space-y-2">
                 <div className="flex items-center gap-2 text-xs text-slate-300">
-                  <CalendarIcon className="w-4 h-4 text-amber-400" />
+                  <CalendarIcon className="w-4 h-4 text-emerald-400" />
                   <span>De: <strong>{currentDate.split('-').reverse().join('/')} {currentTime}</strong></span>
                 </div>
-                <div className="flex items-center gap-2 text-xs text-amber-300 font-bold">
+                <div className="flex items-center gap-2 text-xs text-emerald-300 font-bold">
                   <ChevronRight className="w-4 h-4" />
                   <span>Para: <strong>{selectedDate.split('-').reverse().join('/')} {selectedTime}</strong></span>
                 </div>
@@ -286,7 +286,7 @@ export const RescheduleWizard: React.FC<RescheduleWizardProps> = ({
                 <button
                   onClick={handleReschedule}
                   disabled={isSubmitting}
-                  className="flex-1 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm flex items-center justify-center gap-2 transition disabled:opacity-50"
+                  className="flex-1 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm flex items-center justify-center gap-2 transition disabled:opacity-50"
                 >
                   {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : <><Check className="w-4 h-4" /> Confirmar</>}
                 </button>

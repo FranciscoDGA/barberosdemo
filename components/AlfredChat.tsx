@@ -94,7 +94,7 @@ export default function AlfredChat({ className = '' }: AlfredChatProps) {
       {isOpen && (
         <div className="flex flex-col h-full bg-[#0b1120] sm:rounded-2xl border border-slate-800 shadow-2xl shadow-black/60 overflow-hidden">
           {/* Header */}
-          <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-amber-500 to-amber-600">
+          <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-xl bg-black/30 flex items-center justify-center">
                 <Bot className="w-5 h-5 text-white" />
@@ -118,7 +118,7 @@ export default function AlfredChat({ className = '' }: AlfredChatProps) {
               <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div className={`max-w-[85%] px-4 py-2.5 text-sm leading-relaxed ${
                   msg.role === 'user'
-                    ? 'bg-amber-500 text-black rounded-2xl rounded-br-md font-medium'
+                    ? 'bg-emerald-500 text-black rounded-2xl rounded-br-md font-medium'
                     : 'bg-slate-800 text-slate-100 rounded-2xl rounded-bl-md'
                 }`}>
                   {msg.content}
@@ -128,7 +128,7 @@ export default function AlfredChat({ className = '' }: AlfredChatProps) {
             {isLoading && (
               <div className="flex justify-start">
                 <div className="px-4 py-3 bg-slate-800 rounded-2xl rounded-bl-md">
-                  <Loader2 className="w-4 h-4 text-amber-400 animate-spin" />
+                  <Loader2 className="w-4 h-4 text-emerald-400 animate-spin" />
                 </div>
               </div>
             )}
@@ -137,7 +137,7 @@ export default function AlfredChat({ className = '' }: AlfredChatProps) {
 
           {/* Input */}
           <div className="px-4 pb-4 pt-2 border-t border-slate-800/60">
-            <div className="flex items-end gap-2 bg-slate-900 rounded-2xl border border-slate-800 focus-within:border-amber-500/40 transition-colors">
+            <div className="flex items-end gap-2 bg-slate-900 rounded-2xl border border-slate-800 focus-within:border-emerald-500/40 transition-colors">
               <textarea
                 ref={inputRef}
                 value={input}
@@ -151,7 +151,7 @@ export default function AlfredChat({ className = '' }: AlfredChatProps) {
               <button
                 onClick={handleSend}
                 disabled={!input.trim() || isLoading}
-                className="w-10 h-10 rounded-xl bg-amber-500 hover:bg-amber-400 disabled:bg-slate-800 disabled:text-slate-600 flex items-center justify-center transition-colors m-1.5 shrink-0"
+                className="w-10 h-10 rounded-xl bg-emerald-500 hover:bg-emerald-400 disabled:bg-slate-800 disabled:text-slate-600 flex items-center justify-center transition-colors m-1.5 shrink-0"
               >
                 <Send className="w-4 h-4 text-black" />
               </button>
@@ -164,7 +164,7 @@ export default function AlfredChat({ className = '' }: AlfredChatProps) {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className={`w-14 h-14 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 active:scale-95 transition-all flex items-center justify-center ${className}`}
+          className={`w-14 h-14 rounded-2xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-black shadow-xl shadow-emerald-500/25 hover:shadow-emerald-500/40 active:scale-95 transition-all flex items-center justify-center ${className}`}
         >
           <MessageCircle className="w-6 h-6" />
         </button>
