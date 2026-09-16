@@ -1,36 +1,42 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
   <defs>
-    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#d4b96a"/>
-      <stop offset="50%" style="stop-color:#c9a84c"/>
-      <stop offset="100%" style="stop-color:#a8893a"/>
+    <linearGradient id="emerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#34d399"/>
+      <stop offset="50%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="emerald-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6ee7b7;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:0.1"/>
     </linearGradient>
   </defs>
   <!-- Background circle -->
-  <circle cx="256" cy="256" r="240" fill="#0f0f1a" stroke="url(#gold)" stroke-width="6"/>
-  <circle cx="256" cy="256" r="228" fill="none" stroke="url(#gold)" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="256" cy="256" r="240" fill="#0c1220" stroke="url(#emerald)" stroke-width="6"/>
+  <circle cx="256" cy="256" r="228" fill="none" stroke="url(#emerald)" stroke-width="1.5" opacity="0.3"/>
+  <!-- Glow effect -->
+  <circle cx="256" cy="256" r="200" fill="url(#emerald-glow)" opacity="0.15"/>
   <!-- Scissors icon -->
-  <g transform="translate(256,200)" fill="url(#gold)">
+  <g transform="translate(256,200)" fill="url(#emerald)">
     <!-- Left blade -->
     <ellipse cx="-38" cy="0" rx="28" ry="8" transform="rotate(-30)" opacity="0.9"/>
     <!-- Right blade -->
     <ellipse cx="38" cy="0" rx="28" ry="8" transform="rotate(30)" opacity="0.9"/>
     <!-- Center pivot -->
-    <circle cx="0" cy="0" r="10" fill="#0f0f1a" stroke="url(#gold)" stroke-width="3"/>
+    <circle cx="0" cy="0" r="10" fill="#0c1220" stroke="url(#emerald)" stroke-width="3"/>
     <!-- Left handle -->
-    <circle cx="-52" cy="30" r="14" fill="none" stroke="url(#gold)" stroke-width="4"/>
+    <circle cx="-52" cy="30" r="14" fill="none" stroke="url(#emerald)" stroke-width="4"/>
     <!-- Right handle -->
-    <circle cx="52" cy="30" r="14" fill="none" stroke="url(#gold)" stroke-width="4"/>
+    <circle cx="52" cy="30" r="14" fill="none" stroke="url(#emerald)" stroke-width="4"/>
     <!-- Connecting arms -->
-    <line x1="-28" y1="5" x2="-42" y2="22" stroke="url(#gold)" stroke-width="4" stroke-linecap="round"/>
-    <line x1="28" y1="5" x2="42" y2="22" stroke="url(#gold)" stroke-width="4" stroke-linecap="round"/>
+    <line x1="-28" y1="5" x2="-42" y2="22" stroke="url(#emerald)" stroke-width="4" stroke-linecap="round"/>
+    <line x1="28" y1="5" x2="42" y2="22" stroke="url(#emerald)" stroke-width="4" stroke-linecap="round"/>
   </g>
   <!-- Text: BARBEARIA -->
-  <text x="256" y="310" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="900" letter-spacing="8" fill="url(#gold)">BARBEARIA</text>
+  <text x="256" y="310" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="900" letter-spacing="8" fill="url(#emerald)">BARBEARIA</text>
   <!-- Text: IMPERIAL -->
   <text x="256" y="360" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="900" letter-spacing="4" fill="#ffffff">IMPERIAL</text>
   <!-- Decorative line -->
-  <line x1="156" y1="375" x2="356" y2="375" stroke="url(#gold)" stroke-width="2" opacity="0.6"/>
+  <line x1="156" y1="375" x2="356" y2="375" stroke="url(#emerald)" stroke-width="2" opacity="0.5"/>
   <!-- Tagline -->
-  <text x="256" y="400" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" letter-spacing="3" fill="#a0a0b8">ESTILO &amp; TRADIÇÃO</text>
+  <text x="256" y="400" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" letter-spacing="3" fill="#6ee7b7" opacity="0.7">ESTILO &amp; TRADIÇÃO</text>
 </svg>

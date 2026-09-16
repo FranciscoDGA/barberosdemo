@@ -8,24 +8,24 @@
    ============================================================================ */
 
 :root {
-  /* Primary / Brand — from salon.ts */
-  --color-primary: #c9a84c;
-  --color-primary-dark: #a8893a;
-  --color-primary-light: #d4b96a;
+  /* Primary / Brand — from salon.ts (Emerald) */
+  --color-primary: #10b981;
+  --color-primary-dark: #059669;
+  --color-primary-light: #34d399;
 
-  /* Backgrounds — Navy */
-  --color-bg: #0f0f1a;
-  --color-bg-card: #1a1a2e;
-  --color-bg-card-hover: #252542;
+  /* Backgrounds — Deep Slate */
+  --color-bg: #0c1220;
+  --color-bg-card: #111827;
+  --color-bg-card-hover: #1e293b;
 
   /* Text */
   --color-text: #ffffff;
-  --color-text-secondary: #a0a0b8;
+  --color-text-secondary: #94a3b8;
 
   /* Borders */
-  --color-border: #2a2a45;
+  --color-border: #1e293b;
 
   /* PWA */
-  --pwa-bg: #090d16;
-  --pwa-theme: #0f172a;
+  --pwa-bg: #0c1220;
+  --pwa-theme: #111827;
 }

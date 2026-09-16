@@ -80,8 +80,8 @@ export default function Home() {
   if (!isMounted) {
     return (
       <div className="flex flex-col min-h-screen bg-[#070a12] text-slate-100 items-center justify-center">
-        <div className="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center animate-pulse">
-          <span className="font-extrabold text-lg">M</span>
+        <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center animate-pulse">
+          <span className="font-extrabold text-lg">BI</span>
         </div>
       </div>
     );
@@ -99,7 +99,7 @@ export default function Home() {
             <div 
               onClick={handleSecretTap}
               onTouchEnd={handleSecretTap}
-              className="w-28 h-28 rounded-full overflow-hidden border-3 border-amber-500/60 bg-black shadow-2xl shadow-amber-500/20 cursor-pointer active:scale-95 transition-transform select-none touch-manipulation"
+              className="w-28 h-28 rounded-full overflow-hidden border-3 border-emerald-500/60 bg-black shadow-2xl shadow-emerald-500/20 cursor-pointer active:scale-95 transition-transform select-none touch-manipulation"
               style={{ WebkitTapHighlightColor: 'transparent' }}
             >
               <img src="/logo.png" alt={SALON.nome} className="w-full h-full object-cover pointer-events-none" />
@@ -107,7 +107,7 @@ export default function Home() {
             {/* Hint secreto */}
             {showAdminHint && (
               <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                <span className="text-[10px] text-amber-400/60 font-medium">Mais 2 toques...</span>
+                <span className="text-[10px] text-emerald-400/60 font-medium">Mais 2 toques...</span>
               </div>
             )}
           </div>
@@ -117,7 +117,7 @@ export default function Home() {
             <h1 className="text-4xl sm:text-5xl font-black text-white tracking-widest">
               {SALON.nome.toUpperCase()}
             </h1>
-            <p className="text-lg sm:text-xl font-extrabold text-amber-400 tracking-[0.3em] uppercase">
+            <p className="text-lg sm:text-xl font-extrabold text-emerald-400 tracking-[0.3em] uppercase">
               Barbearia
             </p>
           </div>
@@ -130,7 +130,7 @@ export default function Home() {
           {/* CTA */}
           <Link
             href="/agendar"
-            className="w-full max-w-xs py-4 px-6 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold text-base flex items-center justify-center gap-2.5 transition-all duration-200 shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 active:scale-[0.97]"
+            className="w-full max-w-xs py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-slate-950 font-extrabold text-base flex items-center justify-center gap-2.5 transition-all duration-200 shadow-xl shadow-emerald-500/25 hover:shadow-emerald-500/40 active:scale-[0.97]"
           >
             <Calendar className="w-5 h-5" />
             <span>Agendar Horário</span>
@@ -140,11 +140,11 @@ export default function Home() {
           {/* Info */}
           <div className="w-full space-y-3 pt-4 border-t border-slate-800/60">
             <div className="flex items-center justify-center gap-2 text-sm text-slate-400">
-              <Clock className="w-4 h-4 text-amber-400" />
+              <Clock className="w-4 h-4 text-emerald-400" />
               <span>Hoje: {salonConfig.openingHours}</span>
             </div>
             <div className="flex items-center justify-center gap-2 text-sm text-slate-400">
-              <MapPin className="w-4 h-4 text-amber-400" />
+              <MapPin className="w-4 h-4 text-emerald-400" />
               <span>{salonConfig.address}</span>
             </div>
           </div>
@@ -154,7 +154,7 @@ export default function Home() {
             <PWAInstallButton variant="full" label={`Instalar ${SALON.nome} Cliente`} />
             <Link
               href="/admin/login"
-              className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-amber-500/30 text-slate-300 hover:text-amber-400 font-bold shadow-lg transition-all active:scale-[0.98]"
+              className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-emerald-500/30 text-slate-300 hover:text-emerald-400 font-bold shadow-lg transition-all active:scale-[0.98]"
             >
               <Download className="w-5 h-5" />
               <span>Instalar {SALON.nome} Admin</span>

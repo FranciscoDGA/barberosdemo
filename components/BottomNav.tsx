@@ -24,12 +24,12 @@ export const BottomNav: React.FC = () => {
           href="/"
           onClick={() => setActiveTab('agendar')}
           className={`flex flex-col items-center justify-center py-1 px-2 rounded-xl transition ${
-            isAgendar ? 'text-amber-400 font-bold' : 'text-slate-400 hover:text-slate-200'
+            isAgendar ? 'text-emerald-400 font-bold' : 'text-slate-400 hover:text-slate-200'
           }`}
         >
           <div
             className={`p-1.5 rounded-lg transition ${
-              isAgendar ? 'bg-amber-500/20 text-amber-400' : 'text-slate-400'
+              isAgendar ? 'bg-emerald-500/20 text-emerald-400' : 'text-slate-400'
             }`}
           >
             <Scissors className="w-4 h-4" />
@@ -42,12 +42,12 @@ export const BottomNav: React.FC = () => {
           href="/"
           onClick={() => setActiveTab('galeria')}
           className={`flex flex-col items-center justify-center py-1 px-2 rounded-xl transition ${
-            isGaleria ? 'text-amber-400 font-bold' : 'text-slate-400 hover:text-slate-200'
+            isGaleria ? 'text-emerald-400 font-bold' : 'text-slate-400 hover:text-slate-200'
           }`}
         >
           <div
             className={`p-1.5 rounded-lg transition ${
-              isGaleria ? 'bg-amber-500/20 text-amber-400' : 'text-slate-400'
+              isGaleria ? 'bg-emerald-500/20 text-emerald-400' : 'text-slate-400'
             }`}
           >
             <Sparkles className="w-4 h-4" />
@@ -60,12 +60,12 @@ export const BottomNav: React.FC = () => {
           href="/"
           onClick={() => setActiveTab('fidelidade')}
           className={`flex flex-col items-center justify-center py-1 px-2 rounded-xl transition ${
-            isFidelidade ? 'text-amber-400 font-bold' : 'text-slate-400 hover:text-slate-200'
+            isFidelidade ? 'text-emerald-400 font-bold' : 'text-slate-400 hover:text-slate-200'
           }`}
         >
           <div
             className={`p-1.5 rounded-lg transition ${
-              isFidelidade ? 'bg-amber-500/20 text-amber-400' : 'text-slate-400'
+              isFidelidade ? 'bg-emerald-500/20 text-emerald-400' : 'text-slate-400'
             }`}
           >
             <Award className="w-4 h-4" />
@@ -77,12 +77,12 @@ export const BottomNav: React.FC = () => {
         <Link
           href="/demo"
           className={`flex flex-col items-center justify-center py-1 px-2 rounded-xl transition ${
-            isDemo ? 'text-amber-400 font-bold' : 'text-slate-400 hover:text-slate-200'
+            isDemo ? 'text-emerald-400 font-bold' : 'text-slate-400 hover:text-slate-200'
           }`}
         >
           <div
             className={`p-1.5 rounded-lg transition ${
-              isDemo ? 'bg-amber-500/20 text-amber-400' : 'text-slate-400'
+              isDemo ? 'bg-emerald-500/20 text-emerald-400' : 'text-slate-400'
             }`}
           >
             <MonitorPlay className="w-4 h-4" />
@@ -94,12 +94,12 @@ export const BottomNav: React.FC = () => {
         <Link
           href="/admin"
           className={`flex flex-col items-center justify-center py-1 px-2 rounded-xl transition ${
-            isAdmin ? 'text-amber-400 font-bold' : 'text-slate-400 hover:text-slate-200'
+            isAdmin ? 'text-emerald-400 font-bold' : 'text-slate-400 hover:text-slate-200'
           }`}
         >
           <div
             className={`p-1.5 rounded-lg transition ${
-              isAdmin ? 'bg-amber-500/20 text-amber-400' : 'text-slate-400'
+              isAdmin ? 'bg-emerald-500/20 text-emerald-400' : 'text-slate-400'
             }`}
           >
             <ShieldCheck className="w-4 h-4" />
