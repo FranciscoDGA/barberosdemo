@@ -233,7 +233,7 @@ export const BUSINESS_CONFIG: BusinessConfig = {
     slogan: 'Onde o estilo encontra a tradição.',
     descricao: 'Barbearia premium com atendimento personalizado e estilo único',
     logo: '/logo.png',
-    favicon: '/favicon.ico',
+    favicon: '/favicon.png',
     cores: {
       primaria: '#c9a84c',
       primariaEscura: '#a8893a',
