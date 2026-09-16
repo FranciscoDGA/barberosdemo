@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
@@ -8,72 +8,26 @@ import { SALON } from '@/lib/config/salon';
 import { 
   Lock, 
   Mail, 
-  Phone, 
-  User, 
   KeyRound, 
   ArrowLeft, 
-  Scissors, 
   ShieldCheck, 
   Eye, 
   EyeOff, 
   Loader2,
-  CheckCircle2,
-  AlertCircle
+  AlertCircle,
+  Zap,
 } from 'lucide-react';
-
-const LOGIN_ATTEMPTS_KEY = 'barberos_login_attempts';
-const LOGIN_LOCKOUT_KEY = 'barberos_login_lockout';
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const { login, register, user, logout } = useAuth();
+  const { loginDemo, user, logout } = useAuth();
 
-  const [mode, setMode] = useState<'login' | 'register'>('login');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
-  const [isLocked, setIsLocked] = useState(false);
-  const [lockoutTimer, setLockoutTimer] = useState(0);
 
-  // Login form state
-  const [loginEmailOrPhone, setLoginEmailOrPhone] = useState('');
-  const [loginPassword, setLoginPassword] = useState('');
-
-  // Register form state
-  const [regName, setRegName] = useState('');
-  const [regEmail, setRegEmail] = useState('');
-  const [regPhone, setRegPhone] = useState('');
-  const [regPassword, setRegPassword] = useState('');
-  const [regConfirmPassword, setRegConfirmPassword] = useState('');
-
-  // Check lockout on mount
-  useEffect(() => {
-    const lockoutUntil = localStorage.getItem(LOGIN_LOCKOUT_KEY);
-    if (lockoutUntil) {
-      const remaining = parseInt(lockoutUntil) - Date.now();
-      if (remaining > 0) {
-        setIsLocked(true);
-        setLockoutTimer(Math.ceil(remaining / 1000));
-        const interval = setInterval(() => {
-          const left = parseInt(localStorage.getItem(LOGIN_LOCKOUT_KEY) || '0') - Date.now();
-          if (left <= 0) {
-            setIsLocked(false);
-            setLockoutTimer(0);
-            localStorage.removeItem(LOGIN_LOCKOUT_KEY);
-            localStorage.removeItem(LOGIN_ATTEMPTS_KEY);
-            clearInterval(interval);
-          } else {
-            setLockoutTimer(Math.ceil(left / 1000));
-          }
-        }, 1000);
-        return () => clearInterval(interval);
-      } else {
-        localStorage.removeItem(LOGIN_LOCKOUT_KEY);
-        localStorage.removeItem(LOGIN_ATTEMPTS_KEY);
-      }
-    }
-  }, []);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   // If already logged in, show redirect button
   if (user) {
@@ -83,9 +37,9 @@ export default function AdminLoginPage() {
           <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 text-emerald-400 mx-auto flex items-center justify-center border border-emerald-500/20">
             <ShieldCheck className="w-8 h-8" />
           </div>
-          <h2 className="text-xl font-bold text-white">Você já está conectado!</h2>
+          <h2 className="text-xl font-bold text-white">Conectado!</h2>
           <p className="text-xs text-slate-400">
-            Logado como <strong className="text-amber-400">{user.name}</strong> ({user.email}).
+            Logado como <strong className="text-amber-400">{user.name}</strong>
           </p>
           <div className="pt-2 flex flex-col gap-2">
             <button
@@ -101,7 +55,7 @@ export default function AdminLoginPage() {
               }}
               className="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs transition cursor-pointer"
             >
-              Sair e fazer login novamente
+              Sair
             </button>
             <Link
               href="/"
@@ -115,87 +69,30 @@ export default function AdminLoginPage() {
     );
   }
 
-  const handleLoginSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (isLocked) {
-      setErrorMessage(`Conta bloqueada. Aguarde ${lockoutTimer}s.`);
-      return;
-    }
-
-    if (!loginEmailOrPhone.trim() || !loginPassword.trim()) {
-      setErrorMessage('Por favor, informe seu e-mail/telefone e senha.');
+    if (!email.trim() || !password.trim()) {
+      setErrorMessage('Preencha e-mail e senha.');
       return;
     }
 
     setIsLoading(true);
     setErrorMessage('');
 
-    const res = await login(loginEmailOrPhone, loginPassword);
+    const res = await loginDemo(email, password);
     setIsLoading(false);
 
     if (res.success) {
-      localStorage.removeItem(LOGIN_ATTEMPTS_KEY);
-      localStorage.removeItem(LOGIN_LOCKOUT_KEY);
       router.push('/admin');
     } else {
-      const attempts = parseInt(localStorage.getItem(LOGIN_ATTEMPTS_KEY) || '0') + 1;
-      localStorage.setItem(LOGIN_ATTEMPTS_KEY, attempts.toString());
-
-      if (attempts >= 5) {
-        const lockoutUntil = Date.now() + 15 * 60 * 1000;
-        localStorage.setItem(LOGIN_LOCKOUT_KEY, lockoutUntil.toString());
-        setIsLocked(true);
-        setLockoutTimer(900);
-        setErrorMessage('Muitas tentativas. Conta bloqueada por 15 minutos.');
-      } else {
-        setErrorMessage(`${res.error || 'Credenciais inválidas.'} (${attempts}/5 tentativas)`);
-      }
-    }
-  };
-
-  const handleRegisterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!regName.trim() || !regEmail.trim() || !regPhone.trim() || !regPassword.trim()) {
-      setErrorMessage('Preencha todos os campos para cadastrar o dono.');
-      return;
-    }
-
-    if (regPassword.length < 6) {
-      setErrorMessage('A senha deve ter no mínimo 6 caracteres.');
-      return;
-    }
-
-    if (regPassword !== regConfirmPassword) {
-      setErrorMessage('As senhas digitadas não coincidem.');
-      return;
-    }
-
-    setIsLoading(true);
-    setErrorMessage('');
-
-    const res = await register({
-      name: regName,
-      email: regEmail,
-      phone: regPhone,
-      password: regPassword
-    });
-
-    setIsLoading(false);
-
-    if (res.success) {
-      setSuccessMessage('Conta de Dono criada com sucesso!');
-      setTimeout(() => {
-        router.push('/admin');
-      }, 800);
-    } else {
-      setErrorMessage(res.error || 'Erro ao realizar cadastro.');
+      setErrorMessage(res.error || 'Credenciais inválidas.');
     }
   };
 
   return (
     <div className="min-h-screen bg-[#070a12] flex flex-col justify-between py-6 px-4 sm:px-6">
-      {/* Top Bar with Return Link */}
+      {/* Top Bar */}
       <div className="w-full max-w-md mx-auto flex items-center justify-between mb-4">
         <Link
           href="/"
@@ -205,57 +102,31 @@ export default function AdminLoginPage() {
           <span>Voltar ao Site</span>
         </Link>
         <span className="text-[11px] text-amber-400 font-bold flex items-center gap-1">
-          <ShieldCheck className="w-3.5 h-3.5" /> Acesso Exclusivo Dono
+          <Zap className="w-3.5 h-3.5" /> Modo Demo
         </span>
       </div>
 
-      {/* Center Auth Card */}
+      {/* Auth Card */}
       <div className="w-full max-w-md mx-auto bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-md">
         
         {/* Brand Header */}
         <div className="text-center space-y-2 mb-6">
           <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-amber-500/60 bg-black mx-auto flex items-center justify-center shadow-xl shadow-amber-500/20">
-            <img src="/logo.png" alt={`${SALON.nome} Barbearia`} className="w-full h-full object-cover" />
+            <img src="/logo.png" alt={SALON.nome} className="w-full h-full object-cover" />
           </div>
-          <h1 className="text-2xl font-black text-white tracking-wide">Área do Dono</h1>
+          <h1 className="text-2xl font-black text-white tracking-wide">Painel de Gestão</h1>
           <p className="text-xs text-slate-400">
-            {SALON.nome} &bull; Sistema de Agendamento
+            {SALON.nome}
           </p>
         </div>
 
-        {/* Tab Switcher: Entrar vs Cadastrar */}
-        <div className="grid grid-cols-2 bg-slate-950 p-1.5 rounded-2xl border border-slate-800 mb-6 text-xs font-bold">
-          <button
-            type="button"
-            onClick={() => {
-              setMode('login');
-              setErrorMessage('');
-            }}
-            className={`py-2.5 rounded-xl transition ${
-              mode === 'login'
-                ? 'bg-amber-500 text-slate-950 shadow-md font-black'
-                : 'text-slate-400 hover:text-white'
-            }`}
-          >
-            Entrar (Login)
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              setMode('register');
-              setErrorMessage('');
-            }}
-            className={`py-2.5 rounded-xl transition ${
-              mode === 'register'
-                ? 'bg-amber-500 text-slate-950 shadow-md font-black'
-                : 'text-slate-400 hover:text-white'
-            }`}
-          >
-            Cadastrar Dono
-          </button>
+        {/* Demo Info */}
+        <div className="mb-5 p-3 bg-amber-500/10 border border-amber-500/20 rounded-2xl flex items-center gap-2.5 text-amber-400 text-xs">
+          <Zap className="w-4 h-4 shrink-0" />
+          <span>Credenciais de demonstração — não são salvas.</span>
         </div>
 
-        {/* Alerts */}
+        {/* Alert */}
         {errorMessage && (
           <div className="mb-5 p-3.5 bg-rose-500/15 border border-rose-500/30 rounded-2xl flex items-center gap-2.5 text-rose-400 text-xs animate-shake">
             <AlertCircle className="w-4 h-4 shrink-0" />
@@ -263,217 +134,77 @@ export default function AdminLoginPage() {
           </div>
         )}
 
-        {successMessage && (
-          <div className="mb-5 p-3.5 bg-emerald-500/15 border border-emerald-500/30 rounded-2xl flex items-center gap-2.5 text-emerald-400 text-xs">
-            <CheckCircle2 className="w-4 h-4 shrink-0" />
-            <span>{successMessage}</span>
+        {/* FORM */}
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="space-y-1.5">
+            <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
+              E-mail
+            </label>
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                <Mail className="w-4 h-4" />
+              </div>
+              <input
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="E-mail de demonstração"
+                required
+                className="w-full pl-10 pr-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition"
+              />
+            </div>
           </div>
-        )}
 
-        {/* FORM: LOGIN */}
-        {mode === 'login' && (
-          <form onSubmit={handleLoginSubmit} className="space-y-4">
-            <div className="space-y-1.5">
-              <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
-                E-mail ou WhatsApp
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
-                  <Mail className="w-4 h-4" />
-                </div>
-                <input
-                  type="text"
-                  value={loginEmailOrPhone}
-                  onChange={(e) => setLoginEmailOrPhone(e.target.value)}
-                  placeholder={`ex: ${SALON.placeholders.email} ou ${SALON.placeholders.whatsapp}`}
-                  required
-                  className="w-full pl-10 pr-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition"
-                />
+          <div className="space-y-1.5">
+            <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
+              Senha
+            </label>
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                <KeyRound className="w-4 h-4" />
               </div>
+              <input
+                type={showPassword ? 'text' : 'password'}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Senha de demonstração"
+                required
+                className="w-full pl-10 pr-11 py-3 bg-slate-950 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-500 hover:text-slate-300"
+              >
+                {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+              </button>
             </div>
+          </div>
 
-            <div className="space-y-1.5">
-              <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
-                Senha
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
-                  <KeyRound className="w-4 h-4" />
-                </div>
-                <input
-                  type={showPassword ? 'text' : 'password'}
-                  value={loginPassword}
-                  onChange={(e) => setLoginPassword(e.target.value)}
-                  placeholder="Sua senha de acesso"
-                  required
-                  className="w-full pl-10 pr-11 py-3 bg-slate-950 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-500 hover:text-slate-300"
-                >
-                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                </button>
-              </div>
-            </div>
-
-            <button
-              type="submit"
-              disabled={isLoading || isLocked}
-              className="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm transition shadow-lg shadow-amber-500/20 active:scale-95 flex items-center justify-center gap-2 mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isLocked ? (
-                <>
-                  <Lock className="w-4 h-4" />
-                  <span>Bloqueado — aguarde {lockoutTimer}s</span>
-                </>
-              ) : isLoading ? (
-                <>
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                  <span>Validando Acesso...</span>
-                </>
-              ) : (
-                <>
-                  <Lock className="w-4 h-4" />
-                  <span>Entrar no Painel do Dono</span>
-                </>
-              )}
-            </button>
-
-          </form>
-        )}
-
-        {/* FORM: REGISTER */}
-        {mode === 'register' && (
-          <form onSubmit={handleRegisterSubmit} className="space-y-3.5">
-            <div className="space-y-1">
-              <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
-                Nome do Dono / Administrador
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
-                  <User className="w-4 h-4" />
-                </div>
-                <input
-                  type="text"
-                  value={regName}
-                  onChange={(e) => setRegName(e.target.value)}
-                  placeholder="ex: João Silva"
-                  required
-                  className="w-full pl-10 pr-4 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition"
-                />
-              </div>
-            </div>
-
-            <div className="space-y-1">
-              <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
-                E-mail Profissional
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
-                  <Mail className="w-4 h-4" />
-                </div>
-                <input
-                  type="email"
-                  value={regEmail}
-                  onChange={(e) => setRegEmail(e.target.value)}
-                  placeholder={`ex: ${SALON.placeholders.email}`}
-                  required
-                  className="w-full pl-10 pr-4 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition"
-                />
-              </div>
-            </div>
-
-            <div className="space-y-1">
-              <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
-                WhatsApp do Dono
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
-                  <Phone className="w-4 h-4" />
-                </div>
-                <input
-                  type="tel"
-                  value={regPhone}
-                  onChange={(e) => setRegPhone(e.target.value)}
-                  placeholder={`ex: ${SALON.placeholders.whatsapp}`}
-                  required
-                  className="w-full pl-10 pr-4 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition"
-                />
-              </div>
-            </div>
-
-            <div className="space-y-1">
-              <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
-                Criar Senha
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
-                  <KeyRound className="w-4 h-4" />
-                </div>
-                <input
-                  type={showPassword ? 'text' : 'password'}
-                  value={regPassword}
-                  onChange={(e) => setRegPassword(e.target.value)}
-                  placeholder="Mínimo 6 caracteres"
-                  required
-                  className="w-full pl-10 pr-11 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-500 hover:text-slate-300"
-                >
-                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                </button>
-              </div>
-            </div>
-
-            <div className="space-y-1">
-              <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
-                Confirmar Senha
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
-                  <KeyRound className="w-4 h-4" />
-                </div>
-                <input
-                  type={showPassword ? 'text' : 'password'}
-                  value={regConfirmPassword}
-                  onChange={(e) => setRegConfirmPassword(e.target.value)}
-                  placeholder="Repita a senha"
-                  required
-                  className="w-full pl-10 pr-4 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition"
-                />
-              </div>
-            </div>
-
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm transition shadow-lg shadow-amber-500/20 active:scale-95 flex items-center justify-center gap-2 mt-3 disabled:opacity-50"
-            >
-              {isLoading ? (
-                <>
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                  <span>Cadastrando Dono...</span>
-                </>
-              ) : (
-                <>
-                  <ShieldCheck className="w-4 h-4" />
-                  <span>Criar Conta & Liberar Painel</span>
-                </>
-              )}
-            </button>
-          </form>
-        )}
+          <button
+            type="submit"
+            disabled={isLoading}
+            className="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm transition shadow-lg shadow-amber-500/20 active:scale-95 flex items-center justify-center gap-2 mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {isLoading ? (
+              <>
+                <Loader2 className="w-4 h-4 animate-spin" />
+                <span>Validando...</span>
+              </>
+            ) : (
+              <>
+                <Lock className="w-4 h-4" />
+                <span>Entrar no Painel</span>
+              </>
+            )}
+          </button>
+        </form>
 
       </div>
 
-      {/* Footer Info */}
+      {/* Footer */}
       <div className="text-center text-[11px] text-slate-500 mt-6">
-        {SALON.nome} &bull; Acesso Protegido por Criptografia e Bloqueio de Sessão
+        {SALON.nome} &bull; Modo Demonstração
       </div>
     </div>
   );

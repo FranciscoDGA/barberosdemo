@@ -217,6 +217,7 @@ export interface BusinessConfig {
   pagamento: Pagamento;
   alfred: Alfred;
   lembretes: Lembretes;
+  demoAdmin?: { email: string; password: string; nome: string };
   url: string;
 }
 
@@ -530,7 +531,16 @@ export const BUSINESS_CONFIG: BusinessConfig = {
   },
 
   // ---------------------------------------------------------------------------
-  // 10. URL DO SITE
+  // 10. DEMO ADMIN (for demonstrations — not persisted)
+  // ---------------------------------------------------------------------------
+  demoAdmin: {
+    email: 'admin@barbearia.com',
+    password: 'admin123',
+    nome: 'Admin Demo',
+  },
+
+  // ---------------------------------------------------------------------------
+  // 11. URL DO SITE
   // ---------------------------------------------------------------------------
   url: 'https://barberos-demo.vercel.app',
 };

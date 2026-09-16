@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
+import { BUSINESS_CONFIG } from '@/lib/config/salon';
 
 export interface AdminUser {
   id: string;
@@ -16,6 +17,7 @@ interface AuthContextType {
   user: AdminUser | null;
   isLoading: boolean;
   login: (email: string, password: string) => Promise<{ success: boolean; error?: string }>;
+  loginDemo: (email: string, password: string) => Promise<{ success: boolean; error?: string }>;
   register: (data: { name: string; email: string; phone: string; password: string }) => Promise<{ success: boolean; error?: string }>;
   logout: () => void;
 }
@@ -34,7 +36,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         const { data: { session }, error } = await supabase.auth.getSession();
         
         if (error) {
-          // Sessão inválida ou corrompida — limpar tudo
           setUser(null);
           localStorage.removeItem(LOCAL_STORAGE_SESSION_KEY);
           await supabase.auth.signOut();
@@ -49,7 +50,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           setUser(authUser);
           localStorage.setItem(LOCAL_STORAGE_SESSION_KEY, JSON.stringify(authUser));
         } else {
-          // Sem sessão válida — limpar localStorage
           setUser(null);
           localStorage.removeItem(LOCAL_STORAGE_SESSION_KEY);
         }
@@ -83,6 +83,29 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     return () => subscription.unsubscribe();
   }, []);
+
+  // Demo login: in-memory only, no Supabase, no persistence
+  const loginDemo = async (email: string, password: string): Promise<{ success: boolean; error?: string }> => {
+    const demo = BUSINESS_CONFIG.demoAdmin;
+    if (!demo) {
+      return { success: false, error: 'Modo demo não configurado.' };
+    }
+
+    if (email.trim().toLowerCase() === demo.email && password === demo.password) {
+      const demoUser: AdminUser = {
+        id: 'demo-admin',
+        name: demo.nome,
+        email: demo.email,
+        phone: '',
+        role: 'owner',
+      };
+      // In-memory only — no localStorage, no Supabase
+      setUser(demoUser);
+      return { success: true };
+    }
+
+    return { success: false, error: 'Credenciais demo inválidas.' };
+  };
 
   const register = async (data: { name: string; email: string; phone: string; password: string }): Promise<{ success: boolean; error?: string }> => {
     try {
@@ -158,7 +181,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   return (
-    <AuthContext.Provider value={{ user, isLoading, login, register, logout }}>
+    <AuthContext.Provider value={{ user, isLoading, login, loginDemo, register, logout }}>
       {children}
     </AuthContext.Provider>
   );
